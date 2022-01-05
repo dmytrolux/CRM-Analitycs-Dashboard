@@ -18,6 +18,12 @@
 		B4005B822784C9EE00EDDD97 /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B4005B7F2784C9EE00EDDD97 /* Poppins-Medium.ttf */; };
 		B4005B832784C9EE00EDDD97 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B4005B802784C9EE00EDDD97 /* Poppins-Regular.ttf */; };
 		B4005B852784CF7A00EDDD97 /* CustomTF.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4005B842784CF7A00EDDD97 /* CustomTF.swift */; };
+		B4005B882785C3F800EDDD97 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4005B872785C3F800EDDD97 /* SecondViewController.swift */; };
+		B4005B8E2786071100EDDD97 /* CollectionView1.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4005B8D2786071100EDDD97 /* CollectionView1.swift */; };
+		B4005B9B2786393800EDDD97 /* UserTotalSVCCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4005B992786393800EDDD97 /* UserTotalSVCCVCell.swift */; };
+		B4005B9C2786393800EDDD97 /* UserTotalSVCCVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4005B9A2786393800EDDD97 /* UserTotalSVCCVCell.xib */; };
+		B4005B9E27863D6200EDDD97 /* Poppins-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B4005B9D27863D6200EDDD97 /* Poppins-Light.ttf */; };
+		B4005BA027864E6600EDDD97 /* StructTotalUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4005B9F27864E6600EDDD97 /* StructTotalUser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +40,12 @@
 		B4005B7F2784C9EE00EDDD97 /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.ttf"; sourceTree = "<group>"; };
 		B4005B802784C9EE00EDDD97 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
 		B4005B842784CF7A00EDDD97 /* CustomTF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTF.swift; sourceTree = "<group>"; };
+		B4005B872785C3F800EDDD97 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		B4005B8D2786071100EDDD97 /* CollectionView1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionView1.swift; sourceTree = "<group>"; };
+		B4005B992786393800EDDD97 /* UserTotalSVCCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTotalSVCCVCell.swift; sourceTree = "<group>"; };
+		B4005B9A2786393800EDDD97 /* UserTotalSVCCVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserTotalSVCCVCell.xib; sourceTree = "<group>"; };
+		B4005B9D27863D6200EDDD97 /* Poppins-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Light.ttf"; sourceTree = "<group>"; };
+		B4005B9F27864E6600EDDD97 /* StructTotalUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StructTotalUser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +62,7 @@
 		B4005B2C2784532100EDDD97 = {
 			isa = PBXGroup;
 			children = (
+				B4005B8D2786071100EDDD97 /* CollectionView1.swift */,
 				B4005B4C278455D600EDDD97 /* .gitignore */,
 				B4005B372784532100EDDD97 /* CRM_Analitycs_Dashboard */,
 				B4005B362784532100EDDD97 /* Products */,
@@ -68,11 +81,12 @@
 		B4005B372784532100EDDD97 /* CRM_Analitycs_Dashboard */ = {
 			isa = PBXGroup;
 			children = (
-				B4005B382784532100EDDD97 /* AppDelegate.swift */,
+				B4005B952786253B00EDDD97 /* Storyboard */,
+				B4005B962786257300EDDD97 /* ViewControlles */,
+				B4005B9727862ABB00EDDD97 /* Collections */,
+				B4005B9827862AEE00EDDD97 /* OtherCustomClasses */,
 				B4005B3A2784532100EDDD97 /* SceneDelegate.swift */,
-				B4005B3C2784532100EDDD97 /* ViewController.swift */,
-				B4005B842784CF7A00EDDD97 /* CustomTF.swift */,
-				B4005B3E2784532100EDDD97 /* Main.storyboard */,
+				B4005B382784532100EDDD97 /* AppDelegate.swift */,
 				B4005B412784532200EDDD97 /* Assets.xcassets */,
 				B4005B432784532200EDDD97 /* LaunchScreen.storyboard */,
 				B4005B462784532200EDDD97 /* Info.plist */,
@@ -84,11 +98,47 @@
 		B4005B7B2784C8F100EDDD97 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				B4005B9D27863D6200EDDD97 /* Poppins-Light.ttf */,
 				B4005B7E2784C9EE00EDDD97 /* poppins-bold.ttf */,
 				B4005B7F2784C9EE00EDDD97 /* Poppins-Medium.ttf */,
 				B4005B802784C9EE00EDDD97 /* Poppins-Regular.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		B4005B952786253B00EDDD97 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				B4005B3E2784532100EDDD97 /* Main.storyboard */,
+				B4005B3C2784532100EDDD97 /* ViewController.swift */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		B4005B962786257300EDDD97 /* ViewControlles */ = {
+			isa = PBXGroup;
+			children = (
+				B4005B872785C3F800EDDD97 /* SecondViewController.swift */,
+			);
+			path = ViewControlles;
+			sourceTree = "<group>";
+		};
+		B4005B9727862ABB00EDDD97 /* Collections */ = {
+			isa = PBXGroup;
+			children = (
+				B4005B9F27864E6600EDDD97 /* StructTotalUser.swift */,
+				B4005B992786393800EDDD97 /* UserTotalSVCCVCell.swift */,
+				B4005B9A2786393800EDDD97 /* UserTotalSVCCVCell.xib */,
+			);
+			path = Collections;
+			sourceTree = "<group>";
+		};
+		B4005B9827862AEE00EDDD97 /* OtherCustomClasses */ = {
+			isa = PBXGroup;
+			children = (
+				B4005B842784CF7A00EDDD97 /* CustomTF.swift */,
+			);
+			path = OtherCustomClasses;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -150,10 +200,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				B4005B4D278455D600EDDD97 /* .gitignore in Resources */,
+				B4005B9E27863D6200EDDD97 /* Poppins-Light.ttf in Resources */,
 				B4005B452784532200EDDD97 /* LaunchScreen.storyboard in Resources */,
 				B4005B832784C9EE00EDDD97 /* Poppins-Regular.ttf in Resources */,
 				B4005B812784C9EE00EDDD97 /* poppins-bold.ttf in Resources */,
 				B4005B822784C9EE00EDDD97 /* Poppins-Medium.ttf in Resources */,
+				B4005B9C2786393800EDDD97 /* UserTotalSVCCVCell.xib in Resources */,
 				B4005B422784532200EDDD97 /* Assets.xcassets in Resources */,
 				B4005B402784532100EDDD97 /* Main.storyboard in Resources */,
 			);
@@ -167,8 +219,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				B4005B3D2784532100EDDD97 /* ViewController.swift in Sources */,
+				B4005B9B2786393800EDDD97 /* UserTotalSVCCVCell.swift in Sources */,
+				B4005B8E2786071100EDDD97 /* CollectionView1.swift in Sources */,
+				B4005BA027864E6600EDDD97 /* StructTotalUser.swift in Sources */,
 				B4005B392784532100EDDD97 /* AppDelegate.swift in Sources */,
 				B4005B852784CF7A00EDDD97 /* CustomTF.swift in Sources */,
+				B4005B882785C3F800EDDD97 /* SecondViewController.swift in Sources */,
 				B4005B3B2784532100EDDD97 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

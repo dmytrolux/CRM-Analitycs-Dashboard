@@ -11,8 +11,6 @@ import UIKit
 class ViewController: UIViewController {
     
     
-    
-    
     @IBOutlet var backView: UIView!
     @IBOutlet weak var registerL: UILabel!{
         didSet{
