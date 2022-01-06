@@ -68,14 +68,21 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5mo-9j-80f">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5mo-9j-80f">
                                 <rect key="frame" x="54" y="51" width="20" height="15"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="19" id="4ZO-39-azs"/>
                                     <constraint firstAttribute="height" constant="15" id="4iW-Xz-7FJ"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Poppins-Light" family="Poppins" pointSize="10"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="50%">
+                                        <attributes>
+                                            <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <font key="NSFont" size="10" name="Poppins-Light"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -107,7 +114,7 @@
                 <outlet property="backViewCell" destination="ash-wq-woN" id="JxA-mD-AvX"/>
                 <outlet property="countLessUser" destination="Mma-aZ-cPG" id="Ao4-cC-7nm"/>
                 <outlet property="countTargetUserL" destination="rhD-yp-azz" id="jIl-mV-oyb"/>
-                <outlet property="resulPpercent" destination="5mo-9j-80f" id="Q83-xQ-jBu"/>
+                <outlet property="placeForPercent" destination="5mo-9j-80f" id="Q83-xQ-jBu"/>
                 <outlet property="resultUserL" destination="WIc-CO-AUv" id="m5h-U1-eHe"/>
                 <outlet property="totalusersL" destination="WfW-Hj-geE" id="uUR-tw-Bmm"/>
             </connections>
@@ -116,7 +123,7 @@
     </objects>
     <resources>
         <namedColor name="gray">
-            <color red="0.2196078431372549" green="0.23137254901960785" blue="0.31372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.2199999988079071" green="0.23100000619888306" blue="0.31400001049041748" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

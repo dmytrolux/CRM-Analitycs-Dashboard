@@ -7,7 +7,7 @@
 
 import UIKit
 
- class UserTotalSVCCVCell: UICollectionViewCell {
+  class UserTotalSVCCVCell: UICollectionViewCell {
     @IBOutlet weak var backViewCell: UIView!{
         didSet{
             backViewCell.layer.cornerRadius = 7
@@ -37,20 +37,57 @@ import UIKit
             countLessUser.attributedText =  NSMutableAttributedString(string: "less 1000 User", attributes: [NSAttributedString.Key.kern: 0.1])
         }
     }
-    @IBOutlet weak var resulPpercent: UILabel!{
+    @IBOutlet weak var placeForPercent: UILabel!{
         didSet{
-           
+            placeForPercent.text = ""
         }
     }
     
     let movingCircleLayer = CAShapeLayer()
+      
+      let percentLabel: UILabel = {
+          let label = UILabel()
+          label.text = "Buid!"
+          label.textAlignment = .center
+          label.font = UIFont(name: "Poppins-Light", size: 10)
+          label.textColor = UIColor.white
+          return label
+      }()
+    
+    //var totalUser = targetUserInt - lessUserInt
+    //input param: resultingPercent = 100 /( targetUserInt - lessUserInt
+      var resultingPercent: Int = 90  //результат обрахунків %
+      func animationPercent (resultingPrecent: Int) {
+          var count = 0 // початкове значення % для анімації
+          
+          func nextIteration(){
+              if count < resultingPercent {
+                  count += 1
+                  print("\(count) \(Date())") //хочу бачити кожну ітерацію в консолі
+                  self.percentLabel.text = "\(Int(count))%" // підставити значення ітерації в лейбл
+                  DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) {
+                      nextIteration()
+                  }
+              }
+          }
+          nextIteration()
+      }
+      
+          
+         
+                  
+              
+              
+              
+              /* DispatchQueue.main.asyncAfter(deadline: .now() + 1) { //затримка?
+                  self.percentLabel.text = "\(Int(i))%" // підставити значення ітерації в лейбл
+                  print("\(i) \(Date())") //хочу бачити кожну ітерацію в консолі
+              }
+              */
     
     
-    
-    
-    
-    
-    
+    //func for delay
+     
     
     
     
@@ -58,9 +95,16 @@ import UIKit
     override func awakeFromNib() {
         super.awakeFromNib()
         
-       
+        backViewCell.addSubview(percentLabel)
+        percentLabel.frame = CGRect(x: 0, y: 0, width: 30, height: 15)
+        percentLabel.center = placeForPercent.center
+        
+        
+        
+        
+        
        // let`s start  by drawing a circle somehow
-        let centerForCircle = resulPpercent.center
+        let centerForCircle = placeForPercent.center
         
         //create my track layer
         let backCircleLayer = CAShapeLayer()
@@ -102,6 +146,10 @@ import UIKit
         basicAnimation.fillMode = .forwards
         basicAnimation.isRemovedOnCompletion = false
         movingCircleLayer.add(basicAnimation, forKey: "urSoBasic")
+        animationPercent(resultingPrecent: resultingPercent)
+        
+        
+        
         
         
     }

@@ -11,7 +11,7 @@ import UIKit
 struct TotalUser {
     var targetUserInt: Int
     var lessUserInt: Int
-   // var totalUser = targetUserInt - lessUserInt
+   //var totalUser = targetUserInt - lessUserInt
     
 }
 
