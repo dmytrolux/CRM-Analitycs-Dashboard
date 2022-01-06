@@ -85,6 +85,20 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="типу Target" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nSk-0V-ZX0">
+                                <rect key="frame" x="39" y="139" width="90" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="типу Less" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yg7-7h-KgT">
+                                <rect key="frame" x="210" y="140" width="76" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" name="gray"/>
                         <constraints>
@@ -114,9 +128,11 @@
                 <outlet property="backViewCell" destination="ash-wq-woN" id="JxA-mD-AvX"/>
                 <outlet property="countLessUser" destination="Mma-aZ-cPG" id="Ao4-cC-7nm"/>
                 <outlet property="countTargetUserL" destination="rhD-yp-azz" id="jIl-mV-oyb"/>
+                <outlet property="less" destination="yg7-7h-KgT" id="saT-LF-2SN"/>
                 <outlet property="placeForPercent" destination="5mo-9j-80f" id="Q83-xQ-jBu"/>
                 <outlet property="resultUserL" destination="WIc-CO-AUv" id="m5h-U1-eHe"/>
                 <outlet property="totalusersL" destination="WfW-Hj-geE" id="uUR-tw-Bmm"/>
+                <outlet property="turget" destination="nSk-0V-ZX0" id="6H5-rQ-1QR"/>
             </connections>
             <point key="canvasLocation" x="144" y="159"/>
         </collectionViewCell>

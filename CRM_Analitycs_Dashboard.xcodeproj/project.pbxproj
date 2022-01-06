@@ -24,6 +24,9 @@
 		B4005B9C2786393800EDDD97 /* UserTotalSVCCVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4005B9A2786393800EDDD97 /* UserTotalSVCCVCell.xib */; };
 		B4005B9E27863D6200EDDD97 /* Poppins-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B4005B9D27863D6200EDDD97 /* Poppins-Light.ttf */; };
 		B4005BA027864E6600EDDD97 /* StructTotalUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4005B9F27864E6600EDDD97 /* StructTotalUser.swift */; };
+		B40FD01627878E6D00DFA27B /* VertDiagrameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40FD01427878E6D00DFA27B /* VertDiagrameCell.swift */; };
+		B40FD01727878E6D00DFA27B /* VertDiagrameCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B40FD01527878E6D00DFA27B /* VertDiagrameCell.xib */; };
+		B40FD01927878E9600DFA27B /* StructVertDiagrama.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40FD01827878E9600DFA27B /* StructVertDiagrama.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +49,9 @@
 		B4005B9A2786393800EDDD97 /* UserTotalSVCCVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserTotalSVCCVCell.xib; sourceTree = "<group>"; };
 		B4005B9D27863D6200EDDD97 /* Poppins-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Light.ttf"; sourceTree = "<group>"; };
 		B4005B9F27864E6600EDDD97 /* StructTotalUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StructTotalUser.swift; sourceTree = "<group>"; };
+		B40FD01427878E6D00DFA27B /* VertDiagrameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VertDiagrameCell.swift; sourceTree = "<group>"; };
+		B40FD01527878E6D00DFA27B /* VertDiagrameCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VertDiagrameCell.xib; sourceTree = "<group>"; };
+		B40FD01827878E9600DFA27B /* StructVertDiagrama.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StructVertDiagrama.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,9 +87,10 @@
 		B4005B372784532100EDDD97 /* CRM_Analitycs_Dashboard */ = {
 			isa = PBXGroup;
 			children = (
+				B40FD01327878DEA00DFA27B /* CollectionVerticalDiagrama */,
 				B4005B952786253B00EDDD97 /* Storyboard */,
 				B4005B962786257300EDDD97 /* ViewControlles */,
-				B4005B9727862ABB00EDDD97 /* Collections */,
+				B4005B9727862ABB00EDDD97 /* CollectionsTotalUser */,
 				B4005B9827862AEE00EDDD97 /* OtherCustomClasses */,
 				B4005B3A2784532100EDDD97 /* SceneDelegate.swift */,
 				B4005B382784532100EDDD97 /* AppDelegate.swift */,
@@ -110,7 +117,6 @@
 			isa = PBXGroup;
 			children = (
 				B4005B3E2784532100EDDD97 /* Main.storyboard */,
-				B4005B3C2784532100EDDD97 /* ViewController.swift */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -118,19 +124,20 @@
 		B4005B962786257300EDDD97 /* ViewControlles */ = {
 			isa = PBXGroup;
 			children = (
+				B4005B3C2784532100EDDD97 /* ViewController.swift */,
 				B4005B872785C3F800EDDD97 /* SecondViewController.swift */,
 			);
 			path = ViewControlles;
 			sourceTree = "<group>";
 		};
-		B4005B9727862ABB00EDDD97 /* Collections */ = {
+		B4005B9727862ABB00EDDD97 /* CollectionsTotalUser */ = {
 			isa = PBXGroup;
 			children = (
 				B4005B9F27864E6600EDDD97 /* StructTotalUser.swift */,
 				B4005B992786393800EDDD97 /* UserTotalSVCCVCell.swift */,
 				B4005B9A2786393800EDDD97 /* UserTotalSVCCVCell.xib */,
 			);
-			path = Collections;
+			path = CollectionsTotalUser;
 			sourceTree = "<group>";
 		};
 		B4005B9827862AEE00EDDD97 /* OtherCustomClasses */ = {
@@ -139,6 +146,16 @@
 				B4005B842784CF7A00EDDD97 /* CustomTF.swift */,
 			);
 			path = OtherCustomClasses;
+			sourceTree = "<group>";
+		};
+		B40FD01327878DEA00DFA27B /* CollectionVerticalDiagrama */ = {
+			isa = PBXGroup;
+			children = (
+				B40FD01427878E6D00DFA27B /* VertDiagrameCell.swift */,
+				B40FD01527878E6D00DFA27B /* VertDiagrameCell.xib */,
+				B40FD01827878E9600DFA27B /* StructVertDiagrama.swift */,
+			);
+			path = CollectionVerticalDiagrama;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -207,6 +224,7 @@
 				B4005B822784C9EE00EDDD97 /* Poppins-Medium.ttf in Resources */,
 				B4005B9C2786393800EDDD97 /* UserTotalSVCCVCell.xib in Resources */,
 				B4005B422784532200EDDD97 /* Assets.xcassets in Resources */,
+				B40FD01727878E6D00DFA27B /* VertDiagrameCell.xib in Resources */,
 				B4005B402784532100EDDD97 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -224,6 +242,8 @@
 				B4005BA027864E6600EDDD97 /* StructTotalUser.swift in Sources */,
 				B4005B392784532100EDDD97 /* AppDelegate.swift in Sources */,
 				B4005B852784CF7A00EDDD97 /* CustomTF.swift in Sources */,
+				B40FD01627878E6D00DFA27B /* VertDiagrameCell.swift in Sources */,
+				B40FD01927878E9600DFA27B /* StructVertDiagrama.swift in Sources */,
 				B4005B882785C3F800EDDD97 /* SecondViewController.swift in Sources */,
 				B4005B3B2784532100EDDD97 /* SceneDelegate.swift in Sources */,
 			);

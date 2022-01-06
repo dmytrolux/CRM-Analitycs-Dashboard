@@ -21,10 +21,13 @@ import UIKit
         }
     }
     @IBOutlet weak var totalUserCV: UICollectionView!
+     @IBOutlet weak var yearCV: UICollectionView!
+     
     
     //MARK: - Add
     
-    var collectTUser : TotalUserColl = TotalUserColl()
+    var collectTUser : TotalUserClass = TotalUserClass()
+     var collectYUser : VertDiagClass = VertDiagClass()
     
     
     
@@ -37,6 +40,10 @@ import UIKit
         self.totalUserCV.delegate = self
         
         
+        self.yearCV.register(UINib(nibName: "VertDiagrameCell", bundle: nil), forCellWithReuseIdentifier: "VertDiagrameCell")
+        self.yearCV.dataSource = self
+        self.yearCV.delegate = self
+        
     }
     
 
@@ -47,12 +54,47 @@ import UIKit
 //MARK: - Extensions
 extension SecondViewController: UICollectionViewDataSource, UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return collectTUser.collectionTU.count
+        
+        if collectionView == totalUserCV{
+            return collectTUser.totalUserArray.count
+        }
+        else {
+            return collectYUser.yearUserArray.count
+        }
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        if collectionView == totalUserCV{
+        
+        
+        
+        
+        
+        
         let cell = totalUserCV.dequeueReusableCell(withReuseIdentifier: "UserTotalSVCCVCell", for: indexPath) as! UserTotalSVCCVCell
+        
+        let userData = collectTUser.totalUserArray[indexPath.item]
+        
+        cell.setupCell(totalUser: userData)
+        
         return cell
+        }
+        else {
+            let cell = yearCV.dequeueReusableCell(withReuseIdentifier: "VertDiagrameCell", for: indexPath) as! VertDiagrameCell
+            
+            let userData = collectYUser.yearUserArray[indexPath.item]
+            
+            cell.setupCell(userOfYear: userData)
+            
+            return cell
+        }
+        
+        
+        
+        
+       
     }
     
     
