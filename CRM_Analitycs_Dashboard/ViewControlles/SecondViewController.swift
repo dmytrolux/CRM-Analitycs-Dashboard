@@ -7,7 +7,7 @@
 
 import UIKit
 
-@IBDesignable  class SecondViewController: UIViewController {
+ class SecondViewController: UIViewController {
     
 //MARK: - IBOutlet
     @IBOutlet weak var dashboardL: UILabel!{
