@@ -10,34 +10,29 @@ import UIKit
 class UserTotalSVCCVCell: UICollectionViewCell {
     
     //MARK: - Work with Data
-    
-    var paramTarget = 0
-    var paramLess = 0
+    //Замінити рандои на отримані значення з StructTotalUser
+    var paramTarget = Double.random(in: 2000..<5000)
+    var paramLess = Double.random(in: 500..<2000)
     
     
     //Видалити
-    @IBOutlet weak var turget: UILabel!
+    @IBOutlet weak var targetL: UILabel!
     //Видалити
-    @IBOutlet weak var less: UILabel!
+    @IBOutlet weak var lessL: UILabel!
     
     
     //Викликається в методі cellForItemAt в SecondViewController
     func setupCell(totalUser: TotalUserStruct){
         
         //Значення свойств масива об'єктів передаються в лейбли відповідних ячейок
-        self.less.text = "\(totalUser.lessInt)"
-        self.turget.text = "\(totalUser.targetInt)"
+        //self.less.text = "\(totalUser.lessInt)"
+        //self.turget.text = "\(totalUser.targetInt)"
         
         
-            //Хочу спочатку отримати в свойства ячейки, а потім приклеїти їх в лейбли уникнувши опціоналів
-        paramTarget = totalUser.targetInt
-        paramLess = totalUser.lessInt
+        //Хочу спочатку отримати в свойства ячейки, а потім приклеїти їх в лейбли уникнувши опціоналів
+        //paramTarget = totalUser.targetInt
+        //paramLess = totalUser.lessInt
     }
-    
-    
-    
-     
-    
     
     //MARK: - Design
     @IBOutlet weak var backViewCell: UIView!{
@@ -53,17 +48,17 @@ class UserTotalSVCCVCell: UICollectionViewCell {
     }
     @IBOutlet weak var resultUserL: UILabel!{
         didSet{
-            resultUserL.attributedText =  NSMutableAttributedString(string: "\(paramTarget-paramLess) User", attributes: [NSAttributedString.Key.kern: 0.25])
+            resultUserL.attributedText =  NSMutableAttributedString(string: "\(Int(paramTarget-paramLess)) User", attributes: [NSAttributedString.Key.kern: 0.25])
         }
     }
     @IBOutlet weak var countTargetUserL: UILabel!{
         didSet{
-            countTargetUserL.attributedText =  NSMutableAttributedString(string: "Target Users \(paramTarget) user", attributes: [NSAttributedString.Key.kern: 0.1])
+            countTargetUserL.attributedText =  NSMutableAttributedString(string: "Target Users \(Int(paramTarget)) user", attributes: [NSAttributedString.Key.kern: 0.1])
         }
     }
     @IBOutlet weak var countLessUser: UILabel!{
         didSet{
-            countLessUser.attributedText =  NSMutableAttributedString(string: "less \(paramLess) User", attributes: [NSAttributedString.Key.kern: 0.1])
+            countLessUser.attributedText =  NSMutableAttributedString(string: "less \(Int(paramLess)) User", attributes: [NSAttributedString.Key.kern: 0.1])
         }
     }
     @IBOutlet weak var placeForPercent: UILabel!{
@@ -83,16 +78,12 @@ class UserTotalSVCCVCell: UICollectionViewCell {
         return label
     }()
     
-    //Реалізувати обчислення
-    //var totalUser = targetUserInt - lessUserInt
-    //input param: resultingPercent = 100 /( targetUserInt - lessUserInt
-    var resultingPercent =  Int(100 / ( 2000 / 1000 ))
-    
-    private func animationPercentAndCircle (resultingPrecent: Int) {
-        var count = 0
+    private func animationPercentAndCircle (target: Double, less: Double) {
+        var count = 0.0
+        let resPerc = (100.0 / (target / less))
         
         func nextIteration(){
-            if count < resultingPercent {
+            if count < resPerc {
                 count += 1
                 self.percentLabel.text = "\(Int(count))%"
                 movingCircleLayer.strokeEnd = CGFloat(count) / CGFloat(100)
@@ -103,8 +94,6 @@ class UserTotalSVCCVCell: UICollectionViewCell {
         }
         nextIteration()
     }
-   
-   
     
     //MARK: - Analog View Did Load Cell
     override func awakeFromNib() {
@@ -145,16 +134,9 @@ class UserTotalSVCCVCell: UICollectionViewCell {
             UITapGestureRecognizer(target: self, action: #selector(handleTap)))
     }
     
-    
-//MARK: - Action Gesture
+    //MARK: - Action Gesture
     @objc private func handleTap() {
-        animationPercentAndCircle(resultingPrecent: resultingPercent)
+        animationPercentAndCircle(target: paramTarget, less: paramLess)
+        
     }
-    
-    
-    
-    
-    
-    
-    
 }

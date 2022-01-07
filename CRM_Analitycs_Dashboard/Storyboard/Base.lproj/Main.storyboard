@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="EbP-fV-e6f">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -97,7 +96,7 @@
                                 <color key="backgroundColor" name="blue"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="61" id="Ex5-D8-clT"/>
-                                    <constraint firstAttribute="width" constant="302" id="kzE-wv-hQO"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="302" id="kzE-wv-hQO"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="0.0"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -218,7 +217,7 @@
                                 <rect key="frame" x="45" y="405" width="160" height="23"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="23" id="sLd-Xf-AXH"/>
-                                    <constraint firstAttribute="width" constant="160" id="whY-ct-7B8"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="160" id="whY-ct-7B8"/>
                                 </constraints>
                                 <attributedString key="attributedText">
                                     <fragment content="Daily Sales Results">
@@ -232,7 +231,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d9B-vx-SIe">
-                                <rect key="frame" x="45" y="429" width="77" height="14"/>
+                                <rect key="frame" x="44.999999999999993" y="429" width="76.333333333333314" height="14"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="14" id="9ww-ZQ-N7m"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="76" id="duA-5N-OAP"/>
+                                </constraints>
                                 <attributedString key="attributedText">
                                     <fragment content="January 01 - 30">
                                         <attributes>
@@ -245,13 +248,15 @@
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Iwg-UQ-Y4v">
                                 <rect key="frame" x="16" y="464" width="343" height="241"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" name="darkBlue"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" name="darkBlue"/>
                         <constraints>
                             <constraint firstItem="Y0z-0Y-BBP" firstAttribute="top" secondItem="lEp-T5-Tlj" secondAttribute="bottom" constant="31" id="1nT-dI-2yP"/>
+                            <constraint firstAttribute="trailingMargin" relation="lessThanOrEqual" secondItem="5Ft-6n-c8p" secondAttribute="trailing" constant="154" id="40d-hf-NxP"/>
                             <constraint firstItem="lEp-T5-Tlj" firstAttribute="top" secondItem="K1g-WG-xXc" secondAttribute="bottom" constant="41" id="A8e-t8-qK6"/>
+                            <constraint firstAttribute="trailingMargin" relation="lessThanOrEqual" secondItem="d9B-vx-SIe" secondAttribute="trailing" constant="237.66999999999999" id="R2a-KD-UFI"/>
                             <constraint firstItem="Iwg-UQ-Y4v" firstAttribute="top" secondItem="d9B-vx-SIe" secondAttribute="bottom" constant="21" id="RHN-XE-xQW"/>
                             <constraint firstItem="d9B-vx-SIe" firstAttribute="top" secondItem="5Ft-6n-c8p" secondAttribute="bottom" constant="1" id="Rg5-SA-hzW"/>
                             <constraint firstItem="5Ft-6n-c8p" firstAttribute="top" secondItem="Y0z-0Y-BBP" secondAttribute="bottom" constant="44" id="WCe-kK-4uE"/>
@@ -298,15 +303,16 @@
                                 <constraints>
                                     <constraint firstItem="fma-tG-IyD" firstAttribute="leading" secondItem="24p-Ps-OAn" secondAttribute="trailing" constant="11" id="A6z-Cf-hBY"/>
                                     <constraint firstItem="fma-tG-IyD" firstAttribute="centerY" secondItem="C6R-vI-2zf" secondAttribute="centerY" id="D8Z-pd-Lt0"/>
+                                    <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="fma-tG-IyD" secondAttribute="trailing" constant="60" id="Lir-4f-uES"/>
                                     <constraint firstItem="24p-Ps-OAn" firstAttribute="leading" secondItem="C6R-vI-2zf" secondAttribute="leading" id="RRa-TR-jBP"/>
                                     <constraint firstItem="24p-Ps-OAn" firstAttribute="centerY" secondItem="C6R-vI-2zf" secondAttribute="centerY" id="ogt-cn-o79"/>
                                 </constraints>
                             </view>
                         </barButtonItem>
                         <rightBarButtonItems>
-                            <barButtonItem style="plain" id="RPM-JW-Y5r">
+                            <barButtonItem style="done" id="RPM-JW-Y5r">
                                 <button key="customView" opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jpl-M9-uXh">
-                                    <rect key="frame" x="329" y="5" width="30" height="34.333333333333336"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="30" height="34.333333333333336"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="17" id="klY-jF-IGK"/>
                                         <constraint firstAttribute="height" constant="17" id="ueL-6W-VEq"/>
@@ -337,6 +343,7 @@
                     <connections>
                         <outlet property="dailyL" destination="5Ft-6n-c8p" id="JGz-uZ-hCg"/>
                         <outlet property="dashboardL" destination="fma-tG-IyD" id="6zg-hw-yZR"/>
+                        <outlet property="tableViewTV" destination="Iwg-UQ-Y4v" id="F8G-yc-eTT"/>
                         <outlet property="totalUserCV" destination="lEp-T5-Tlj" id="l5l-ES-2si"/>
                         <outlet property="yearCV" destination="Y0z-0Y-BBP" id="x5G-SS-SsE"/>
                     </connections>
@@ -380,8 +387,5 @@
         <namedColor name="gray">
             <color red="0.2199999988079071" green="0.23100000619888306" blue="0.31400001049041748" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>

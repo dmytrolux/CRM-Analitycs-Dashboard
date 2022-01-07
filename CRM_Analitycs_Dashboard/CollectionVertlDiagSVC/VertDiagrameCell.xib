@@ -19,19 +19,26 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OSt-0L-MDv">
                         <rect key="frame" x="0.0" y="0.0" width="23" height="34"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2000" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JI9-O3-71o">
-                                <rect key="frame" x="-1.5" y="22" width="26" height="12"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JI9-O3-71o">
+                                <rect key="frame" x="-1.5" y="26" width="26" height="10"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="23" id="gcJ-xe-Lqe"/>
-                                    <constraint firstAttribute="height" constant="12" id="sOt-j8-3HI"/>
+                                    <constraint firstAttribute="height" constant="10" id="sOt-j8-3HI"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="10"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="2000">
+                                        <attributes>
+                                            <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <font key="NSFont" metaFont="system" size="10"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="JI9-O3-71o" secondAttribute="bottom" id="2Vl-Ty-Jlj"/>
+                            <constraint firstAttribute="bottom" secondItem="JI9-O3-71o" secondAttribute="bottom" constant="-2" id="2Vl-Ty-Jlj"/>
                             <constraint firstItem="JI9-O3-71o" firstAttribute="centerX" secondItem="OSt-0L-MDv" secondAttribute="centerX" id="2mm-0Q-aW8"/>
                         </constraints>
                     </view>

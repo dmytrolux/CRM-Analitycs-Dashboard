@@ -10,7 +10,6 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    
     @IBOutlet var backView: UIView!
     @IBOutlet weak var registerL: UILabel!{
         didSet{
@@ -67,18 +66,13 @@ class ViewController: UIViewController {
             registerBtn.layer.cornerRadius = 4
             registerBtn.layer.masksToBounds = true
         }
-       
     }
     
-    
-   
-   
     override func viewDidLoad() {
         super.viewDidLoad()
         
      
     }
-
 
 }
 

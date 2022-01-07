@@ -29,6 +29,7 @@ class VertDiagrameCell: UICollectionViewCell {
             paragraphStyle.lineHeightMultiple = 0.8
             yearL.textAlignment = .center
             yearL.attributedText = NSMutableAttributedString(string: "xxxx", attributes: [NSAttributedString.Key.kern: 0.3, NSAttributedString.Key.paragraphStyle: paragraphStyle])
+            yearL.contentMode = .bottom
        
         }
     }
@@ -36,13 +37,15 @@ class VertDiagrameCell: UICollectionViewCell {
     /////ShapeLayer/////////////
     
     @IBOutlet weak var backView: UIView!
+    
+    
     var shapeLayer: CAShapeLayer!{
         didSet{
             shapeLayer.lineWidth = 3
             shapeLayer.lineCap = .round
-            shapeLayer.fillColor = nil
+            shapeLayer.fillColor = UIColor.green.cgColor
             shapeLayer.strokeEnd = 1
-            let color = UIColor.white.cgColor  //UIColor(red: 0.224, green: 0.227, blue: 0.278, alpha: 1).cgColor
+            let color = UIColor(red: 0.224, green: 0.227, blue: 0.278, alpha: 1).cgColor
             shapeLayer.strokeColor = color
             
         }
@@ -63,12 +66,16 @@ class VertDiagrameCell: UICollectionViewCell {
     func configShapeLayer(_ shapeLayer: CAShapeLayer) {
         shapeLayer.frame = backView.bounds
         let path = UIBezierPath()
-        path.move(to: CGPoint(x: self.backView.frame.width / 2, y: self.backView.frame.height / 2 ))
-        path.addLine(to: CGPoint(x: self.backView.frame.width / 2 - 3 , y: self.backView.frame.height  + 4))
+        path.move(to: CGPoint(
+            x: backView.frame.width / 2,
+            y: 18 ))
+        path.addLine(to: CGPoint(
+            x: backView.frame.width / 2 ,
+            y: 0))
         shapeLayer.path = path.cgPath
     }
     
-    
+  
     
     
     override func awakeFromNib() {
@@ -81,6 +88,20 @@ class VertDiagrameCell: UICollectionViewCell {
         
         overShapeLayer = CAShapeLayer()
         backView.layer.addSublayer(overShapeLayer)
+        
+        configShapeLayer(shapeLayer)
+        configShapeLayer(overShapeLayer)
+        
+        let animation = CABasicAnimation(keyPath: "strokeEnd")
+        animation.toValue = Double.random(in: 0..<1)
+                                          
+        animation.duration = 2
+        animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
+        animation.fillMode = .forwards
+        animation.isRemovedOnCompletion = false
+        //animation.delegate = self
+        
+        overShapeLayer.add(animation, forKey: nil)
     }
 
 }

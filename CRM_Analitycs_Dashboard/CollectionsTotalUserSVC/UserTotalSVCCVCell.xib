@@ -42,7 +42,7 @@
                                 <rect key="frame" x="119" y="60" width="118" height="38"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="38" id="QpP-gX-Jcs"/>
-                                    <constraint firstAttribute="width" constant="118" id="SlJ-23-qpu"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="118" id="SlJ-23-qpu"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Poppins-Light" family="Poppins" pointSize="25"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -128,11 +128,11 @@
                 <outlet property="backViewCell" destination="ash-wq-woN" id="JxA-mD-AvX"/>
                 <outlet property="countLessUser" destination="Mma-aZ-cPG" id="Ao4-cC-7nm"/>
                 <outlet property="countTargetUserL" destination="rhD-yp-azz" id="jIl-mV-oyb"/>
-                <outlet property="less" destination="yg7-7h-KgT" id="saT-LF-2SN"/>
+                <outlet property="lessL" destination="yg7-7h-KgT" id="saT-LF-2SN"/>
                 <outlet property="placeForPercent" destination="5mo-9j-80f" id="Q83-xQ-jBu"/>
                 <outlet property="resultUserL" destination="WIc-CO-AUv" id="m5h-U1-eHe"/>
+                <outlet property="targetL" destination="nSk-0V-ZX0" id="6H5-rQ-1QR"/>
                 <outlet property="totalusersL" destination="WfW-Hj-geE" id="uUR-tw-Bmm"/>
-                <outlet property="turget" destination="nSk-0V-ZX0" id="6H5-rQ-1QR"/>
             </connections>
             <point key="canvasLocation" x="144" y="159"/>
         </collectionViewCell>

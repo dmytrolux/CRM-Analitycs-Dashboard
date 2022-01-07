@@ -27,6 +27,9 @@
 		B40FD01627878E6D00DFA27B /* VertDiagrameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40FD01427878E6D00DFA27B /* VertDiagrameCell.swift */; };
 		B40FD01727878E6D00DFA27B /* VertDiagrameCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B40FD01527878E6D00DFA27B /* VertDiagrameCell.xib */; };
 		B40FD01927878E9600DFA27B /* StructVertDiagrama.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40FD01827878E9600DFA27B /* StructVertDiagrama.swift */; };
+		B4C688BE278874D40097ADD2 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C688BC278874D40097ADD2 /* TableViewCell.swift */; };
+		B4C688BF278874D40097ADD2 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4C688BD278874D40097ADD2 /* TableViewCell.xib */; };
+		B4C688C1278890780097ADD2 /* StructureTV.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C688C0278890780097ADD2 /* StructureTV.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +55,9 @@
 		B40FD01427878E6D00DFA27B /* VertDiagrameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VertDiagrameCell.swift; sourceTree = "<group>"; };
 		B40FD01527878E6D00DFA27B /* VertDiagrameCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VertDiagrameCell.xib; sourceTree = "<group>"; };
 		B40FD01827878E9600DFA27B /* StructVertDiagrama.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StructVertDiagrama.swift; sourceTree = "<group>"; };
+		B4C688BC278874D40097ADD2 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		B4C688BD278874D40097ADD2 /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
+		B4C688C0278890780097ADD2 /* StructureTV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StructureTV.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,10 +93,11 @@
 		B4005B372784532100EDDD97 /* CRM_Analitycs_Dashboard */ = {
 			isa = PBXGroup;
 			children = (
-				B40FD01327878DEA00DFA27B /* CollectionVerticalDiagrama */,
 				B4005B952786253B00EDDD97 /* Storyboard */,
 				B4005B962786257300EDDD97 /* ViewControlles */,
-				B4005B9727862ABB00EDDD97 /* CollectionsTotalUser */,
+				B4005B9727862ABB00EDDD97 /* CollectionsTotalUserSVC */,
+				B40FD01327878DEA00DFA27B /* CollectionVertlDiagSVC */,
+				B4C688BB2788735D0097ADD2 /* TableViewSVC */,
 				B4005B9827862AEE00EDDD97 /* OtherCustomClasses */,
 				B4005B3A2784532100EDDD97 /* SceneDelegate.swift */,
 				B4005B382784532100EDDD97 /* AppDelegate.swift */,
@@ -130,14 +137,14 @@
 			path = ViewControlles;
 			sourceTree = "<group>";
 		};
-		B4005B9727862ABB00EDDD97 /* CollectionsTotalUser */ = {
+		B4005B9727862ABB00EDDD97 /* CollectionsTotalUserSVC */ = {
 			isa = PBXGroup;
 			children = (
 				B4005B9F27864E6600EDDD97 /* StructTotalUser.swift */,
 				B4005B992786393800EDDD97 /* UserTotalSVCCVCell.swift */,
 				B4005B9A2786393800EDDD97 /* UserTotalSVCCVCell.xib */,
 			);
-			path = CollectionsTotalUser;
+			path = CollectionsTotalUserSVC;
 			sourceTree = "<group>";
 		};
 		B4005B9827862AEE00EDDD97 /* OtherCustomClasses */ = {
@@ -148,14 +155,24 @@
 			path = OtherCustomClasses;
 			sourceTree = "<group>";
 		};
-		B40FD01327878DEA00DFA27B /* CollectionVerticalDiagrama */ = {
+		B40FD01327878DEA00DFA27B /* CollectionVertlDiagSVC */ = {
 			isa = PBXGroup;
 			children = (
 				B40FD01427878E6D00DFA27B /* VertDiagrameCell.swift */,
 				B40FD01527878E6D00DFA27B /* VertDiagrameCell.xib */,
 				B40FD01827878E9600DFA27B /* StructVertDiagrama.swift */,
 			);
-			path = CollectionVerticalDiagrama;
+			path = CollectionVertlDiagSVC;
+			sourceTree = "<group>";
+		};
+		B4C688BB2788735D0097ADD2 /* TableViewSVC */ = {
+			isa = PBXGroup;
+			children = (
+				B4C688BC278874D40097ADD2 /* TableViewCell.swift */,
+				B4C688BD278874D40097ADD2 /* TableViewCell.xib */,
+				B4C688C0278890780097ADD2 /* StructureTV.swift */,
+			);
+			path = TableViewSVC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -217,6 +234,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B4005B4D278455D600EDDD97 /* .gitignore in Resources */,
+				B4C688BF278874D40097ADD2 /* TableViewCell.xib in Resources */,
 				B4005B9E27863D6200EDDD97 /* Poppins-Light.ttf in Resources */,
 				B4005B452784532200EDDD97 /* LaunchScreen.storyboard in Resources */,
 				B4005B832784C9EE00EDDD97 /* Poppins-Regular.ttf in Resources */,
@@ -237,11 +255,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				B4005B3D2784532100EDDD97 /* ViewController.swift in Sources */,
+				B4C688C1278890780097ADD2 /* StructureTV.swift in Sources */,
 				B4005B9B2786393800EDDD97 /* UserTotalSVCCVCell.swift in Sources */,
 				B4005B8E2786071100EDDD97 /* CollectionView1.swift in Sources */,
 				B4005BA027864E6600EDDD97 /* StructTotalUser.swift in Sources */,
 				B4005B392784532100EDDD97 /* AppDelegate.swift in Sources */,
 				B4005B852784CF7A00EDDD97 /* CustomTF.swift in Sources */,
+				B4C688BE278874D40097ADD2 /* TableViewCell.swift in Sources */,
 				B40FD01627878E6D00DFA27B /* VertDiagrameCell.swift in Sources */,
 				B40FD01927878E9600DFA27B /* StructVertDiagrama.swift in Sources */,
 				B4005B882785C3F800EDDD97 /* SecondViewController.swift in Sources */,
