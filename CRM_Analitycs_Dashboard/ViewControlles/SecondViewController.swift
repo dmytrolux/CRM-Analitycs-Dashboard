@@ -15,13 +15,29 @@ class SecondViewController: UIViewController {
             dashboardL.attributedText =  NSMutableAttributedString(string: "Dashboard", attributes: [NSAttributedString.Key.kern: 2])
         }
     }
+    @IBOutlet weak var totalUserCV: UICollectionView!
+    @IBOutlet weak var yearCV: UICollectionView!
     @IBOutlet weak var dailyL: UILabel!{
         didSet{
             dailyL.attributedText =  NSMutableAttributedString(string: "Daily Sales Results", attributes: [NSAttributedString.Key.kern: 1])
         }
     }
-    @IBOutlet weak var totalUserCV: UICollectionView!
-    @IBOutlet weak var yearCV: UICollectionView!
+    @IBOutlet weak var choseDate: UILabel!{
+        didSet{
+            choseDate.font = UIFont(name: "Poppins-Regular", size: 10)
+            choseDate.attributedText = NSMutableAttributedString(string: "January 01 - 30", attributes: [NSAttributedString.Key.kern: 0.5])
+        }
+    }
+    @IBOutlet weak var sumDollar: UILabel!{
+        didSet{
+            sumDollar.font = UIFont(name: "Poppins-Bold", size: 15)
+            sumDollar.textAlignment = .right
+            sumDollar.attributedText = NSMutableAttributedString(string: "$10,190", attributes: [NSAttributedString.Key.kern: 1.35])
+            
+            
+            //sumDollar.text = "\(summDoll)"
+        }
+    }
     @IBOutlet weak var tableViewTV: UITableView!
     
     
@@ -61,14 +77,32 @@ class SecondViewController: UIViewController {
         self.tableViewTV.dataSource = self
         self.tableViewTV.delegate = self
         
+        
+        
+        
         // Init data
-        for _ in 1...25 {
+        for item in 1...31 {
             let data = DataStructure()
-            data?.month = "Junuary 02"
-            data?.dollars = "$5,667"
+            
+            //format mounth
+            let formNumWithZero = String(format: "%02d", item)
+        
+            data?.month =  formNumWithZero
+            data?.dollars = Int.random(in: 0..<5111)
             contentCellAray.append(data!)
+        
         }
         tableViewTV.reloadData()
+        
+        
+        //SummDollars
+        let dollarString = contentCellAray.map({$0.dollars})
+        let dollarStringOpt = (dollarString.compactMap({$0}))
+        let summDoll = dollarStringOpt.reduce(0, +)
+        print(summDoll)
+        
+        
+        
     }
     
 }
@@ -116,9 +150,23 @@ extension SecondViewController : UITableViewDataSource, UITableViewDelegate{
         let cell = tableView.dequeueReusableCell(withIdentifier: tabCellId, for: indexPath) as! TableViewCell
         cell.selectionStyle = .none
         let contentCell = contentCellAray[indexPath.row]
-        cell.dollarL.text = contentCell.dollars!
-        cell.mounthL.text = contentCell.month!
+        
+        //Formating value for label dollarL
+        let numberForDollar = Int.random(in: 0..<5111)
+        let numbForm = NumberFormatter()
+        numbForm.numberStyle = .decimal
+        let formNumWithCommas = numbForm.string(from: NSNumber(value: numberForDollar))
+        
+       cell.dollarL.text = "$\(String(formNumWithCommas!))"
+       
+        cell.mounthL.text = "January \(contentCell.month!)"
+        
+        guard indexPath.row == 2  else {return cell }
+        cell.areaForShapes.isHidden = true
+        //вимкнути reusable
         return cell
     }
+    
+    
 }
 

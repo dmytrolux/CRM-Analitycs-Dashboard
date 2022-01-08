@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="EbP-fV-e6f">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
@@ -247,25 +247,38 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Iwg-UQ-Y4v">
-                                <rect key="frame" x="16" y="464" width="343" height="241"/>
+                                <rect key="frame" x="45" y="464" width="314" height="241"/>
                                 <color key="backgroundColor" name="darkBlue"/>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$10,190" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ydn-BU-idH">
+                                <rect key="frame" x="295" y="405" width="64" height="23"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="23" id="CXN-qQ-Zlk"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="64" id="Meg-Uj-gty"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" name="darkBlue"/>
                         <constraints>
                             <constraint firstItem="Y0z-0Y-BBP" firstAttribute="top" secondItem="lEp-T5-Tlj" secondAttribute="bottom" constant="31" id="1nT-dI-2yP"/>
                             <constraint firstAttribute="trailingMargin" relation="lessThanOrEqual" secondItem="5Ft-6n-c8p" secondAttribute="trailing" constant="154" id="40d-hf-NxP"/>
                             <constraint firstItem="lEp-T5-Tlj" firstAttribute="top" secondItem="K1g-WG-xXc" secondAttribute="bottom" constant="41" id="A8e-t8-qK6"/>
+                            <constraint firstItem="ydn-BU-idH" firstAttribute="trailing" secondItem="lEp-T5-Tlj" secondAttribute="trailing" id="F5D-F5-iVy"/>
                             <constraint firstAttribute="trailingMargin" relation="lessThanOrEqual" secondItem="d9B-vx-SIe" secondAttribute="trailing" constant="237.66999999999999" id="R2a-KD-UFI"/>
                             <constraint firstItem="Iwg-UQ-Y4v" firstAttribute="top" secondItem="d9B-vx-SIe" secondAttribute="bottom" constant="21" id="RHN-XE-xQW"/>
                             <constraint firstItem="d9B-vx-SIe" firstAttribute="top" secondItem="5Ft-6n-c8p" secondAttribute="bottom" constant="1" id="Rg5-SA-hzW"/>
                             <constraint firstItem="5Ft-6n-c8p" firstAttribute="top" secondItem="Y0z-0Y-BBP" secondAttribute="bottom" constant="44" id="WCe-kK-4uE"/>
                             <constraint firstItem="5Ft-6n-c8p" firstAttribute="leading" secondItem="m9a-oT-ia4" secondAttribute="leadingMargin" constant="29" id="Y8j-ry-SdI"/>
-                            <constraint firstItem="Iwg-UQ-Y4v" firstAttribute="leading" secondItem="m9a-oT-ia4" secondAttribute="leadingMargin" id="b7D-0X-Knm"/>
+                            <constraint firstItem="Iwg-UQ-Y4v" firstAttribute="leading" secondItem="5Ft-6n-c8p" secondAttribute="leading" id="Yzg-yD-lbg"/>
                             <constraint firstItem="d9B-vx-SIe" firstAttribute="leading" secondItem="5Ft-6n-c8p" secondAttribute="leading" id="c55-13-EyM"/>
+                            <constraint firstItem="ydn-BU-idH" firstAttribute="top" secondItem="5Ft-6n-c8p" secondAttribute="top" id="dAR-g8-74f"/>
                             <constraint firstItem="Y0z-0Y-BBP" firstAttribute="leading" secondItem="m9a-oT-ia4" secondAttribute="leadingMargin" id="dCf-7b-oHR"/>
                             <constraint firstItem="Iwg-UQ-Y4v" firstAttribute="trailing" secondItem="m9a-oT-ia4" secondAttribute="trailingMargin" id="dFP-u6-1aY"/>
                             <constraint firstAttribute="trailingMargin" secondItem="lEp-T5-Tlj" secondAttribute="trailing" id="oJR-cP-02L"/>
+                            <constraint firstItem="ydn-BU-idH" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="5Ft-6n-c8p" secondAttribute="trailing" constant="1" id="rEh-0q-msA"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Y0z-0Y-BBP" secondAttribute="trailing" id="th9-Di-oMT"/>
                             <constraint firstItem="TMc-RG-b7h" firstAttribute="top" secondItem="Iwg-UQ-Y4v" secondAttribute="bottom" constant="14" id="uE2-1S-3wm"/>
                             <constraint firstItem="lEp-T5-Tlj" firstAttribute="leading" secondItem="m9a-oT-ia4" secondAttribute="leadingMargin" id="wxC-uN-wZf"/>
@@ -341,8 +354,10 @@
                     </navigationItem>
                     <size key="freeformSize" width="375" height="719"/>
                     <connections>
+                        <outlet property="choseDate" destination="d9B-vx-SIe" id="dPt-Hp-H6T"/>
                         <outlet property="dailyL" destination="5Ft-6n-c8p" id="JGz-uZ-hCg"/>
                         <outlet property="dashboardL" destination="fma-tG-IyD" id="6zg-hw-yZR"/>
+                        <outlet property="sumDollar" destination="ydn-BU-idH" id="tLL-lw-nCl"/>
                         <outlet property="tableViewTV" destination="Iwg-UQ-Y4v" id="F8G-yc-eTT"/>
                         <outlet property="totalUserCV" destination="lEp-T5-Tlj" id="l5l-ES-2si"/>
                         <outlet property="yearCV" destination="Y0z-0Y-BBP" id="x5G-SS-SsE"/>

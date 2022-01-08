@@ -11,6 +11,6 @@ import Foundation
 
 class DataStructure {
     var month: String?
-    var dollars: String?
+    var dollars: Int?
     required init?() {}
 }

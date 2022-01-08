@@ -12,9 +12,7 @@ class TableViewCell: UITableViewCell {
   
     @IBOutlet weak var areaForShapes: UIView!
     
-    
-    
-    
+
     
     @IBOutlet weak var mounthL: UILabel!{
         didSet{
@@ -52,6 +50,7 @@ class TableViewCell: UITableViewCell {
         let line = CAShapeLayer()
         line.lineWidth = 1
         line.strokeColor = UIColor(red: 0.276, green: 0.287, blue: 0.397, alpha: 1).cgColor
+        
         let path = UIBezierPath()
         path.move(to: CGPoint(
             x: areaForShapes.frame.width / 2,
@@ -60,7 +59,9 @@ class TableViewCell: UITableViewCell {
             x: areaForShapes.frame.width / 2 ,
             y: areaForShapes.frame.height / 2 + lineHeight))
         line.path = path.cgPath
+      
         areaForShapes.layer.addSublayer(line)
+        
     }
     
     override func awakeFromNib() {
