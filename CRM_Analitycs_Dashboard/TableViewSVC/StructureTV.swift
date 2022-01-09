@@ -14,3 +14,6 @@ class DataStructure {
     var dollars: Int?
     required init?() {}
 }
+
+
+

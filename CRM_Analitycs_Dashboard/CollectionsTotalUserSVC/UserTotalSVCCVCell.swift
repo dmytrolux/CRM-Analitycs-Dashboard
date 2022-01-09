@@ -25,13 +25,13 @@ class UserTotalSVCCVCell: UICollectionViewCell {
     func setupCell(totalUser: TotalUserStruct){
         
         //Значення свойств масива об'єктів передаються в лейбли відповідних ячейок
-        //self.less.text = "\(totalUser.lessInt)"
-        //self.turget.text = "\(totalUser.targetInt)"
-        
+//        self.less.text = "\(totalUser.lessInt)"
+//        self.turget.text = "\(totalUser.targetInt)"
+//        
         
         //Хочу спочатку отримати в свойства ячейки, а потім приклеїти їх в лейбли уникнувши опціоналів
-        //paramTarget = totalUser.targetInt
-        //paramLess = totalUser.lessInt
+//        paramTarget = totalUser.targetInt
+//        paramLess = totalUser.lessInt
     }
     
     //MARK: - Design
@@ -130,13 +130,13 @@ class UserTotalSVCCVCell: UICollectionViewCell {
         
         backViewCell.layer.addSublayer(movingCircleLayer)
         
-        backViewCell.addGestureRecognizer(
-            UITapGestureRecognizer(target: self, action: #selector(handleTap)))
+        //backViewCell.addGestureRecognizer(
+            //UITapGestureRecognizer(target: self, action: #selector(handleTap)))
     }
     
     //MARK: - Action Gesture
-    @objc private func handleTap() {
-        animationPercentAndCircle(target: paramTarget, less: paramLess)
+//    @objc private func handleTap() {
+        //animationPercentAndCircle(target: paramTarget, less: paramLess)
         
-    }
+    //}
 }

@@ -41,16 +41,18 @@ class SecondViewController: UIViewController {
     @IBOutlet weak var tableViewTV: UITableView!
     
     
+    
+    
     //MARK: - Colects Set
     
-    let totUsSecContID = "UserTotalSVCCVCell"
+    private let totUsSecContID = "UserTotalSVCCVCell"
     var collectTUser : TotalUserClass = TotalUserClass()
     
-    let yearPerSecContID = "VertDiagrameCell"
+    private let yearPerSecContID = "VertDiagrameCell"
     var collectYUser : VertDiagClass = VertDiagClass()
     
     //MARK: - Table set
-    let tabCellId = "TableViewCell"
+    private let tabCellId = "TableViewCell"
     var contentCellAray = [DataStructure]()
     
 
@@ -58,6 +60,8 @@ class SecondViewController: UIViewController {
     //MARK: - ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         
         // Register cell of first collection
         self.totalUserCV.register(UINib(nibName: totUsSecContID, bundle: nil), forCellWithReuseIdentifier: totUsSecContID)
@@ -102,8 +106,22 @@ class SecondViewController: UIViewController {
         print(summDoll)
         
         
+        let numberForDollar = summDoll
+        let numbForm = NumberFormatter()
+        numbForm.numberStyle = .decimal
+        let formNumWithCommas = numbForm.string(from: NSNumber(value: numberForDollar))
+        sumDollar.text = "$\(formNumWithCommas!)"
         
+        
+//        sumDollar.text = String(formNumWithCommas)
     }
+    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "2segue3" {
+//            let vc = segue.destination as! ThirdViewController
+//            vc.testDouble = 154.0
+//        }
+//    }
     
 }
 
@@ -133,6 +151,20 @@ extension SecondViewController: UICollectionViewDataSource, UICollectionViewDele
             return cell
         }
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if collectionView == totalUserCV{
+            let cell = totalUserCV.dequeueReusableCell(withReuseIdentifier: totUsSecContID, for: indexPath) as! UserTotalSVCCVCell
+            
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "ThirdVC") as! ThirdViewController
+            vc.modalPresentationStyle = .fullScreen
+            vc.testInt = cell.countLessUser.text!
+            self.present(vc, animated: true) {
+                print("Something")
+            }
+        }
+    }
 }
 
 //MARK: - Extensions for Tables
@@ -149,17 +181,15 @@ extension SecondViewController : UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: tabCellId, for: indexPath) as! TableViewCell
         cell.selectionStyle = .none
-        let contentCell = contentCellAray[indexPath.row]
         
-        //Formating value for label dollarL
-        let numberForDollar = Int.random(in: 0..<5111)
+//        //Formating value for label dollarL
+        let numberForDollar = contentCellAray[indexPath.row].dollars!
         let numbForm = NumberFormatter()
         numbForm.numberStyle = .decimal
         let formNumWithCommas = numbForm.string(from: NSNumber(value: numberForDollar))
-        
-       cell.dollarL.text = "$\(String(formNumWithCommas!))"
        
-        cell.mounthL.text = "January \(contentCell.month!)"
+        cell.dollarL.text = "$\(formNumWithCommas!)"
+        cell.mounthL.text = "January \(contentCellAray[indexPath.row].month!)"
         
         guard indexPath.row == 2  else {return cell }
         cell.areaForShapes.isHidden = true

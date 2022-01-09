@@ -61,12 +61,14 @@ class ViewController: UIViewController {
                 .font: UIFont(name: "Poppins-Regular", size: 18) as Any])
         }
     }
-    @IBOutlet weak var registerBtn: UIButton!{
+    @IBOutlet weak var registerBtn: KernButton!{
         didSet{
             registerBtn.layer.cornerRadius = 4
             registerBtn.layer.masksToBounds = true
         }
     }
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
