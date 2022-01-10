@@ -171,7 +171,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="719"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="lEp-T5-Tlj">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="lEp-T5-Tlj">
                                 <rect key="frame" x="16" y="129" width="343" height="167"/>
                                 <color key="backgroundColor" name="darkBlue"/>
                                 <constraints>
@@ -371,7 +371,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HM1-fL-QqN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="735" y="194"/>
+            <point key="canvasLocation" x="734" y="190"/>
         </scene>
         <!--Third View Controller-->
         <scene sceneID="2H4-C8-wJ2">
@@ -509,12 +509,12 @@
                     <size key="freeformSize" width="375" height="719"/>
                     <connections>
                         <outlet property="backTotalUserL" destination="Atk-eD-zgE" id="Ahf-Bb-9un"/>
-                        <outlet property="deteilTotalUserV" destination="Z5W-OF-8zG" id="RYn-t1-lqh"/>
+                        <outlet property="deteilTotalUserV" destination="Z5W-OF-8zG" id="Q8Q-NF-rbH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kyb-nf-KCG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1469.5999999999999" y="191.74876847290642"/>
+            <point key="canvasLocation" x="1378" y="188"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="aKM-SK-BWV">

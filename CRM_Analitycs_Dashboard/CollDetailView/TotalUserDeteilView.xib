@@ -18,24 +18,16 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TotalUserDeteilView" customModule="CRM_Analitycs_Dashboard" customModuleProvider="target">
             <connections>
                 <outlet property="contentView" destination="kDr-Sd-zYZ" id="zWO-gd-KlW"/>
-                <outlet property="lessL" destination="yI5-Jy-pj4" id="k53-c3-ESS"/>
+                <outlet property="lessL" destination="yI5-Jy-pj4" id="MHb-hF-ben"/>
                 <outlet property="percentL" destination="vMr-30-qBa" id="wMw-MK-cnZ"/>
                 <outlet property="someTextL" destination="u45-H4-XDt" id="i7H-l8-3cY"/>
                 <outlet property="targetL" destination="OYX-Xe-Ltz" id="SyT-m1-bvH"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleAspectFit" interfaceStyle="light" translatesAutoresizingMaskIntoConstraints="NO" id="kDr-Sd-zYZ">
+        <view contentMode="scaleAspectFit" restorationIdentifier="TotalUserXib" interfaceStyle="light" translatesAutoresizingMaskIntoConstraints="NO" id="kDr-Sd-zYZ">
             <rect key="frame" x="0.0" y="0.0" width="317" height="261"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KPB-KE-Nnn">
-                    <rect key="frame" x="0.0" y="0.0" width="317" height="261"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="317" id="58A-6u-4L1"/>
-                        <constraint firstAttribute="height" constant="261" id="xte-PM-USg"/>
-                    </constraints>
-                </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="1" translatesAutoresizingMaskIntoConstraints="NO" id="QyA-0q-4E3" customClass="KernLabel" customModule="CRM_Analitycs_Dashboard" customModuleProvider="target">
                     <rect key="frame" x="26" y="19" width="136" height="23"/>
                     <constraints>
@@ -63,7 +55,7 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Target 2000 Users" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OYX-Xe-Ltz" customClass="KernLabel" customModule="CRM_Analitycs_Dashboard" customModuleProvider="target">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Target _ Users" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OYX-Xe-Ltz" customClass="KernLabel" customModule="CRM_Analitycs_Dashboard" customModuleProvider="target">
                     <rect key="frame" x="189" y="136" width="119" height="13"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="13" id="67v-3G-vx6"/>
@@ -78,13 +70,13 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yI5-Jy-pj4" customClass="KernLabel" customModule="CRM_Analitycs_Dashboard" customModuleProvider="target">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yI5-Jy-pj4">
                     <rect key="frame" x="189" y="158" width="119" height="13"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="119" id="S7R-FJ-QtC"/>
                         <constraint firstAttribute="height" constant="13" id="fdz-8L-MRk"/>
                     </constraints>
-                    <string key="text">Less 1000 Users
+                    <string key="text">Less _ Users
 </string>
                     <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="9"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -131,7 +123,6 @@
                 <constraint firstItem="QyA-0q-4E3" firstAttribute="top" secondItem="kDr-Sd-zYZ" secondAttribute="top" constant="19" id="3O2-t4-wf1"/>
                 <constraint firstItem="QyA-0q-4E3" firstAttribute="leading" secondItem="39B-9R-H3B" secondAttribute="leading" constant="26" id="4cn-qx-SKO"/>
                 <constraint firstAttribute="width" constant="317" id="6lO-ZN-3dc"/>
-                <constraint firstItem="KPB-KE-Nnn" firstAttribute="leading" secondItem="kDr-Sd-zYZ" secondAttribute="leading" id="7Ti-jX-MKU"/>
                 <constraint firstItem="ICb-pf-pXG" firstAttribute="centerX" secondItem="vMr-30-qBa" secondAttribute="centerX" id="BvT-Xe-u7L"/>
                 <constraint firstItem="OYX-Xe-Ltz" firstAttribute="leading" secondItem="39B-9R-H3B" secondAttribute="leading" constant="189" id="CfI-aA-bkF"/>
                 <constraint firstItem="yI5-Jy-pj4" firstAttribute="top" secondItem="OYX-Xe-Ltz" secondAttribute="bottom" constant="9" id="Fas-eB-S0G"/>
@@ -141,14 +132,13 @@
                 <constraint firstItem="yI5-Jy-pj4" firstAttribute="leading" secondItem="OYX-Xe-Ltz" secondAttribute="leading" id="dnN-Sk-ejO"/>
                 <constraint firstItem="u45-H4-XDt" firstAttribute="top" secondItem="kDr-Sd-zYZ" secondAttribute="top" constant="195" id="j9S-6e-6uh"/>
                 <constraint firstItem="vMr-30-qBa" firstAttribute="leading" secondItem="39B-9R-H3B" secondAttribute="leading" constant="66" id="rAh-Ln-fuN"/>
-                <constraint firstItem="KPB-KE-Nnn" firstAttribute="top" secondItem="kDr-Sd-zYZ" secondAttribute="top" id="t3g-oI-KfN"/>
                 <constraint firstItem="vMr-30-qBa" firstAttribute="top" secondItem="kDr-Sd-zYZ" secondAttribute="top" constant="102" id="tnH-OH-KNs"/>
                 <constraint firstAttribute="height" constant="261" id="zOS-uw-83c"/>
             </constraints>
             <nil key="simulatedTopBarMetrics"/>
             <nil key="simulatedBottomBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="184" y="53"/>
+            <point key="canvasLocation" x="-418" y="-155"/>
         </view>
     </objects>
 </document>

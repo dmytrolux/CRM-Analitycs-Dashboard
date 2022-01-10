@@ -6,10 +6,8 @@
 //
 
 import UIKit
-/*
-protocol UserTotalDelegate {
-    func update(target: Double, less: Double) {
-        
-    }
+
+protocol UserTotalDelegate: AnyObject {
+    func update(target: Double, less: Double)
 }
-*/
+

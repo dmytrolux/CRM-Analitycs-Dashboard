@@ -10,62 +10,48 @@ import UIKit
 class UserTotalSVCCVCell: UICollectionViewCell {
     
     //MARK: - Work with Data
-    //Замінити рандои на отримані значення з StructTotalUser
-    var paramTarget = Double.random(in: 2000..<5000)
-    var paramLess = Double.random(in: 500..<2000)
-    
-    
-    //Видалити
-    @IBOutlet weak var targetL: UILabel!
-    //Видалити
-    @IBOutlet weak var lessL: UILabel!
-    
-    
-    //Викликається в методі cellForItemAt в SecondViewController
-    func setupCell(totalUser: TotalUserStruct){
+    var userStatistic: UsersStatistic?
+    func setupCell(totalUser: UsersStatistic){
+        userStatistic = totalUser
+        countLessUserLabel.text = "Less \(totalUser.lessUsersCount) users"
+        countTargetUserL.text = "Target Users \(totalUser.targetUsersCount)"
+        countUserLabel.text = "\(totalUser.totalUsersCount) User"
         
-        //Значення свойств масива об'єктів передаються в лейбли відповідних ячейок
-//        self.less.text = "\(totalUser.lessInt)"
-//        self.turget.text = "\(totalUser.targetInt)"
-//        
-        
-        //Хочу спочатку отримати в свойства ячейки, а потім приклеїти їх в лейбли уникнувши опціоналів
-//        paramTarget = totalUser.targetInt
-//        paramLess = totalUser.lessInt
+        animationPercentAndCircle(target: totalUser.targetUsersCount,
+                                  less: totalUser.lessUsersCount)
     }
-    
     //MARK: - Design
-    @IBOutlet weak var backViewCell: UIView!{
+    @IBOutlet weak var view: UIView!{
         didSet{
-            backViewCell.layer.cornerRadius = 7
-            backViewCell.layer.masksToBounds = true
+            view.layer.cornerRadius = 7
+            view.layer.masksToBounds = true
         }
     }
-    @IBOutlet weak var totalusersL: UILabel!{
-        didSet{
-            totalusersL.attributedText =  NSMutableAttributedString(string: "Total Users Now", attributes: [NSAttributedString.Key.kern: 1])
-        }
-    }
-    @IBOutlet weak var resultUserL: UILabel!{
-        didSet{
-            resultUserL.attributedText =  NSMutableAttributedString(string: "\(Int(paramTarget-paramLess)) User", attributes: [NSAttributedString.Key.kern: 0.25])
-        }
-    }
-    @IBOutlet weak var countTargetUserL: UILabel!{
-        didSet{
-            countTargetUserL.attributedText =  NSMutableAttributedString(string: "Target Users \(Int(paramTarget)) user", attributes: [NSAttributedString.Key.kern: 0.1])
-        }
-    }
-    @IBOutlet weak var countLessUser: UILabel!{
-        didSet{
-            countLessUser.attributedText =  NSMutableAttributedString(string: "less \(Int(paramLess)) User", attributes: [NSAttributedString.Key.kern: 0.1])
-        }
-    }
-    @IBOutlet weak var placeForPercent: UILabel!{
+    @IBOutlet weak var totalUsersNowLabel: KernLabel!
+    @IBOutlet weak var countUserLabel: KernLabel!
+    @IBOutlet weak var countTargetUserL: KernLabel!
+    @IBOutlet weak var countLessUserLabel: KernLabel!
+    @IBOutlet weak var placeForPercent: KernLabel!{
         didSet{
             placeForPercent.text = ""
         }
     }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
     let movingCircleLayer = CAShapeLayer()
     
@@ -78,9 +64,9 @@ class UserTotalSVCCVCell: UICollectionViewCell {
         return label
     }()
     
-    private func animationPercentAndCircle (target: Double, less: Double) {
+    private func animationPercentAndCircle (target: Int, less: Int) {
         var count = 0.0
-        let resPerc = (100.0 / (target / less))
+        let resPerc = (100.0 / (Double(target) / Double(less)))
         
         func nextIteration(){
             if count < resPerc {
@@ -99,7 +85,25 @@ class UserTotalSVCCVCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        backViewCell.addSubview(percentLabel)
+      
+        
+//        let copyClass = TotalUserDeteilView()
+//        let circlPath = UIBezierPath(arcCenter: placeForPercent.center,
+//                                 radius: 50,
+//                                 startAngle: -.pi / 2,
+//                                 endAngle: 3 * .pi / 2,
+//                                 clockwise: true)
+//
+//        copyClass.makeBackCircl(superLayer: view,
+//                                path: circlPath,
+//                                color: UIColor(named: "blue"),
+//                                width: 5)
+        
+        
+        
+        //animationPercentAndCircle(target: target, less: less)
+        
+        view.addSubview(percentLabel)
         percentLabel.frame = CGRect(x: 0, y: 0, width: 30, height: 15)
         percentLabel.center = placeForPercent.center
         
@@ -119,7 +123,7 @@ class UserTotalSVCCVCell: UICollectionViewCell {
         backCircleLayer.lineWidth = 10
         backCircleLayer.fillColor = UIColor.clear.cgColor
         backCircleLayer.lineCap = .round
-        backViewCell.layer.addSublayer(backCircleLayer)
+        view.layer.addSublayer(backCircleLayer)
         
         movingCircleLayer.path = circularPath.cgPath
         movingCircleLayer.strokeColor = UIColor(named: "blue")?.cgColor
@@ -128,7 +132,9 @@ class UserTotalSVCCVCell: UICollectionViewCell {
         movingCircleLayer.lineCap = .round
         movingCircleLayer.strokeEnd = 0
         
-        backViewCell.layer.addSublayer(movingCircleLayer)
+        view.layer.addSublayer(movingCircleLayer)
+        
+      
         
         //backViewCell.addGestureRecognizer(
             //UITapGestureRecognizer(target: self, action: #selector(handleTap)))

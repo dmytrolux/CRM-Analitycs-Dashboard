@@ -8,26 +8,20 @@
 import Foundation
 import UIKit
 
-struct TotalUserStruct {
-    var targetInt: Int
-    var lessInt: Int
-   //var totalUser = targetUserInt - lessUserInt
-    
-}
-
-
-class TotalUserClass {
-    var totalUserArray = [TotalUserStruct]()
-    
-    init(){
-        setupTotalUsers()
+struct UsersStatistic {
+    var targetUsersCount: Int //2000
+    var totalUsersCount: Int  //1000
+    var lessUsersCount: Int {
+        targetUsersCount - totalUsersCount
     }
-    
-    func setupTotalUsers () {
-        let p1 = TotalUserStruct(targetInt: 2000, lessInt: 1000)
-        let p2 = TotalUserStruct(targetInt: 3200, lessInt: 1430)
-        let p3 = TotalUserStruct(targetInt: 4500, lessInt: 1850)
-        self.totalUserArray = [p1, p2, p3]
+
+    static func getDemoArray () -> [UsersStatistic] {
+        let p1 = UsersStatistic(targetUsersCount: 2000, totalUsersCount: 1000)
+        let p2 = UsersStatistic(targetUsersCount: 3200, totalUsersCount: 1430)
+        let p3 = UsersStatistic(targetUsersCount: 2700, totalUsersCount: 2200)
+        let p4 = UsersStatistic(targetUsersCount: 3250, totalUsersCount: 2220)
+        let p5 = UsersStatistic(targetUsersCount: 5345, totalUsersCount: 3287)
+        return [p1, p2, p3, p4, p5]
         
     }
 }

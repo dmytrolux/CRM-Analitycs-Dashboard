@@ -8,17 +8,7 @@
 import UIKit
 
 class TotalUserDeteilView: UIView, CustomViewProtocol {
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        commonInit(for: "TotalUserDeteilView")
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        commonInit(for: "TotalUserDeteilView")
-    }
-    
+   
     @IBOutlet var contentView: UIView!
     @IBOutlet weak var percentL: UILabel!
     @IBOutlet weak var targetL: KernLabel!{
@@ -26,15 +16,15 @@ class TotalUserDeteilView: UIView, CustomViewProtocol {
             targetL.font = UIFont(name: "Poppins-Regular", size: 9)
             let paragraphStyle = NSMutableParagraphStyle()
             paragraphStyle.lineHeightMultiple = 0.9
-            targetL.attributedText = NSMutableAttributedString(string: "Target 2000 Users", attributes: [NSAttributedString.Key.kern: 0.63, NSAttributedString.Key.paragraphStyle: paragraphStyle])
+            targetL.attributedText = NSMutableAttributedString(string: "T-", attributes: [NSAttributedString.Key.kern: 0.63, NSAttributedString.Key.paragraphStyle: paragraphStyle])
         }
     }
-    @IBOutlet weak var lessL: KernLabel!{
+    @IBOutlet weak var lessL: UILabel!{
         didSet{
             lessL.font = UIFont(name: "Poppins-Regular", size: 9)
             let paragraphStyle = NSMutableParagraphStyle()
             paragraphStyle.lineHeightMultiple = 0.9
-            lessL.attributedText = NSMutableAttributedString(string: "Target 2000 Users", attributes: [NSAttributedString.Key.kern: 0.63, NSAttributedString.Key.paragraphStyle: paragraphStyle])
+            lessL.attributedText = NSMutableAttributedString(string: "\(paramLess)", attributes: [NSAttributedString.Key.kern: 0.63, NSAttributedString.Key.paragraphStyle: paragraphStyle])
         }
     }
     @IBOutlet weak var someTextL: UILabel!{
@@ -44,17 +34,69 @@ class TotalUserDeteilView: UIView, CustomViewProtocol {
         }
     }
     
-    var paramTarget: Double = 2000
-    var paramLess : Double = 1000
-    
-    let backCircleLayer = CAShapeLayer()
+    var paramTarget = 0
+    var paramLess = 0
+
+    var circlPath = UIBezierPath()
     let movingCircleLayer = CAShapeLayer()
     var strokeEnd : CGFloat = 0.5
-    var circlPath: UIBezierPath!
+    //var circlPath: UIBezierPath!
     
-    private func animationPercentAndCircleFront (target: Double, less: Double) {
+    
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    
+        circlPath = UIBezierPath(arcCenter: percentL.center,
+                                 radius: 50,
+                                 startAngle: -.pi / 2,
+                                 endAngle: 3 * .pi / 2,
+                                 clockwise: true)
+        
+        makeBackCircl(superLayer: contentView,
+                      path: circlPath,
+                      color: UIColor(named: "backCirc"),
+                      width: 10)
+        
+        animationPercentAndCircleFront(target: paramTarget, less: paramLess)
+        
+        let circlPoint1 = UIBezierPath(arcCenter: CGPoint(x: 171+5, y: 137+5),
+                                       radius: 5,
+                                       startAngle: -.pi / 2,
+                                       endAngle: 3 * .pi / 2,
+                                       clockwise: true)
+        
+        makeBackCircl(superLayer: contentView,
+                      path: circlPoint1,
+                      color: UIColor.blue,
+                      width: 0,
+                      fillColor: UIColor(named: "blue"))
+        
+        let circlPoint2 = UIBezierPath(arcCenter: CGPoint(x: 171+5, y: 159+5),
+                                       radius: 5,
+                                       startAngle: -.pi / 2,
+                                       endAngle: 3 * .pi / 2,
+                                       clockwise: true)
+        
+        makeBackCircl(superLayer: contentView,
+                      path: circlPoint2,
+                      color: UIColor.blue,
+                      width: 0,
+                      fillColor: UIColor(named: "blue"))
+  
+        
+        
+    }
+    func setupView (data: UsersStatistic) {
+        self.lessL.text = "\(data.lessUsersCount)"
+        self.targetL.text = "\(data.targetUsersCount)"
+        self.percentL.text = "\(data.totalUsersCount)"
+        self.animationPercentAndCircleFront(target: data.targetUsersCount, less: data.lessUsersCount)
+    }
+    
+     func animationPercentAndCircleFront (target: Int, less: Int) {
         var count = 0.0
-        let resPerc = (100.0 / (target / less))
+        let resPerc = (100.0 / (Double(target) / Double(less)))
         
         func nextIteration(){
             if count < resPerc {
@@ -76,17 +118,18 @@ class TotalUserDeteilView: UIView, CustomViewProtocol {
         nextIteration()
     }
     
-    func makeBackCircl(superLayer: UIView, path: UIBezierPath, color: UIColor!, width: CGFloat) {
-        backCircleLayer.path = path.cgPath
-        backCircleLayer.strokeColor = color.cgColor
-        backCircleLayer.opacity = 1
-        backCircleLayer.lineWidth = width
-        backCircleLayer.fillColor = UIColor.clear.cgColor
-        backCircleLayer.lineCap = .round
-        superLayer.layer.addSublayer(backCircleLayer)
+     func makeBackCircl(superLayer: UIView, path: UIBezierPath, color: UIColor!, width: CGFloat, fillColor: UIColor! = UIColor.clear)  {
+        let backCirkleLayer = CAShapeLayer()
+        backCirkleLayer.path = path.cgPath
+        backCirkleLayer.strokeColor = color.cgColor
+        backCirkleLayer.opacity = 1
+        backCirkleLayer.lineWidth = width
+        backCirkleLayer.fillColor = fillColor.cgColor
+        backCirkleLayer.lineCap = .round
+        superLayer.layer.addSublayer(backCirkleLayer)
     }
     
-    func makeFrontCircl(superLayer: UIView, path: UIBezierPath, color: UIColor!, width: CGFloat, strokeEnd: CGFloat) {
+   private func makeFrontCircl(superLayer: UIView, path: UIBezierPath, color: UIColor!, width: CGFloat, strokeEnd: CGFloat) {
         movingCircleLayer.path = path.cgPath
         movingCircleLayer.strokeColor = color.cgColor
         movingCircleLayer.lineWidth = width
@@ -96,22 +139,23 @@ class TotalUserDeteilView: UIView, CustomViewProtocol {
         superLayer.layer.addSublayer(movingCircleLayer)
     }
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        
-        circlPath = UIBezierPath(arcCenter: percentL.center,
-                                 radius: 50,
-                                 startAngle: -.pi / 2,
-                                 endAngle: 3 * .pi / 2,
-                                 clockwise: true)
-        
-
-        makeBackCircl(superLayer: contentView,
-                      path: circlPath,
-                      color: UIColor(named: "backCirc"),
-                      width: 10)
-        
-        animationPercentAndCircleFront(target: paramTarget, less: paramLess)
-        
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        commonInit(for: "TotalUserDeteilView")
     }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        commonInit(for: "TotalUserDeteilView")
+    }
+    
+}
+
+extension TotalUserDeteilView: UserTotalDelegate {
+    func update(target: Double, less: Double) {
+        targetL.text = "\(target)"
+        lessL.text = "\(less)"
+    }
+    
+    
 }

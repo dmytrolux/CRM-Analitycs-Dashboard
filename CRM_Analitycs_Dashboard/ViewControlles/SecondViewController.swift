@@ -46,10 +46,10 @@ class SecondViewController: UIViewController {
     //MARK: - Colects Set
     
     private let totUsSecContID = "UserTotalSVCCVCell"
-    var collectTUser : TotalUserClass = TotalUserClass()
+    var statisticArray = UsersStatistic.getDemoArray()
     
     private let yearPerSecContID = "VertDiagrameCell"
-    var collectYUser : VertDiagClass = VertDiagClass()
+    var collectYUser: VertDiagClass = VertDiagClass()
     
     //MARK: - Table set
     private let tabCellId = "TableViewCell"
@@ -103,9 +103,6 @@ class SecondViewController: UIViewController {
         let dollarString = contentCellAray.map({$0.dollars})
         let dollarStringOpt = (dollarString.compactMap({$0}))
         let summDoll = dollarStringOpt.reduce(0, +)
-        print(summDoll)
-        
-        
         let numberForDollar = summDoll
         let numbForm = NumberFormatter()
         numbForm.numberStyle = .decimal
@@ -130,7 +127,7 @@ extension SecondViewController: UICollectionViewDataSource, UICollectionViewDele
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if collectionView == totalUserCV{
-            return collectTUser.totalUserArray.count
+            return statisticArray.count
         }
         else {
             return collectYUser.yearUserArray.count
@@ -140,8 +137,9 @@ extension SecondViewController: UICollectionViewDataSource, UICollectionViewDele
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == totalUserCV{
             let cell = totalUserCV.dequeueReusableCell(withReuseIdentifier: totUsSecContID, for: indexPath) as! UserTotalSVCCVCell
-            let userData = collectTUser.totalUserArray[indexPath.item]
+            let userData = statisticArray[indexPath.item]
             cell.setupCell(totalUser: userData)
+            
             return cell
         }
         else {
@@ -153,17 +151,14 @@ extension SecondViewController: UICollectionViewDataSource, UICollectionViewDele
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if collectionView == totalUserCV{
-            let cell = totalUserCV.dequeueReusableCell(withReuseIdentifier: totUsSecContID, for: indexPath) as! UserTotalSVCCVCell
             
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "ThirdVC") as! ThirdViewController
             vc.modalPresentationStyle = .fullScreen
-            vc.testInt = cell.countLessUser.text!
-            self.present(vc, animated: true) {
-                print("Something")
-            }
-        }
+            vc.data = statisticArray[indexPath.item]
+            self.present(vc, animated: true) {}
+            //Delegate
+       
     }
 }
 
@@ -199,4 +194,5 @@ extension SecondViewController : UITableViewDataSource, UITableViewDelegate{
     
     
 }
+
 

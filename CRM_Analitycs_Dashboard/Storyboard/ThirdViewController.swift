@@ -8,51 +8,28 @@
 import UIKit
 
 class ThirdViewController: UIViewController {
-    
     @IBOutlet weak var backTotalUserL: UILabel!{
         didSet{
             backTotalUserL.attributedText =  NSMutableAttributedString(string: "Total User", attributes: [NSAttributedString.Key.kern: 2])
         }
     }
     //add outlet view with xib
-    @IBOutlet weak var deteilTotalUserV: UIView!{
+    @IBOutlet weak var deteilTotalUserV: TotalUserDeteilView!{
         didSet{
             deteilTotalUserV.layer.cornerRadius = 12
             deteilTotalUserV.clipsToBounds = true
-            
         }
     }
-    
-    
-    
     @IBOutlet weak var collDetailV: UICollectionView!
-    
-    
-    
-    var testInt = ""
     
     //MARK: - Colects Set
     let CollDetailID = "CollDetailTVC"
-    
+    var data: UsersStatistic?
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
-         print(testInt)
-       
-        
-        
-        
-            /*
-        // Register cell of first collection
-        self.collDetailV.register(UINib(nibName: CollDetailID, bundle: nil), forCellWithReuseIdentifier: CollDetailID)
-        self.collDetailV.dataSource = self
-        self.collDetailV.delegate = self
-        */
+        guard let data = data else { return }
+        deteilTotalUserV.setupView(data: data)
     }
-    
-
-    
 
 }
 

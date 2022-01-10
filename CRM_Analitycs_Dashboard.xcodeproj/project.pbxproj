@@ -41,6 +41,7 @@
 		B4C688BE278874D40097ADD2 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C688BC278874D40097ADD2 /* TableViewCell.swift */; };
 		B4C688BF278874D40097ADD2 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4C688BD278874D40097ADD2 /* TableViewCell.xib */; };
 		B4C688C1278890780097ADD2 /* StructureTV.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C688C0278890780097ADD2 /* StructureTV.swift */; };
+		B4C6C684278CBDBB005396D5 /* BuildShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C6C683278CBDBB005396D5 /* BuildShape.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +81,7 @@
 		B4C688BC278874D40097ADD2 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		B4C688BD278874D40097ADD2 /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		B4C688C0278890780097ADD2 /* StructureTV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StructureTV.swift; sourceTree = "<group>"; };
+		B4C6C683278CBDBB005396D5 /* BuildShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildShape.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +194,7 @@
 		B4A140B92789B579009A4523 /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				B4C6C682278CBD24005396D5 /* SupportClass */,
 				B4005B7B2784C8F100EDDD97 /* Fonts */,
 				B4C3ECA2278B459700AD50AC /* Protocols */,
 				B4C3ECA9278B4E0B00AD50AC /* Extensions */,
@@ -238,6 +241,14 @@
 				B4A140AD278999CD009A4523 /* TableModel.swift */,
 			);
 			path = TableViewSVC;
+			sourceTree = "<group>";
+		};
+		B4C6C682278CBD24005396D5 /* SupportClass */ = {
+			isa = PBXGroup;
+			children = (
+				B4C6C683278CBDBB005396D5 /* BuildShape.swift */,
+			);
+			path = SupportClass;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -342,6 +353,7 @@
 				B4A140B52789B523009A4523 /* KernTextView.swift in Sources */,
 				B4005B3B2784532100EDDD97 /* SceneDelegate.swift in Sources */,
 				B4A140AC27898F6B009A4523 /* TableModelCopy.swift in Sources */,
+				B4C6C684278CBDBB005396D5 /* BuildShape.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

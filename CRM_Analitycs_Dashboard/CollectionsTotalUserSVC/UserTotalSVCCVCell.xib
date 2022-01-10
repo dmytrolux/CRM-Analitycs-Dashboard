@@ -28,7 +28,7 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ash-wq-woN">
                         <rect key="frame" x="0.0" y="0.0" width="317" height="167"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Users Now" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WfW-Hj-geE">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Users Now" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WfW-Hj-geE" customClass="KernLabel" customModule="CRM_Analitycs_Dashboard" customModuleProvider="target">
                                 <rect key="frame" x="119" y="37" width="120" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="Eqz-q5-dUS"/>
@@ -37,8 +37,13 @@
                                 <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="13"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="characterSpacing">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1000 User" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WIc-CO-AUv">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_ User" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WIc-CO-AUv" customClass="KernLabel" customModule="CRM_Analitycs_Dashboard" customModuleProvider="target">
                                 <rect key="frame" x="119" y="60" width="118" height="38"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="38" id="QpP-gX-Jcs"/>
@@ -48,7 +53,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Target Users 2000 user" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rhD-yp-azz">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Target Users _ user" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rhD-yp-azz" customClass="KernLabel" customModule="CRM_Analitycs_Dashboard" customModuleProvider="target">
                                 <rect key="frame" x="32" y="126" width="116" height="15"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="15" id="Uf5-Cn-7cy"/>
@@ -58,24 +63,23 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="less 1000 User" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mma-aZ-cPG">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="less _ User" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mma-aZ-cPG" customClass="KernLabel" customModule="CRM_Analitycs_Dashboard" customModuleProvider="target">
                                 <rect key="frame" x="214" y="126" width="72" height="15"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="72" id="2vQ-2X-cgO"/>
                                     <constraint firstAttribute="height" constant="15" id="Ulg-Iq-Z5v"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Poppins-Light" family="Poppins" pointSize="10"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5mo-9j-80f">
-                                <rect key="frame" x="54" y="51" width="20" height="15"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5mo-9j-80f" customClass="KernLabel" customModule="CRM_Analitycs_Dashboard" customModuleProvider="target">
+                                <rect key="frame" x="54" y="51" width="19" height="15"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="19" id="4ZO-39-azs"/>
                                     <constraint firstAttribute="height" constant="15" id="4iW-Xz-7FJ"/>
                                 </constraints>
                                 <attributedString key="attributedText">
-                                    <fragment content="50%">
+                                    <fragment content="_%">
                                         <attributes>
                                             <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <font key="NSFont" size="10" name="Poppins-Light"/>
@@ -85,27 +89,14 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="типу Target" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nSk-0V-ZX0">
-                                <rect key="frame" x="39" y="139" width="90" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="типу Less" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yg7-7h-KgT">
-                                <rect key="frame" x="210" y="140" width="76" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" name="gray"/>
                         <constraints>
-                            <constraint firstItem="Mma-aZ-cPG" firstAttribute="leading" secondItem="rhD-yp-azz" secondAttribute="trailing" constant="66" id="5JM-Bw-FMV"/>
+                            <constraint firstItem="Mma-aZ-cPG" firstAttribute="leading" relation="lessThanOrEqual" secondItem="rhD-yp-azz" secondAttribute="trailing" constant="66" id="5JM-Bw-FMV"/>
                             <constraint firstItem="5mo-9j-80f" firstAttribute="leading" secondItem="ash-wq-woN" secondAttribute="leading" constant="54" id="9Jz-NW-8Sl"/>
                             <constraint firstItem="WIc-CO-AUv" firstAttribute="leading" secondItem="ash-wq-woN" secondAttribute="leading" constant="119" id="DD3-Zy-M5g"/>
                             <constraint firstItem="WIc-CO-AUv" firstAttribute="top" secondItem="WfW-Hj-geE" secondAttribute="bottom" constant="3" id="HHS-HT-sFw"/>
+                            <constraint firstAttribute="trailing" secondItem="Mma-aZ-cPG" secondAttribute="trailing" constant="31" id="OXu-aQ-AaV"/>
                             <constraint firstItem="WfW-Hj-geE" firstAttribute="leading" secondItem="ash-wq-woN" secondAttribute="leading" constant="119" id="VBR-Nh-Ohc"/>
                             <constraint firstItem="5mo-9j-80f" firstAttribute="top" secondItem="ash-wq-woN" secondAttribute="top" constant="51" id="VYN-RB-ARN"/>
                             <constraint firstItem="WfW-Hj-geE" firstAttribute="top" secondItem="ash-wq-woN" secondAttribute="top" constant="37" id="hXl-Cf-8mn"/>
@@ -125,14 +116,12 @@
             </constraints>
             <size key="customSize" width="563" height="376"/>
             <connections>
-                <outlet property="backViewCell" destination="ash-wq-woN" id="JxA-mD-AvX"/>
-                <outlet property="countLessUser" destination="Mma-aZ-cPG" id="Ao4-cC-7nm"/>
-                <outlet property="countTargetUserL" destination="rhD-yp-azz" id="jIl-mV-oyb"/>
-                <outlet property="lessL" destination="yg7-7h-KgT" id="saT-LF-2SN"/>
-                <outlet property="placeForPercent" destination="5mo-9j-80f" id="Q83-xQ-jBu"/>
-                <outlet property="resultUserL" destination="WIc-CO-AUv" id="m5h-U1-eHe"/>
-                <outlet property="targetL" destination="nSk-0V-ZX0" id="6H5-rQ-1QR"/>
-                <outlet property="totalusersL" destination="WfW-Hj-geE" id="uUR-tw-Bmm"/>
+                <outlet property="countLessUserLabel" destination="Mma-aZ-cPG" id="3Kj-7x-WVw"/>
+                <outlet property="countTargetUserL" destination="rhD-yp-azz" id="vzs-YD-aGS"/>
+                <outlet property="countUserLabel" destination="WIc-CO-AUv" id="iQy-dh-535"/>
+                <outlet property="placeForPercent" destination="5mo-9j-80f" id="fy9-r1-Uev"/>
+                <outlet property="totalUsersNowLabel" destination="WfW-Hj-geE" id="KNQ-vD-wXC"/>
+                <outlet property="view" destination="ash-wq-woN" id="WsU-Iy-uLL"/>
             </connections>
             <point key="canvasLocation" x="144" y="159"/>
         </collectionViewCell>
