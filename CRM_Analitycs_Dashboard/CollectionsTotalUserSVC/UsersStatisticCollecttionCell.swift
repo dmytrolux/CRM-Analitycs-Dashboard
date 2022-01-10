@@ -7,7 +7,7 @@
 
 import UIKit
 
-class UserTotalSVCCVCell: UICollectionViewCell {
+class UsersStatisticCollecttionCell: UICollectionViewCell {
     
     //MARK: - Work with Data
     var userStatistic: UsersStatistic?

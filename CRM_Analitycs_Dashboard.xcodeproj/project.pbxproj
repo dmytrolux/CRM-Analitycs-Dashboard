@@ -20,7 +20,7 @@
 		B4005B852784CF7A00EDDD97 /* CustomTF.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4005B842784CF7A00EDDD97 /* CustomTF.swift */; };
 		B4005B882785C3F800EDDD97 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4005B872785C3F800EDDD97 /* SecondViewController.swift */; };
 		B4005B8E2786071100EDDD97 /* CollectionView1.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4005B8D2786071100EDDD97 /* CollectionView1.swift */; };
-		B4005B9B2786393800EDDD97 /* UserTotalSVCCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4005B992786393800EDDD97 /* UserTotalSVCCVCell.swift */; };
+		B4005B9B2786393800EDDD97 /* UsersStatisticCollecttionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4005B992786393800EDDD97 /* UsersStatisticCollecttionCell.swift */; };
 		B4005B9C2786393800EDDD97 /* UserTotalSVCCVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4005B9A2786393800EDDD97 /* UserTotalSVCCVCell.xib */; };
 		B4005B9E27863D6200EDDD97 /* Poppins-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B4005B9D27863D6200EDDD97 /* Poppins-Light.ttf */; };
 		B4005BA027864E6600EDDD97 /* StructTotalUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4005B9F27864E6600EDDD97 /* StructTotalUser.swift */; };
@@ -60,7 +60,7 @@
 		B4005B842784CF7A00EDDD97 /* CustomTF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTF.swift; sourceTree = "<group>"; };
 		B4005B872785C3F800EDDD97 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		B4005B8D2786071100EDDD97 /* CollectionView1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionView1.swift; sourceTree = "<group>"; };
-		B4005B992786393800EDDD97 /* UserTotalSVCCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTotalSVCCVCell.swift; sourceTree = "<group>"; };
+		B4005B992786393800EDDD97 /* UsersStatisticCollecttionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersStatisticCollecttionCell.swift; sourceTree = "<group>"; };
 		B4005B9A2786393800EDDD97 /* UserTotalSVCCVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserTotalSVCCVCell.xib; sourceTree = "<group>"; };
 		B4005B9D27863D6200EDDD97 /* Poppins-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Light.ttf"; sourceTree = "<group>"; };
 		B4005B9F27864E6600EDDD97 /* StructTotalUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StructTotalUser.swift; sourceTree = "<group>"; };
@@ -167,7 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				B4005B9F27864E6600EDDD97 /* StructTotalUser.swift */,
-				B4005B992786393800EDDD97 /* UserTotalSVCCVCell.swift */,
+				B4005B992786393800EDDD97 /* UsersStatisticCollecttionCell.swift */,
 				B4005B9A2786393800EDDD97 /* UserTotalSVCCVCell.xib */,
 			);
 			path = CollectionsTotalUserSVC;
@@ -333,7 +333,7 @@
 			files = (
 				B4005B3D2784532100EDDD97 /* ViewController.swift in Sources */,
 				B4C688C1278890780097ADD2 /* StructureTV.swift in Sources */,
-				B4005B9B2786393800EDDD97 /* UserTotalSVCCVCell.swift in Sources */,
+				B4005B9B2786393800EDDD97 /* UsersStatisticCollecttionCell.swift in Sources */,
 				B4A140B72789B523009A4523 /* KernButton.swift in Sources */,
 				B4C3ECA1278B3B1700AD50AC /* TotalUserDeteilView.swift in Sources */,
 				B4A140BB2789BEFE009A4523 /* ThirdViewController.swift in Sources */,
