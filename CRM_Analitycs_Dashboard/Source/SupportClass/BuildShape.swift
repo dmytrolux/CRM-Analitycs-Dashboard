@@ -10,7 +10,7 @@ import UIKit
 
 class BuildingShape {
     
-    func makeCirclShape(superLayer: UIView, center: CGPoint, radius: CGFloat, startAngle: CGFloat, endAngle: CGFloat, clockwise: Bool, fillColor: UIColor!, strokeColor: UIColor!, width: CGFloat, strokeEnd: CGFloat) {
+    func makeCircleShape(superLayer: UIView, center: CGPoint, radius: CGFloat, startAngle: CGFloat, endAngle: CGFloat, clockwise: Bool, fillColor: UIColor!, strokeColor: UIColor!, width: CGFloat, strokeEnd: CGFloat) {
         
         let circleShape = CAShapeLayer()
         let path = UIBezierPath(arcCenter: center,
@@ -47,6 +47,39 @@ class BuildingShape {
         superLayer.layer.addSublayer(vertikalLineShape)
     }
     
+    func makeAnimationCircleAndPercent (percent: Int, labelForPercent: UILabel,superLayer: UIView, center: CGPoint, radius: CGFloat, startAngle: CGFloat, endAngle: CGFloat, clockwise: Bool, fillColor: UIColor!, strokeColor: UIColor!, width: CGFloat) {
+        
+        var count = 0
+        
+        func nextIteration(){
+            if count < percent {
+                count += 1
+                labelForPercent.text = "\(Int(count))%"
+                let strokeEnd = CGFloat(count) / CGFloat(100)
+                
+                let circleShape = CAShapeLayer()
+                let path = UIBezierPath(arcCenter: center,
+                                               radius: radius,
+                                               startAngle: startAngle,
+                                               endAngle: endAngle,
+                                               clockwise: clockwise)
+                circleShape.path = path.cgPath
+                circleShape.strokeColor = strokeColor.cgColor
+                circleShape.lineWidth = width
+                circleShape.fillColor = fillColor.cgColor
+                circleShape.lineCap = .round
+                circleShape.strokeEnd = strokeEnd
+                superLayer.layer.addSublayer(circleShape)
+            
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.075) {
+                    nextIteration()
+                }
+            }
+        }
+        nextIteration()
+    }
 }
+
+
 
 

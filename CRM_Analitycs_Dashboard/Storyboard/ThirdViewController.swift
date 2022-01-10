@@ -14,7 +14,7 @@ class ThirdViewController: UIViewController {
         }
     }
     //add outlet view with xib
-    @IBOutlet weak var deteilTotalUserV: TotalUserDeteilView!{
+    @IBOutlet weak var deteilTotalUserV: StatisticDetailView!{
         didSet{
             deteilTotalUserV.layer.cornerRadius = 12
             deteilTotalUserV.clipsToBounds = true

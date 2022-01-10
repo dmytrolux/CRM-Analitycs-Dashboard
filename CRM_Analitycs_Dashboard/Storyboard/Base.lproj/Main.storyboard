@@ -469,7 +469,7 @@
                                     </mask>
                                 </variation>
                             </button>
-                            <view contentMode="center" semanticContentAttribute="playback" translatesAutoresizingMaskIntoConstraints="NO" id="Z5W-OF-8zG" customClass="TotalUserDeteilView" customModule="CRM_Analitycs_Dashboard" customModuleProvider="target">
+                            <view contentMode="center" semanticContentAttribute="playback" translatesAutoresizingMaskIntoConstraints="NO" id="Z5W-OF-8zG" customClass="StatisticDetailView" customModule="CRM_Analitycs_Dashboard" customModuleProvider="target">
                                 <rect key="frame" x="45" y="112.99999999999999" width="285" height="234.66666666666663"/>
                                 <color key="backgroundColor" name="gray"/>
                                 <constraints>

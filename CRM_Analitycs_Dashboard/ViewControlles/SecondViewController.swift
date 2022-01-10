@@ -45,7 +45,7 @@ class SecondViewController: UIViewController {
     
     //MARK: - Colects Set
     
-    private let totUsSecContID = "UserTotalSVCCVCell"
+    private let totUsSecContID = "UsersStatisticCollecttionCell"
     var statisticArray = UsersStatistic.getDemoArray()
     
     private let yearPerSecContID = "VertDiagrameCell"

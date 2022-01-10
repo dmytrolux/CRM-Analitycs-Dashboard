@@ -15,13 +15,13 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TotalUserDeteilView" customModule="CRM_Analitycs_Dashboard" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StatisticDetailView" customModule="CRM_Analitycs_Dashboard" customModuleProvider="target">
             <connections>
                 <outlet property="contentView" destination="kDr-Sd-zYZ" id="zWO-gd-KlW"/>
-                <outlet property="lessL" destination="yI5-Jy-pj4" id="MHb-hF-ben"/>
-                <outlet property="percentL" destination="vMr-30-qBa" id="wMw-MK-cnZ"/>
-                <outlet property="someTextL" destination="u45-H4-XDt" id="i7H-l8-3cY"/>
-                <outlet property="targetL" destination="OYX-Xe-Ltz" id="SyT-m1-bvH"/>
+                <outlet property="decriptionLabel" destination="u45-H4-XDt" id="i7H-l8-3cY"/>
+                <outlet property="lessLabel" destination="yI5-Jy-pj4" id="MHb-hF-ben"/>
+                <outlet property="percentLabel" destination="vMr-30-qBa" id="wMw-MK-cnZ"/>
+                <outlet property="targetLable" destination="OYX-Xe-Ltz" id="SyT-m1-bvH"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -88,9 +88,9 @@
                     </userDefinedRuntimeAttributes>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u45-H4-XDt">
-                    <rect key="frame" x="26" y="195" width="255" height="41"/>
+                    <rect key="frame" x="26" y="195" width="255" height="56"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="41" id="iLt-64-qNb"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="41" id="iLt-64-qNb"/>
                         <constraint firstAttribute="width" constant="255" id="ke4-al-Zmn"/>
                     </constraints>
                     <attributedString key="attributedText">
