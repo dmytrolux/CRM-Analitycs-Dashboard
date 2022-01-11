@@ -18,8 +18,9 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StatisticDetailView" customModule="CRM_Analitycs_Dashboard" customModuleProvider="target">
             <connections>
                 <outlet property="contentView" destination="kDr-Sd-zYZ" id="zWO-gd-KlW"/>
-                <outlet property="decriptionLabel" destination="u45-H4-XDt" id="i7H-l8-3cY"/>
-                <outlet property="lessLabel" destination="yI5-Jy-pj4" id="MHb-hF-ben"/>
+                <outlet property="decriptionLabel" destination="u45-H4-XDt" id="D4A-1X-XAi"/>
+                <outlet property="headingViewLabel" destination="QyA-0q-4E3" id="Jpw-oA-TGo"/>
+                <outlet property="lessLabel" destination="yI5-Jy-pj4" id="22i-HA-fxi"/>
                 <outlet property="percentLabel" destination="vMr-30-qBa" id="wMw-MK-cnZ"/>
                 <outlet property="targetLable" destination="OYX-Xe-Ltz" id="SyT-m1-bvH"/>
             </connections>
@@ -45,7 +46,7 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vMr-30-qBa">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="_%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vMr-30-qBa">
                     <rect key="frame" x="66" y="102" width="41" height="24"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="24" id="QMI-qB-j9a"/>
@@ -55,14 +56,21 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Target _ Users" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OYX-Xe-Ltz" customClass="KernLabel" customModule="CRM_Analitycs_Dashboard" customModuleProvider="target">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OYX-Xe-Ltz" customClass="KernLabel" customModule="CRM_Analitycs_Dashboard" customModuleProvider="target">
                     <rect key="frame" x="189" y="136" width="119" height="13"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="13" id="67v-3G-vx6"/>
                         <constraint firstAttribute="width" constant="119" id="npd-Cd-IzC"/>
                     </constraints>
-                    <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="9"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <attributedString key="attributedText">
+                        <fragment content="Target _ Users">
+                            <attributes>
+                                <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <font key="NSFont" size="9" name="Poppins-Regular"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" paragraphSpacingBefore="0.90000000000000002" tighteningFactorForTruncation="0.0"/>
+                            </attributes>
+                        </fragment>
+                    </attributedString>
                     <nil key="highlightedColor"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="characterSpacing">
@@ -70,16 +78,23 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yI5-Jy-pj4">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yI5-Jy-pj4" customClass="KernLabel" customModule="CRM_Analitycs_Dashboard" customModuleProvider="target">
                     <rect key="frame" x="189" y="158" width="119" height="13"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="119" id="S7R-FJ-QtC"/>
                         <constraint firstAttribute="height" constant="13" id="fdz-8L-MRk"/>
                     </constraints>
-                    <string key="text">Less _ Users
+                    <attributedString key="attributedText">
+                        <fragment>
+                            <string key="content">Less _ Users
 </string>
-                    <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="9"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <attributes>
+                                <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <font key="NSFont" size="9" name="Poppins-Regular"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                            </attributes>
+                        </fragment>
+                    </attributedString>
                     <nil key="highlightedColor"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="characterSpacing">
@@ -87,7 +102,7 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u45-H4-XDt">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u45-H4-XDt" customClass="KernLabel" customModule="CRM_Analitycs_Dashboard" customModuleProvider="target">
                     <rect key="frame" x="26" y="195" width="255" height="56"/>
                     <constraints>
                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="41" id="iLt-64-qNb"/>
@@ -105,6 +120,11 @@
                         </fragment>
                     </attributedString>
                     <nil key="highlightedColor"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="characterSpacing">
+                            <real key="value" value="0.20000000000000001"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ICb-pf-pXG">
                     <rect key="frame" x="75" y="126" width="23" height="14"/>

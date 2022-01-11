@@ -39,11 +39,10 @@
                         </subviews>
                         <color key="backgroundColor" name="darkBlue"/>
                         <constraints>
-                            <constraint firstItem="2kT-49-z6W" firstAttribute="centerY" secondItem="3Sl-2O-yPX" secondAttribute="centerY" id="9Uj-ws-dsf"/>
-                            <constraint firstAttribute="bottom" secondItem="2kT-49-z6W" secondAttribute="bottom" id="Gjo-Rn-uT8"/>
                             <constraint firstItem="Lcc-ue-wTe" firstAttribute="centerY" secondItem="3Sl-2O-yPX" secondAttribute="centerY" id="JaS-H2-sgi"/>
-                            <constraint firstItem="2kT-49-z6W" firstAttribute="top" secondItem="3Sl-2O-yPX" secondAttribute="top" id="Z8D-If-bFR"/>
+                            <constraint firstAttribute="bottom" secondItem="2kT-49-z6W" secondAttribute="bottom" id="NZK-js-Bjg"/>
                             <constraint firstItem="2kT-49-z6W" firstAttribute="leading" secondItem="3Sl-2O-yPX" secondAttribute="leading" id="huj-ed-aoK"/>
+                            <constraint firstItem="2kT-49-z6W" firstAttribute="top" secondItem="3Sl-2O-yPX" secondAttribute="top" id="jcP-ZG-mdr"/>
                             <constraint firstAttribute="trailing" secondItem="Lcc-ue-wTe" secondAttribute="trailing" constant="10" id="utu-DJ-oHl"/>
                         </constraints>
                     </view>

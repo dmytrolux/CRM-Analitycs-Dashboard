@@ -14,8 +14,11 @@ struct UsersStatistic {
     var lessUsersCount: Int {
         targetUsersCount - totalUsersCount
     }
+    var percent: Int {
+        Int(100.0 / (Double(targetUsersCount) / Double(totalUsersCount)))
+    }
 
-    static func getDemoArray () -> [UsersStatistic] {
+    static func getDemoArrayUserStatistics () -> [UsersStatistic] {
         let p1 = UsersStatistic(targetUsersCount: 2000, totalUsersCount: 1000)
         let p2 = UsersStatistic(targetUsersCount: 3200, totalUsersCount: 1430)
         let p3 = UsersStatistic(targetUsersCount: 2700, totalUsersCount: 2200)

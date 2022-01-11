@@ -23,10 +23,10 @@
 		B4005B9B2786393800EDDD97 /* UsersStatisticCollecttionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4005B992786393800EDDD97 /* UsersStatisticCollecttionCell.swift */; };
 		B4005B9C2786393800EDDD97 /* UsersStatisticCollecttionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4005B9A2786393800EDDD97 /* UsersStatisticCollecttionCell.xib */; };
 		B4005B9E27863D6200EDDD97 /* Poppins-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B4005B9D27863D6200EDDD97 /* Poppins-Light.ttf */; };
-		B4005BA027864E6600EDDD97 /* StructTotalUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4005B9F27864E6600EDDD97 /* StructTotalUser.swift */; };
-		B40FD01627878E6D00DFA27B /* VertDiagrameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40FD01427878E6D00DFA27B /* VertDiagrameCell.swift */; };
-		B40FD01727878E6D00DFA27B /* VertDiagrameCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B40FD01527878E6D00DFA27B /* VertDiagrameCell.xib */; };
-		B40FD01927878E9600DFA27B /* StructVertDiagrama.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40FD01827878E9600DFA27B /* StructVertDiagrama.swift */; };
+		B4005BA027864E6600EDDD97 /* UserStatistic.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4005B9F27864E6600EDDD97 /* UserStatistic.swift */; };
+		B40FD01627878E6D00DFA27B /* ColumnMiniChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40FD01427878E6D00DFA27B /* ColumnMiniChartCell.swift */; };
+		B40FD01727878E6D00DFA27B /* ColumnMiniChartCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B40FD01527878E6D00DFA27B /* ColumnMiniChartCell.xib */; };
+		B40FD01927878E9600DFA27B /* YearlyStatistics.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40FD01827878E9600DFA27B /* YearlyStatistics.swift */; };
 		B4A140AC27898F6B009A4523 /* TableModelCopy.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A140AB27898F6A009A4523 /* TableModelCopy.swift */; };
 		B4A140AE278999CD009A4523 /* TableModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A140AD278999CD009A4523 /* TableModel.swift */; };
 		B4A140B52789B523009A4523 /* KernTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A140B12789B522009A4523 /* KernTextView.swift */; };
@@ -37,7 +37,6 @@
 		B4C3ECA1278B3B1700AD50AC /* StatisticDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C3ECA0278B3B1700AD50AC /* StatisticDetailView.swift */; };
 		B4C3ECA4278B45E300AD50AC /* CustomViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C3ECA3278B45E300AD50AC /* CustomViewProtocol.swift */; };
 		B4C3ECA8278B4AF200AD50AC /* StatisticDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4C3ECA7278B4AF200AD50AC /* StatisticDetailView.xib */; };
-		B4C3ECAB278B800A00AD50AC /* UserTotalDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C3ECAA278B800A00AD50AC /* UserTotalDelegate.swift */; };
 		B4C688BE278874D40097ADD2 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C688BC278874D40097ADD2 /* TableViewCell.swift */; };
 		B4C688BF278874D40097ADD2 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4C688BD278874D40097ADD2 /* TableViewCell.xib */; };
 		B4C688C1278890780097ADD2 /* StructureTV.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C688C0278890780097ADD2 /* StructureTV.swift */; };
@@ -63,10 +62,10 @@
 		B4005B992786393800EDDD97 /* UsersStatisticCollecttionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersStatisticCollecttionCell.swift; sourceTree = "<group>"; };
 		B4005B9A2786393800EDDD97 /* UsersStatisticCollecttionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UsersStatisticCollecttionCell.xib; sourceTree = "<group>"; };
 		B4005B9D27863D6200EDDD97 /* Poppins-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Light.ttf"; sourceTree = "<group>"; };
-		B4005B9F27864E6600EDDD97 /* StructTotalUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StructTotalUser.swift; sourceTree = "<group>"; };
-		B40FD01427878E6D00DFA27B /* VertDiagrameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VertDiagrameCell.swift; sourceTree = "<group>"; };
-		B40FD01527878E6D00DFA27B /* VertDiagrameCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VertDiagrameCell.xib; sourceTree = "<group>"; };
-		B40FD01827878E9600DFA27B /* StructVertDiagrama.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StructVertDiagrama.swift; sourceTree = "<group>"; };
+		B4005B9F27864E6600EDDD97 /* UserStatistic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStatistic.swift; sourceTree = "<group>"; };
+		B40FD01427878E6D00DFA27B /* ColumnMiniChartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColumnMiniChartCell.swift; sourceTree = "<group>"; };
+		B40FD01527878E6D00DFA27B /* ColumnMiniChartCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColumnMiniChartCell.xib; sourceTree = "<group>"; };
+		B40FD01827878E9600DFA27B /* YearlyStatistics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearlyStatistics.swift; sourceTree = "<group>"; };
 		B4A140AB27898F6A009A4523 /* TableModelCopy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableModelCopy.swift; sourceTree = "<group>"; };
 		B4A140AD278999CD009A4523 /* TableModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableModel.swift; sourceTree = "<group>"; };
 		B4A140B12789B522009A4523 /* KernTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KernTextView.swift; sourceTree = "<group>"; };
@@ -77,7 +76,6 @@
 		B4C3ECA0278B3B1700AD50AC /* StatisticDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticDetailView.swift; sourceTree = "<group>"; };
 		B4C3ECA3278B45E300AD50AC /* CustomViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomViewProtocol.swift; sourceTree = "<group>"; };
 		B4C3ECA7278B4AF200AD50AC /* StatisticDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatisticDetailView.xib; sourceTree = "<group>"; };
-		B4C3ECAA278B800A00AD50AC /* UserTotalDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTotalDelegate.swift; sourceTree = "<group>"; };
 		B4C688BC278874D40097ADD2 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		B4C688BD278874D40097ADD2 /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		B4C688C0278890780097ADD2 /* StructureTV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StructureTV.swift; sourceTree = "<group>"; };
@@ -117,12 +115,13 @@
 		B4005B372784532100EDDD97 /* CRM_Analitycs_Dashboard */ = {
 			isa = PBXGroup;
 			children = (
+				B4D1D558278DE4DC001A72C0 /* ModelData */,
 				B4005B952786253B00EDDD97 /* Storyboard */,
 				B4005B962786257300EDDD97 /* ViewControlles */,
 				B4005B9727862ABB00EDDD97 /* UsersStatisticCollecttionCell */,
-				B40FD01327878DEA00DFA27B /* CollectionVertlDiagSVC */,
-				B4C688BB2788735D0097ADD2 /* TableViewSVC */,
-				B4A140BC2789C152009A4523 /* CollDetailView */,
+				B40FD01327878DEA00DFA27B /* ColumnMiniChartCell */,
+				B4C688BB2788735D0097ADD2 /* TableViewCell */,
+				B4A140BC2789C152009A4523 /* StatisticDetailView */,
 				B4005B9827862AEE00EDDD97 /* OtherCustomClasses */,
 				B4A140B92789B579009A4523 /* Source */,
 				B4005B3A2784532100EDDD97 /* SceneDelegate.swift */,
@@ -166,7 +165,6 @@
 		B4005B9727862ABB00EDDD97 /* UsersStatisticCollecttionCell */ = {
 			isa = PBXGroup;
 			children = (
-				B4005B9F27864E6600EDDD97 /* StructTotalUser.swift */,
 				B4005B992786393800EDDD97 /* UsersStatisticCollecttionCell.swift */,
 				B4005B9A2786393800EDDD97 /* UsersStatisticCollecttionCell.xib */,
 			);
@@ -181,14 +179,13 @@
 			path = OtherCustomClasses;
 			sourceTree = "<group>";
 		};
-		B40FD01327878DEA00DFA27B /* CollectionVertlDiagSVC */ = {
+		B40FD01327878DEA00DFA27B /* ColumnMiniChartCell */ = {
 			isa = PBXGroup;
 			children = (
-				B40FD01427878E6D00DFA27B /* VertDiagrameCell.swift */,
-				B40FD01527878E6D00DFA27B /* VertDiagrameCell.xib */,
-				B40FD01827878E9600DFA27B /* StructVertDiagrama.swift */,
+				B40FD01427878E6D00DFA27B /* ColumnMiniChartCell.swift */,
+				B40FD01527878E6D00DFA27B /* ColumnMiniChartCell.xib */,
 			);
-			path = CollectionVertlDiagSVC;
+			path = ColumnMiniChartCell;
 			sourceTree = "<group>";
 		};
 		B4A140B92789B579009A4523 /* Source */ = {
@@ -202,20 +199,19 @@
 			path = Source;
 			sourceTree = "<group>";
 		};
-		B4A140BC2789C152009A4523 /* CollDetailView */ = {
+		B4A140BC2789C152009A4523 /* StatisticDetailView */ = {
 			isa = PBXGroup;
 			children = (
 				B4C3ECA0278B3B1700AD50AC /* StatisticDetailView.swift */,
 				B4C3ECA7278B4AF200AD50AC /* StatisticDetailView.xib */,
 			);
-			path = CollDetailView;
+			path = StatisticDetailView;
 			sourceTree = "<group>";
 		};
 		B4C3ECA2278B459700AD50AC /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
 				B4C3ECA3278B45E300AD50AC /* CustomViewProtocol.swift */,
-				B4C3ECAA278B800A00AD50AC /* UserTotalDelegate.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -231,16 +227,15 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		B4C688BB2788735D0097ADD2 /* TableViewSVC */ = {
+		B4C688BB2788735D0097ADD2 /* TableViewCell */ = {
 			isa = PBXGroup;
 			children = (
 				B4C688BC278874D40097ADD2 /* TableViewCell.swift */,
 				B4C688BD278874D40097ADD2 /* TableViewCell.xib */,
-				B4C688C0278890780097ADD2 /* StructureTV.swift */,
 				B4A140AB27898F6A009A4523 /* TableModelCopy.swift */,
 				B4A140AD278999CD009A4523 /* TableModel.swift */,
 			);
-			path = TableViewSVC;
+			path = TableViewCell;
 			sourceTree = "<group>";
 		};
 		B4C6C682278CBD24005396D5 /* SupportClass */ = {
@@ -249,6 +244,16 @@
 				B4C6C683278CBDBB005396D5 /* BuildShape.swift */,
 			);
 			path = SupportClass;
+			sourceTree = "<group>";
+		};
+		B4D1D558278DE4DC001A72C0 /* ModelData */ = {
+			isa = PBXGroup;
+			children = (
+				B4005B9F27864E6600EDDD97 /* UserStatistic.swift */,
+				B40FD01827878E9600DFA27B /* YearlyStatistics.swift */,
+				B4C688C0278890780097ADD2 /* StructureTV.swift */,
+			);
+			path = ModelData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -318,7 +323,7 @@
 				B4005B822784C9EE00EDDD97 /* Poppins-Medium.ttf in Resources */,
 				B4005B9C2786393800EDDD97 /* UsersStatisticCollecttionCell.xib in Resources */,
 				B4005B422784532200EDDD97 /* Assets.xcassets in Resources */,
-				B40FD01727878E6D00DFA27B /* VertDiagrameCell.xib in Resources */,
+				B40FD01727878E6D00DFA27B /* ColumnMiniChartCell.xib in Resources */,
 				B4C3ECA8278B4AF200AD50AC /* StatisticDetailView.xib in Resources */,
 				B4005B402784532100EDDD97 /* Main.storyboard in Resources */,
 			);
@@ -337,18 +342,17 @@
 				B4A140B72789B523009A4523 /* KernButton.swift in Sources */,
 				B4C3ECA1278B3B1700AD50AC /* StatisticDetailView.swift in Sources */,
 				B4A140BB2789BEFE009A4523 /* ThirdViewController.swift in Sources */,
-				B4C3ECAB278B800A00AD50AC /* UserTotalDelegate.swift in Sources */,
 				B4005B8E2786071100EDDD97 /* CollectionView1.swift in Sources */,
 				B4A140B62789B523009A4523 /* KernTextField.swift in Sources */,
-				B4005BA027864E6600EDDD97 /* StructTotalUser.swift in Sources */,
+				B4005BA027864E6600EDDD97 /* UserStatistic.swift in Sources */,
 				B4005B392784532100EDDD97 /* AppDelegate.swift in Sources */,
 				B4A140AE278999CD009A4523 /* TableModel.swift in Sources */,
 				B4005B852784CF7A00EDDD97 /* CustomTF.swift in Sources */,
 				B4C688BE278874D40097ADD2 /* TableViewCell.swift in Sources */,
 				B4C3ECA4278B45E300AD50AC /* CustomViewProtocol.swift in Sources */,
-				B40FD01627878E6D00DFA27B /* VertDiagrameCell.swift in Sources */,
+				B40FD01627878E6D00DFA27B /* ColumnMiniChartCell.swift in Sources */,
 				B4A140B82789B523009A4523 /* KernLabel.swift in Sources */,
-				B40FD01927878E9600DFA27B /* StructVertDiagrama.swift in Sources */,
+				B40FD01927878E9600DFA27B /* YearlyStatistics.swift in Sources */,
 				B4005B882785C3F800EDDD97 /* SecondViewController.swift in Sources */,
 				B4A140B52789B523009A4523 /* KernTextView.swift in Sources */,
 				B4005B3B2784532100EDDD97 /* SceneDelegate.swift in Sources */,

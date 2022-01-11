@@ -25,7 +25,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="317" height="167"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ash-wq-woN">
+                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ash-wq-woN">
                         <rect key="frame" x="0.0" y="0.0" width="317" height="167"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Users Now" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WfW-Hj-geE" customClass="KernLabel" customModule="CRM_Analitycs_Dashboard" customModuleProvider="target">
@@ -116,11 +116,11 @@
             </constraints>
             <size key="customSize" width="563" height="376"/>
             <connections>
-                <outlet property="countLessUserLabel" destination="Mma-aZ-cPG" id="3Kj-7x-WVw"/>
-                <outlet property="countTargetUserL" destination="rhD-yp-azz" id="vzs-YD-aGS"/>
-                <outlet property="countUserLabel" destination="WIc-CO-AUv" id="iQy-dh-535"/>
-                <outlet property="placeForPercent" destination="5mo-9j-80f" id="fy9-r1-Uev"/>
-                <outlet property="totalUsersNowLabel" destination="WfW-Hj-geE" id="KNQ-vD-wXC"/>
+                <outlet property="countLessUsersLabel" destination="Mma-aZ-cPG" id="3Kj-7x-WVw"/>
+                <outlet property="countTargetUsersL" destination="rhD-yp-azz" id="vzs-YD-aGS"/>
+                <outlet property="countTotalUserLabel" destination="WIc-CO-AUv" id="iQy-dh-535"/>
+                <outlet property="headingViewLabel" destination="WfW-Hj-geE" id="KNQ-vD-wXC"/>
+                <outlet property="percentLabel" destination="5mo-9j-80f" id="fy9-r1-Uev"/>
                 <outlet property="view" destination="ash-wq-woN" id="WsU-Iy-uLL"/>
             </connections>
             <point key="canvasLocation" x="144" y="159"/>

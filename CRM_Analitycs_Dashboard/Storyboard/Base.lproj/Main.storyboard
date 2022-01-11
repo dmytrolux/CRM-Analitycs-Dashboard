@@ -8,6 +8,14 @@
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Poppins-Regular.ttf">
+            <string>Poppins-Regular</string>
+        </array>
+        <array key="poppins-bold.ttf">
+            <string>Poppins-Bold</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -20,7 +28,7 @@
                     <view key="view" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="719"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="eGj-oP-Eiu">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="eGj-oP-Eiu" customClass="KernLabel" customModule="CRM_Analitycs_Dashboard" customModuleProvider="target">
                                 <rect key="frame" x="83" y="113" width="209" height="54"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="54" id="Eii-L2-sJf"/>
@@ -36,8 +44,13 @@
                                     </fragment>
                                 </attributedString>
                                 <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="characterSpacing">
+                                        <real key="value" value="7"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="27" clearButtonMode="unlessEditing" translatesAutoresizingMaskIntoConstraints="NO" id="nLV-px-OzN">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="27" clearButtonMode="unlessEditing" translatesAutoresizingMaskIntoConstraints="NO" id="nLV-px-OzN">
                                 <rect key="frame" x="36.666666666666657" y="194" width="302" height="54"/>
                                 <color key="backgroundColor" name="gray"/>
                                 <constraints>
@@ -48,7 +61,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" smartDashesType="no" smartInsertDeleteType="no" textContentType="name"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="27" clearButtonMode="unlessEditing" translatesAutoresizingMaskIntoConstraints="NO" id="lpB-bF-IMY">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="27" clearButtonMode="unlessEditing" translatesAutoresizingMaskIntoConstraints="NO" id="lpB-bF-IMY">
                                 <rect key="frame" x="36.666666666666657" y="262" width="302" height="54"/>
                                 <color key="backgroundColor" name="gray"/>
                                 <constraints>
@@ -59,7 +72,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" smartDashesType="no" smartInsertDeleteType="no" textContentType="url"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="27" clearButtonMode="unlessEditing" translatesAutoresizingMaskIntoConstraints="NO" id="44L-qW-Stf">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="27" clearButtonMode="unlessEditing" translatesAutoresizingMaskIntoConstraints="NO" id="44L-qW-Stf">
                                 <rect key="frame" x="36.666666666666657" y="330" width="302" height="54"/>
                                 <color key="backgroundColor" name="gray"/>
                                 <constraints>
@@ -70,7 +83,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" textContentType="username"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="27" clearButtonMode="unlessEditing" translatesAutoresizingMaskIntoConstraints="NO" id="5UI-SN-7e8">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="27" clearButtonMode="unlessEditing" translatesAutoresizingMaskIntoConstraints="NO" id="5UI-SN-7e8">
                                 <rect key="frame" x="36.666666666666657" y="398" width="302" height="54"/>
                                 <color key="backgroundColor" name="gray"/>
                                 <constraints>
@@ -81,7 +94,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" textContentType="password"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="27" clearButtonMode="unlessEditing" translatesAutoresizingMaskIntoConstraints="NO" id="KbK-RR-SnX">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="27" clearButtonMode="unlessEditing" translatesAutoresizingMaskIntoConstraints="NO" id="KbK-RR-SnX">
                                 <rect key="frame" x="36.666666666666657" y="466" width="302" height="54"/>
                                 <color key="backgroundColor" name="gray"/>
                                 <constraints>
@@ -150,7 +163,7 @@
                         <outlet property="nameTF" destination="nLV-px-OzN" id="dCi-Mc-K6i"/>
                         <outlet property="passwordTF" destination="5UI-SN-7e8" id="PRH-7H-jgj"/>
                         <outlet property="registerBtn" destination="Kh8-M7-FEn" id="g9k-Yl-1e7"/>
-                        <outlet property="registerL" destination="eGj-oP-Eiu" id="8Fb-CO-i18"/>
+                        <outlet property="registerL" destination="eGj-oP-Eiu" id="Gef-0Q-66e"/>
                         <outlet property="usernameTF" destination="44L-qW-Stf" id="fVb-JX-0Jn"/>
                         <outlet property="view" destination="8bC-Xf-vdC" id="B0r-io-FBT"/>
                     </connections>
@@ -211,7 +224,7 @@
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="VertDiagrameCell" id="jyh-3x-Q0W">
                                         <rect key="frame" x="0.0" y="0.0" width="25" height="34"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="UNJ-Kt-bNf" customClass="VertDiagrameCell" customModule="CRM_Analitycs_Dashboard" customModuleProvider="target">
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="UNJ-Kt-bNf" customClass="ColumnMiniChartCell" customModule="CRM_Analitycs_Dashboard" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="25" height="34"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </collectionViewCellContentView>
@@ -219,7 +232,7 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Ft-6n-c8p">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Ft-6n-c8p" customClass="KernLabel" customModule="CRM_Analitycs_Dashboard" customModuleProvider="target">
                                 <rect key="frame" x="45" y="405" width="160" height="23"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="23" id="sLd-Xf-AXH"/>
@@ -235,56 +248,65 @@
                                     </fragment>
                                 </attributedString>
                                 <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d9B-vx-SIe">
-                                <rect key="frame" x="44.999999999999993" y="429" width="76.333333333333314" height="14"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="14" id="9ww-ZQ-N7m"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="76" id="duA-5N-OAP"/>
-                                </constraints>
-                                <attributedString key="attributedText">
-                                    <fragment content="January 01 - 30">
-                                        <attributes>
-                                            <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <font key="NSFont" size="10" name="Poppins-Regular"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="characterSpacing">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Iwg-UQ-Y4v">
-                                <rect key="frame" x="45" y="464" width="314" height="241"/>
+                                <rect key="frame" x="45" y="456" width="314" height="249"/>
                                 <color key="backgroundColor" name="darkBlue"/>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$10,190" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ydn-BU-idH">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$10,190" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ydn-BU-idH" customClass="KernLabel" customModule="CRM_Analitycs_Dashboard" customModuleProvider="target">
                                 <rect key="frame" x="295" y="405" width="64" height="23"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="23" id="CXN-qQ-Zlk"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="64" id="Meg-Uj-gty"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="15"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="characterSpacing">
+                                        <real key="value" value="1.3500000000000001"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Wn-63-RZ9" customClass="KernButton" customModule="CRM_Analitycs_Dashboard" customModuleProvider="target">
+                                <rect key="frame" x="45" y="429" width="85" height="15"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="85" id="MDC-kR-ifn"/>
+                                    <constraint firstAttribute="height" constant="15" id="z4f-M6-x6j"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="10"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="January 01 - 30"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="characterSpacing">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" name="darkBlue"/>
                         <constraints>
                             <constraint firstItem="Y0z-0Y-BBP" firstAttribute="top" secondItem="lEp-T5-Tlj" secondAttribute="bottom" constant="31" id="1nT-dI-2yP"/>
                             <constraint firstAttribute="trailingMargin" relation="lessThanOrEqual" secondItem="5Ft-6n-c8p" secondAttribute="trailing" constant="154" id="40d-hf-NxP"/>
                             <constraint firstItem="lEp-T5-Tlj" firstAttribute="top" secondItem="K1g-WG-xXc" secondAttribute="bottom" constant="41" id="A8e-t8-qK6"/>
+                            <constraint firstItem="7Wn-63-RZ9" firstAttribute="top" secondItem="5Ft-6n-c8p" secondAttribute="bottom" constant="1" id="Coo-ma-DpN"/>
                             <constraint firstItem="ydn-BU-idH" firstAttribute="trailing" secondItem="lEp-T5-Tlj" secondAttribute="trailing" id="F5D-F5-iVy"/>
-                            <constraint firstAttribute="trailingMargin" relation="lessThanOrEqual" secondItem="d9B-vx-SIe" secondAttribute="trailing" constant="237.66999999999999" id="R2a-KD-UFI"/>
-                            <constraint firstItem="Iwg-UQ-Y4v" firstAttribute="top" secondItem="d9B-vx-SIe" secondAttribute="bottom" constant="21" id="RHN-XE-xQW"/>
-                            <constraint firstItem="d9B-vx-SIe" firstAttribute="top" secondItem="5Ft-6n-c8p" secondAttribute="bottom" constant="1" id="Rg5-SA-hzW"/>
+                            <constraint firstItem="Iwg-UQ-Y4v" firstAttribute="top" secondItem="7Wn-63-RZ9" secondAttribute="bottom" constant="12" id="LIs-BB-cZv"/>
                             <constraint firstItem="5Ft-6n-c8p" firstAttribute="top" secondItem="Y0z-0Y-BBP" secondAttribute="bottom" constant="44" id="WCe-kK-4uE"/>
                             <constraint firstItem="5Ft-6n-c8p" firstAttribute="leading" secondItem="m9a-oT-ia4" secondAttribute="leadingMargin" constant="29" id="Y8j-ry-SdI"/>
                             <constraint firstItem="Iwg-UQ-Y4v" firstAttribute="leading" secondItem="5Ft-6n-c8p" secondAttribute="leading" id="Yzg-yD-lbg"/>
-                            <constraint firstItem="d9B-vx-SIe" firstAttribute="leading" secondItem="5Ft-6n-c8p" secondAttribute="leading" id="c55-13-EyM"/>
                             <constraint firstItem="ydn-BU-idH" firstAttribute="top" secondItem="5Ft-6n-c8p" secondAttribute="top" id="dAR-g8-74f"/>
                             <constraint firstItem="Y0z-0Y-BBP" firstAttribute="leading" secondItem="m9a-oT-ia4" secondAttribute="leadingMargin" id="dCf-7b-oHR"/>
                             <constraint firstItem="Iwg-UQ-Y4v" firstAttribute="trailing" secondItem="m9a-oT-ia4" secondAttribute="trailingMargin" id="dFP-u6-1aY"/>
                             <constraint firstAttribute="trailingMargin" secondItem="lEp-T5-Tlj" secondAttribute="trailing" id="oJR-cP-02L"/>
                             <constraint firstItem="ydn-BU-idH" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="5Ft-6n-c8p" secondAttribute="trailing" constant="1" id="rEh-0q-msA"/>
+                            <constraint firstItem="7Wn-63-RZ9" firstAttribute="leading" secondItem="5Ft-6n-c8p" secondAttribute="leading" id="tSF-Yb-laI"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Y0z-0Y-BBP" secondAttribute="trailing" id="th9-Di-oMT"/>
                             <constraint firstItem="TMc-RG-b7h" firstAttribute="top" secondItem="Iwg-UQ-Y4v" secondAttribute="bottom" constant="14" id="uE2-1S-3wm"/>
                             <constraint firstItem="lEp-T5-Tlj" firstAttribute="leading" secondItem="m9a-oT-ia4" secondAttribute="leadingMargin" id="wxC-uN-wZf"/>
@@ -304,7 +326,7 @@
                                             <constraint firstAttribute="width" constant="22" id="zKT-xU-FDr"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fma-tG-IyD">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fma-tG-IyD" customClass="KernLabel" customModule="CRM_Analitycs_Dashboard" customModuleProvider="target">
                                         <rect key="frame" x="33" y="8.6666666666666661" width="107" height="26.666666666666671"/>
                                         <attributedString key="attributedText">
                                             <fragment content="Dashboard">
@@ -316,6 +338,11 @@
                                             </fragment>
                                         </attributedString>
                                         <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="characterSpacing">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -360,13 +387,13 @@
                     </navigationItem>
                     <size key="freeformSize" width="375" height="719"/>
                     <connections>
-                        <outlet property="choseDate" destination="d9B-vx-SIe" id="dPt-Hp-H6T"/>
-                        <outlet property="dailyL" destination="5Ft-6n-c8p" id="JGz-uZ-hCg"/>
-                        <outlet property="dashboardL" destination="fma-tG-IyD" id="6zg-hw-yZR"/>
-                        <outlet property="sumDollar" destination="ydn-BU-idH" id="tLL-lw-nCl"/>
-                        <outlet property="tableViewTV" destination="Iwg-UQ-Y4v" id="F8G-yc-eTT"/>
-                        <outlet property="totalUserCV" destination="lEp-T5-Tlj" id="l5l-ES-2si"/>
-                        <outlet property="yearCV" destination="Y0z-0Y-BBP" id="x5G-SS-SsE"/>
+                        <outlet property="columnMiniChartCollectionView" destination="Y0z-0Y-BBP" id="x5G-SS-SsE"/>
+                        <outlet property="dailySalesLabel" destination="5Ft-6n-c8p" id="rOm-ss-71d"/>
+                        <outlet property="headingNavigationBarLabel" destination="fma-tG-IyD" id="blN-Nz-Ccv"/>
+                        <outlet property="monthlyStatementTableView" destination="Iwg-UQ-Y4v" id="F8G-yc-eTT"/>
+                        <outlet property="rangeDateButton" destination="7Wn-63-RZ9" id="RyI-2X-rV3"/>
+                        <outlet property="sumPerMonth" destination="ydn-BU-idH" id="F3h-rH-a6L"/>
+                        <outlet property="usersStatisticCollectionView" destination="lEp-T5-Tlj" id="l5l-ES-2si"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HM1-fL-QqN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

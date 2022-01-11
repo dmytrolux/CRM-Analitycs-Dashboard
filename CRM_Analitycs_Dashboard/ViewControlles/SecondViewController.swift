@@ -10,52 +10,24 @@ import UIKit
 class SecondViewController: UIViewController {
     
     //MARK: - IBOutlet
-    @IBOutlet weak var dashboardL: UILabel!{
-        didSet{
-            dashboardL.attributedText =  NSMutableAttributedString(string: "Dashboard", attributes: [NSAttributedString.Key.kern: 2])
-        }
-    }
-    @IBOutlet weak var totalUserCV: UICollectionView!
-    @IBOutlet weak var yearCV: UICollectionView!
-    @IBOutlet weak var dailyL: UILabel!{
-        didSet{
-            dailyL.attributedText =  NSMutableAttributedString(string: "Daily Sales Results", attributes: [NSAttributedString.Key.kern: 1])
-        }
-    }
-    @IBOutlet weak var choseDate: UILabel!{
-        didSet{
-            choseDate.font = UIFont(name: "Poppins-Regular", size: 10)
-            choseDate.attributedText = NSMutableAttributedString(string: "January 01 - 30", attributes: [NSAttributedString.Key.kern: 0.5])
-        }
-    }
-    @IBOutlet weak var sumDollar: UILabel!{
-        didSet{
-            sumDollar.font = UIFont(name: "Poppins-Bold", size: 15)
-            sumDollar.textAlignment = .right
-            sumDollar.attributedText = NSMutableAttributedString(string: "$10,190", attributes: [NSAttributedString.Key.kern: 1.35])
-            
-            
-            //sumDollar.text = "\(summDoll)"
-        }
-    }
-    @IBOutlet weak var tableViewTV: UITableView!
-    
-    
-    
+    @IBOutlet weak var headingNavigationBarLabel: KernLabel!
+    @IBOutlet weak var usersStatisticCollectionView: UICollectionView!
+    @IBOutlet weak var columnMiniChartCollectionView: UICollectionView!
+    @IBOutlet weak var dailySalesLabel: KernLabel!
+    @IBOutlet weak var rangeDateButton: KernButton!
+    @IBOutlet weak var sumPerMonth: KernLabel!
+    @IBOutlet weak var monthlyStatementTableView: UITableView!
     
     //MARK: - Colects Set
+    private let UsersStatisticsId = String(describing: UsersStatisticCollecttionCell.self)
+    var statisticArray = UsersStatistic.getDemoArrayUserStatistics()
     
-    private let totUsSecContID = "UsersStatisticCollecttionCell"
-    var statisticArray = UsersStatistic.getDemoArray()
-    
-    private let yearPerSecContID = "VertDiagrameCell"
-    var collectYUser: VertDiagClass = VertDiagClass()
+    private let columnMiniChartId = String(describing: ColumnMiniChartCell.self)
+    var yearlyStatisticsArray = YearlyStatistics.getDemoArrayYearlyStatistics()
     
     //MARK: - Table set
     private let tabCellId = "TableViewCell"
     var contentCellAray = [DataStructure]()
-    
-
     
     //MARK: - ViewDidLoad
     override func viewDidLoad() {
@@ -64,22 +36,22 @@ class SecondViewController: UIViewController {
         
         
         // Register cell of first collection
-        self.totalUserCV.register(UINib(nibName: totUsSecContID, bundle: nil), forCellWithReuseIdentifier: totUsSecContID)
-        self.totalUserCV.dataSource = self
-        self.totalUserCV.delegate = self
+        self.usersStatisticCollectionView.register(UINib(nibName: UsersStatisticsId, bundle: nil), forCellWithReuseIdentifier: UsersStatisticsId)
+        self.usersStatisticCollectionView.dataSource = self
+        self.usersStatisticCollectionView.delegate = self
         
         // Register cell of second collection
-        self.yearCV.register(UINib(nibName: yearPerSecContID, bundle: nil), forCellWithReuseIdentifier: yearPerSecContID)
-        self.yearCV.dataSource = self
-        self.yearCV.delegate = self
+        self.columnMiniChartCollectionView.register(UINib(nibName: columnMiniChartId, bundle: nil), forCellWithReuseIdentifier: columnMiniChartId)
+        self.columnMiniChartCollectionView.dataSource = self
+        self.columnMiniChartCollectionView.delegate = self
         
         
         // Register cell of table
-        tableViewTV.register(UINib.init(nibName: tabCellId, bundle: nil), forCellReuseIdentifier: tabCellId)
+        monthlyStatementTableView.register(UINib.init(nibName: tabCellId, bundle: nil), forCellReuseIdentifier: tabCellId)
         //tableView.rowHeight = UITableViewAutomaticDimension
-        tableViewTV.separatorColor = UIColor.clear
-        self.tableViewTV.dataSource = self
-        self.tableViewTV.delegate = self
+        monthlyStatementTableView.separatorColor = UIColor.clear
+        self.monthlyStatementTableView.dataSource = self
+        self.monthlyStatementTableView.delegate = self
         
         
         
@@ -96,7 +68,7 @@ class SecondViewController: UIViewController {
             contentCellAray.append(data!)
         
         }
-        tableViewTV.reloadData()
+        monthlyStatementTableView.reloadData()
         
         
         //SummDollars
@@ -107,7 +79,7 @@ class SecondViewController: UIViewController {
         let numbForm = NumberFormatter()
         numbForm.numberStyle = .decimal
         let formNumWithCommas = numbForm.string(from: NSNumber(value: numberForDollar))
-        sumDollar.text = "$\(formNumWithCommas!)"
+        sumPerMonth.text = "$\(formNumWithCommas!)"
         
         
 //        sumDollar.text = String(formNumWithCommas)
@@ -126,26 +98,26 @@ class SecondViewController: UIViewController {
 extension SecondViewController: UICollectionViewDataSource, UICollectionViewDelegate{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if collectionView == totalUserCV{
+        if collectionView == usersStatisticCollectionView{
             return statisticArray.count
         }
         else {
-            return collectYUser.yearUserArray.count
+            return yearlyStatisticsArray.count
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if collectionView == totalUserCV{
-            let cell = totalUserCV.dequeueReusableCell(withReuseIdentifier: totUsSecContID, for: indexPath) as! UsersStatisticCollecttionCell
+        if collectionView == usersStatisticCollectionView{
+            let cell = usersStatisticCollectionView.dequeueReusableCell(withReuseIdentifier: UsersStatisticsId, for: indexPath) as! UsersStatisticCollecttionCell
             let userData = statisticArray[indexPath.item]
             cell.setupCell(totalUser: userData)
             
             return cell
         }
         else {
-            let cell = yearCV.dequeueReusableCell(withReuseIdentifier: yearPerSecContID, for: indexPath) as! VertDiagrameCell
-            let userData = collectYUser.yearUserArray[indexPath.item]
-            cell.setupCell(userOfYear: userData)
+            let cell = columnMiniChartCollectionView.dequeueReusableCell(withReuseIdentifier: columnMiniChartId, for: indexPath) as! ColumnMiniChartCell
+            let userData = yearlyStatisticsArray[indexPath.item]
+            cell.setupCell(data: userData)
             return cell
         }
     }
