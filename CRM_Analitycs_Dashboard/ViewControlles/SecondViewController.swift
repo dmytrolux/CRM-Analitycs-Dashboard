@@ -62,11 +62,11 @@ class SecondViewController: UIViewController {
             
             //format mounth
             let formNumWithZero = String(format: "%02d", item)
-        
+            
             data?.month =  formNumWithZero
             data?.dollars = Int.random(in: 0..<5111)
             contentCellAray.append(data!)
-        
+            
         }
         monthlyStatementTableView.reloadData()
         
@@ -81,16 +81,7 @@ class SecondViewController: UIViewController {
         let formNumWithCommas = numbForm.string(from: NSNumber(value: numberForDollar))
         sumPerMonth.text = "$\(formNumWithCommas!)"
         
-        
-//        sumDollar.text = String(formNumWithCommas)
     }
-    
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "2segue3" {
-//            let vc = segue.destination as! ThirdViewController
-//            vc.testDouble = 154.0
-//        }
-//    }
     
 }
 
@@ -123,14 +114,14 @@ extension SecondViewController: UICollectionViewDataSource, UICollectionViewDele
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-            
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let vc = storyboard.instantiateViewController(withIdentifier: "ThirdVC") as! ThirdViewController
-            vc.modalPresentationStyle = .fullScreen
-            vc.data = statisticArray[indexPath.item]
-            self.present(vc, animated: true) {}
-            //Delegate
-       
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "ThirdVC") as! ThirdViewController
+        vc.modalPresentationStyle = .fullScreen
+        vc.data = statisticArray[indexPath.item]
+        self.present(vc, animated: true) {}
+        //Delegate
+        
     }
 }
 
@@ -147,20 +138,24 @@ extension SecondViewController : UITableViewDataSource, UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: tabCellId, for: indexPath) as! TableViewCell
-        cell.selectionStyle = .none
+       
         
-//        //Formating value for label dollarL
+        
+        
         let numberForDollar = contentCellAray[indexPath.row].dollars!
         let numbForm = NumberFormatter()
         numbForm.numberStyle = .decimal
         let formNumWithCommas = numbForm.string(from: NSNumber(value: numberForDollar))
-       
+        
         cell.dollarL.text = "$\(formNumWithCommas!)"
         cell.mounthL.text = "January \(contentCellAray[indexPath.row].month!)"
+       
         
-        guard indexPath.row == 2  else {return cell }
-        cell.areaForShapes.isHidden = true
-        //вимкнути reusable
+        //Work with Reusable cell
+        cell.indexPath = indexPath
+        cell.contentCellAray = contentCellAray
+        cell.drawLinesAtPrepareForReuse()
+        
         return cell
     }
     
