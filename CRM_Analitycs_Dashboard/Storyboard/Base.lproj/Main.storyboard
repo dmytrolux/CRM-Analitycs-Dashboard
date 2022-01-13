@@ -236,7 +236,6 @@
                                 <rect key="frame" x="45" y="405" width="160" height="23"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="23" id="sLd-Xf-AXH"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="160" id="whY-ct-7B8"/>
                                 </constraints>
                                 <attributedString key="attributedText">
                                     <fragment content="Daily Sales Results">
@@ -256,13 +255,14 @@
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Iwg-UQ-Y4v">
                                 <rect key="frame" x="45" y="456" width="314" height="249"/>
-                                <color key="backgroundColor" name="darkBlue"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$10,190" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ydn-BU-idH" customClass="KernLabel" customModule="CRM_Analitycs_Dashboard" customModuleProvider="target">
-                                <rect key="frame" x="295" y="405" width="64" height="23"/>
+                                <rect key="frame" x="306.66666666666669" y="405" width="52.333333333333314" height="23"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="23" id="CXN-qQ-Zlk"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="64" id="Meg-Uj-gty"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="15"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -274,9 +274,8 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Wn-63-RZ9" customClass="KernButton" customModule="CRM_Analitycs_Dashboard" customModuleProvider="target">
-                                <rect key="frame" x="45" y="429" width="85" height="15"/>
+                                <rect key="frame" x="45" y="429" width="77" height="15"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="85" id="MDC-kR-ifn"/>
                                     <constraint firstAttribute="height" constant="15" id="z4f-M6-x6j"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="10"/>
@@ -303,13 +302,14 @@
                             <constraint firstItem="Iwg-UQ-Y4v" firstAttribute="leading" secondItem="5Ft-6n-c8p" secondAttribute="leading" id="Yzg-yD-lbg"/>
                             <constraint firstItem="ydn-BU-idH" firstAttribute="top" secondItem="5Ft-6n-c8p" secondAttribute="top" id="dAR-g8-74f"/>
                             <constraint firstItem="Y0z-0Y-BBP" firstAttribute="leading" secondItem="m9a-oT-ia4" secondAttribute="leadingMargin" id="dCf-7b-oHR"/>
-                            <constraint firstItem="Iwg-UQ-Y4v" firstAttribute="trailing" secondItem="m9a-oT-ia4" secondAttribute="trailingMargin" id="dFP-u6-1aY"/>
+                            <constraint firstItem="Iwg-UQ-Y4v" firstAttribute="trailing" secondItem="ydn-BU-idH" secondAttribute="trailingMargin" constant="8" id="dFP-u6-1aY"/>
                             <constraint firstAttribute="trailingMargin" secondItem="lEp-T5-Tlj" secondAttribute="trailing" id="oJR-cP-02L"/>
                             <constraint firstItem="ydn-BU-idH" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="5Ft-6n-c8p" secondAttribute="trailing" constant="1" id="rEh-0q-msA"/>
                             <constraint firstItem="7Wn-63-RZ9" firstAttribute="leading" secondItem="5Ft-6n-c8p" secondAttribute="leading" id="tSF-Yb-laI"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Y0z-0Y-BBP" secondAttribute="trailing" id="th9-Di-oMT"/>
                             <constraint firstItem="TMc-RG-b7h" firstAttribute="top" secondItem="Iwg-UQ-Y4v" secondAttribute="bottom" constant="14" id="uE2-1S-3wm"/>
                             <constraint firstItem="lEp-T5-Tlj" firstAttribute="leading" secondItem="m9a-oT-ia4" secondAttribute="leadingMargin" id="wxC-uN-wZf"/>
+                            <constraint firstAttribute="trailingMargin" relation="lessThanOrEqual" secondItem="7Wn-63-RZ9" secondAttribute="trailing" constant="237" id="zNA-tP-O6d"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" largeTitleDisplayMode="always" id="kjt-rw-JjM">
@@ -323,7 +323,6 @@
                                         <rect key="frame" x="0.0" y="15" width="22" height="14"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="14" id="gxa-d3-MQx"/>
-                                            <constraint firstAttribute="width" constant="22" id="zKT-xU-FDr"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fma-tG-IyD" customClass="KernLabel" customModule="CRM_Analitycs_Dashboard" customModuleProvider="target">
@@ -435,10 +434,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3LV-bB-xTG" customClass="KernButton" customModule="CRM_Analitycs_Dashboard" customModuleProvider="target">
-                                <rect key="frame" x="30" y="43" width="160" height="29"/>
+                                <rect key="frame" x="30" y="43" width="24" height="29"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="160" id="XcT-fm-cVk"/>
                                     <constraint firstAttribute="height" constant="29" id="jHO-Jf-MNc"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
@@ -507,8 +505,8 @@
                         <color key="backgroundColor" name="darkBlue"/>
                         <constraints>
                             <constraint firstItem="OMx-5b-a7G" firstAttribute="leading" relation="lessThanOrEqual" secondItem="Atk-eD-zgE" secondAttribute="trailing" constant="132.66999999999999" id="0JD-Bc-r95"/>
-                            <constraint firstItem="OMx-5b-a7G" firstAttribute="leading" relation="lessThanOrEqual" secondItem="3LV-bB-xTG" secondAttribute="trailing" constant="100" id="2qG-79-gXt"/>
                             <constraint firstItem="6AU-EO-upf" firstAttribute="centerY" secondItem="3LV-bB-xTG" secondAttribute="centerY" id="4RG-z3-Aae"/>
+                            <constraint firstItem="Atk-eD-zgE" firstAttribute="leading" secondItem="3LV-bB-xTG" secondAttribute="trailing" constant="8" id="A0o-hS-8Sy"/>
                             <constraint firstItem="h8t-fa-FFv" firstAttribute="leading" secondItem="3LV-bB-xTG" secondAttribute="leading" id="Aqz-bo-J2s"/>
                             <constraint firstItem="Z5W-OF-8zG" firstAttribute="top" secondItem="3LV-bB-xTG" secondAttribute="bottom" constant="41" id="BwN-5M-4X2"/>
                             <constraint firstItem="Atk-eD-zgE" firstAttribute="leading" secondItem="h8t-fa-FFv" secondAttribute="trailing" constant="9" id="GSn-se-DeZ"/>

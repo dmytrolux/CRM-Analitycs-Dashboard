@@ -10,25 +10,23 @@ import UIKit
 
 class BuildingShape {
     
-    func makeCircle(superLayer: UIView, center: CGPoint, radius: CGFloat, startAngle: CGFloat, endAngle: CGFloat, clockwise: Bool, fillColor: UIColor!, strokeColor: UIColor!, width: CGFloat) {
-        
-        let circleShape = CAShapeLayer()
+    func makeCircle(shape: CAShapeLayer, superLayer: UIView, center: CGPoint, radius: CGFloat, startAngle: CGFloat, endAngle: CGFloat, clockwise: Bool, fillColor: UIColor!, strokeColor: UIColor!, width: CGFloat) {
         let path = UIBezierPath(arcCenter: center,
                                 radius: radius,
                                 startAngle: startAngle,
                                 endAngle: endAngle,
                                 clockwise: clockwise)
-        circleShape.path = path.cgPath
-        circleShape.strokeColor = strokeColor.cgColor
-        circleShape.lineWidth = width
-        circleShape.fillColor = fillColor.cgColor
-        circleShape.lineCap = .round
-        circleShape.strokeEnd = 1
-        superLayer.layer.addSublayer(circleShape)
+        shape.path = path.cgPath
+        shape.strokeColor = strokeColor.cgColor
+        shape.lineWidth = width
+        shape.fillColor = fillColor.cgColor
+        shape.lineCap = .round
+        shape.strokeEnd = 1
+        superLayer.layer.addSublayer(shape)
     }
     
     
-    func makeAnimationCircleAndPercent (percent: Int, labelForPercent: UILabel, shape: CAShapeLayer, superLayer: UIView, center: CGPoint, radius: CGFloat, startAngle: CGFloat, endAngle: CGFloat, clockwise: Bool, fillColor: UIColor!, strokeColor: UIColor!, width: CGFloat, fullCycleInSec: Double) {
+    func makeAnimationCircleAndPercent (shape: CAShapeLayer, superLayer: UIView, percent: Int, labelForPercent: UILabel, center: CGPoint, radius: CGFloat, startAngle: CGFloat, endAngle: CGFloat, clockwise: Bool, fillColor: UIColor!, strokeColor: UIColor!, width: CGFloat, fullCycleInSec: Double) {
         
         var count = 0
         let delay = fullCycleInSec / 100
@@ -61,10 +59,14 @@ class BuildingShape {
         nextIteration()
     }
     
-    func makeLine(superLayer: UIView, startX: CGFloat, startY: CGFloat, endX: CGFloat, endY: CGFloat, fillColor: UIColor!, strokeColor: UIColor!,  width: CGFloat){
+    func makeLine(shape: CAShapeLayer, superLayer: UIView, startX: CGFloat, startY: CGFloat, endX: CGFloat, endY: CGFloat, fillColor: UIColor!, strokeColor: UIColor!,  width: CGFloat){
         
-        let lineShape = CAShapeLayer()
-        lineShape.frame = superLayer.bounds
+        shape.lineWidth = width
+        shape.lineCap = .round
+        shape.fillColor = fillColor.cgColor
+        shape.strokeEnd = 1
+        shape.strokeColor = strokeColor.cgColor
+        shape.frame = superLayer.bounds
         let path = UIBezierPath()
         path.move(to: CGPoint(
             x: startX,
@@ -72,18 +74,11 @@ class BuildingShape {
         path.addLine(to: CGPoint(
             x: endX ,
             y: endY))
-        lineShape.path = path.cgPath
-        
-        lineShape.lineWidth = width
-        lineShape.lineCap = .round
-        lineShape.fillColor = fillColor.cgColor
-        lineShape.strokeEnd = 1
-        lineShape.strokeColor = strokeColor.cgColor
-        lineShape.frame = superLayer.bounds
-        superLayer.layer.addSublayer(lineShape)
+        shape.path = path.cgPath
+        superLayer.layer.addSublayer(shape)
     }
     
-    func makeAnimationLine (lineShape: CAShapeLayer, percent: Int, startX: CGFloat, startY: CGFloat, endX: CGFloat, endY: CGFloat, superLayer: UIView, fillColor: UIColor!, strokeColor: UIColor!, width: CGFloat, fullCycleInSec: Double){
+    func makeAnimationLine (shape: CAShapeLayer, superLayer: UIView, percent: Int, startX: CGFloat, startY: CGFloat, endX: CGFloat, endY: CGFloat, fillColor: UIColor!, strokeColor: UIColor!, width: CGFloat, fullCycleInSec: Double){
         
         var count = 0
         let delay = fullCycleInSec / 100
@@ -93,13 +88,12 @@ class BuildingShape {
                 count += 1
                 let strokeEnd = CGFloat(count) / CGFloat(100)
                 
-                lineShape.frame = superLayer.bounds
-                superLayer.layer.addSublayer(lineShape)
-                lineShape.lineWidth = width
-                lineShape.lineCap = .round
-                lineShape.fillColor = fillColor.cgColor
-                lineShape.strokeEnd = strokeEnd
-                lineShape.strokeColor = strokeColor.cgColor
+                shape.lineWidth = width
+                shape.lineCap = .round
+                shape.fillColor = fillColor.cgColor
+                shape.strokeEnd = strokeEnd
+                shape.strokeColor = strokeColor.cgColor
+                shape.frame = superLayer.bounds
                 let path = UIBezierPath()
                 path.move(to: CGPoint(
                     x: startX,
@@ -107,7 +101,8 @@ class BuildingShape {
                 path.addLine(to: CGPoint(
                     x: endX ,
                     y: endY))
-                lineShape.path = path.cgPath
+                shape.path = path.cgPath
+                superLayer.layer.addSublayer(shape)
 
                 DispatchQueue.main.asyncAfter(deadline: .now() + delay) {
                     nextIteration()

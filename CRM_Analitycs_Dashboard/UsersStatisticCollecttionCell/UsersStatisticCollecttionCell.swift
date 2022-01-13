@@ -18,23 +18,24 @@ class UsersStatisticCollecttionCell: UICollectionViewCell {
     @IBOutlet weak var percentLabel: KernLabel!
     
     let buildShape = BuildingShape()
-    let shapeLayer = CAShapeLayer()
+    let backCircleShape = CAShapeLayer()
+    let animationCircleShape = CAShapeLayer()
     let startAngle: CGFloat = ( -.pi / 2 )
     let endAngle: CGFloat = ( 3 * .pi / 2 )
     
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        buildShape.makeCircle(superLayer: view,
-                                       center: percentLabel.center,
-                                       radius: 35,
-                                       startAngle: startAngle,
-                                       endAngle: endAngle,
-                                       clockwise: true,
-                                       fillColor: UIColor.clear,
-                                       strokeColor: UIColor(named: "backCirc"),
-                                       width: 10)
-        
+        buildShape.makeCircle(shape: backCircleShape,
+                              superLayer: contentView,
+                              center: percentLabel.center,
+                              radius: 35,
+                              startAngle: startAngle,
+                              endAngle: endAngle,
+                              clockwise: true,
+                              fillColor: MyColor.clear,
+                              strokeColor: MyColor.backCircle,
+                              width: 10)
     }
     
     func setupCell(totalUser: UsersStatistic){
@@ -48,19 +49,19 @@ class UsersStatisticCollecttionCell: UICollectionViewCell {
         countTargetUsersL.text = "Target Users \(countTarget)"
         countTotalUserLabel.text = "\(countTotal) User"
         
-        buildShape.makeAnimationCircleAndPercent(percent: persent,
-                                                     labelForPercent: percentLabel,
-                                                     shape: shapeLayer,
-                                                     superLayer: view,
-                                                     center: percentLabel.center,
-                                                     radius: 35,
-                                                     startAngle: startAngle,
-                                                     endAngle: endAngle,
-                                                     clockwise: true,
-                                                     fillColor: UIColor.clear,
-                                                     strokeColor: UIColor(named: "blue"),
-                                                     width: 10,
-                                                     fullCycleInSec: 2)
+        buildShape.makeAnimationCircleAndPercent(shape: animationCircleShape,
+                                                 superLayer: contentView,
+                                                 percent: persent,
+                                                 labelForPercent: percentLabel,
+                                                 center: percentLabel.center,
+                                                 radius: 35,
+                                                 startAngle: startAngle,
+                                                 endAngle: endAngle,
+                                                 clockwise: true,
+                                                 fillColor: UIColor.clear,
+                                                 strokeColor: MyColor.blue,
+                                                 width: 10,
+                                                 fullCycleInSec: 3)
     }
     
 }

@@ -18,7 +18,10 @@ class StatisticDetailView: UIView, CustomViewProtocol {
     
     let nameThisClass = String(describing: StatisticDetailView.self)
     let buildShape = BuildingShape()
-    let shapeLayer = CAShapeLayer()
+    let backCirclShape = CAShapeLayer()
+    let pointUpShape = CAShapeLayer()
+    let pointDownShape = CAShapeLayer()
+    let animationCircleShape = CAShapeLayer()
     
     let startAngle: CGFloat = ( -.pi / 2 )
     let endAngle: CGFloat = ( 3 * .pi / 2 )
@@ -28,35 +31,39 @@ class StatisticDetailView: UIView, CustomViewProtocol {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        buildShape.makeCircle(superLayer: contentView,
-                                  center: percentLabel.center,
-                                  radius: 50,
-                                  startAngle: startAngle,
-                                  endAngle: endAngle,
-                                  clockwise: true,
-                                  fillColor: UIColor.clear,
-                                  strokeColor: UIColor(named: "backCirc"),
-                                  width: 10)
+        buildShape.makeCircle(shape: backCirclShape,
+                              superLayer: contentView,
+                              center: percentLabel.center,
+                              radius: 50,
+                              startAngle: startAngle,
+                              endAngle: endAngle,
+                              clockwise: true,
+                              fillColor: MyColor.clear,
+                              strokeColor: MyColor.backCircle,
+                              width: 10)
         
-        buildShape.makeCircle(superLayer: contentView,
-                                  center: positionPoint2,
-                                  radius: 5,
-                                  startAngle: startAngle,
-                                  endAngle: endAngle,
-                                  clockwise: true,
-                                  fillColor: UIColor(named: "blue"),
-                                  strokeColor: UIColor.clear,
-                                  width: 0)
+        buildShape.makeCircle(shape: pointUpShape,
+                              superLayer: contentView,
+                              center: positionPoint1,
+                              radius: 5,
+                              startAngle: startAngle,
+                              endAngle: endAngle,
+                              clockwise: true,
+                              fillColor: MyColor.blue,
+                              strokeColor: MyColor.clear,
+                              width: 0)
         
-        buildShape.makeCircle(superLayer: contentView,
-                                  center: positionPoint1,
-                                  radius: 5,
-                                  startAngle: startAngle,
-                                  endAngle: endAngle,
-                                  clockwise: true,
-                                  fillColor: UIColor(named: "blue"),
-                                  strokeColor: UIColor.clear,
-                                  width: 0)
+        buildShape.makeCircle(shape: pointDownShape,
+                              superLayer: contentView,
+                              center: positionPoint2,
+                              radius: 5,
+                              startAngle: startAngle,
+                              endAngle: endAngle,
+                              clockwise: true,
+                              fillColor: MyColor.blue,
+                              strokeColor: MyColor.clear,
+                              width: 0)
+        
         
     }
     
@@ -68,19 +75,20 @@ class StatisticDetailView: UIView, CustomViewProtocol {
         self.lessLabel.text = "Less \(data.lessUsersCount) Users"
         self.targetLable.text = "Target \(usersTarget) Users"
         
-        buildShape.makeAnimationCircleAndPercent(percent: persent,
-                                                     labelForPercent: percentLabel,
-                                                     shape: shapeLayer,
-                                                     superLayer: contentView,
-                                                     center: percentLabel.center,
-                                                     radius: 50,
-                                                     startAngle: startAngle,
-                                                     endAngle: endAngle,
-                                                     clockwise: true,
-                                                     fillColor: UIColor.clear,
-                                                     strokeColor: UIColor(named: "blue"),
-                                                     width: 15,
-                                                     fullCycleInSec: 2)
+        buildShape.makeAnimationCircleAndPercent(shape: animationCircleShape,
+                                                 superLayer: contentView,
+                                                 percent: persent,
+                                                 labelForPercent: percentLabel,
+                                                 center: percentLabel.center,
+                                                 radius: 50,
+                                                 startAngle: startAngle,
+                                                 endAngle: endAngle,
+                                                 clockwise: true,
+                                                 fillColor: MyColor.clear,
+                                                 strokeColor: MyColor.blue,
+                                                 width: 15,
+                                                 fullCycleInSec: 2)
+        
     }
     
     override init(frame: CGRect) {

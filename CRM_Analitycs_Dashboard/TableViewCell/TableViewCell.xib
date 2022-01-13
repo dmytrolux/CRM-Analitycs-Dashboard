@@ -3,7 +3,6 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -17,68 +16,49 @@
                 <rect key="frame" x="0.0" y="0.0" width="316" height="37"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Sl-2O-yPX">
-                        <rect key="frame" x="0.0" y="0.0" width="316" height="37"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$2,029" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lcc-ue-wTe">
-                                <rect key="frame" x="251.5" y="8.5" width="54.5" height="20"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="46" id="cRb-Vp-nbQ"/>
-                                    <constraint firstAttribute="height" constant="20" id="duy-Qg-JI7"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2kT-49-z6W">
-                                <rect key="frame" x="0.0" y="0.0" width="28" height="37"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="28" id="UVH-8c-a6D"/>
-                                </constraints>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" name="darkBlue"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$2,029" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lcc-ue-wTe">
+                        <rect key="frame" x="253.5" y="8.5" width="54.5" height="20"/>
                         <constraints>
-                            <constraint firstItem="Lcc-ue-wTe" firstAttribute="centerY" secondItem="3Sl-2O-yPX" secondAttribute="centerY" id="JaS-H2-sgi"/>
-                            <constraint firstAttribute="bottom" secondItem="2kT-49-z6W" secondAttribute="bottom" id="NZK-js-Bjg"/>
-                            <constraint firstItem="2kT-49-z6W" firstAttribute="leading" secondItem="3Sl-2O-yPX" secondAttribute="leading" id="huj-ed-aoK"/>
-                            <constraint firstItem="2kT-49-z6W" firstAttribute="top" secondItem="3Sl-2O-yPX" secondAttribute="top" id="jcP-ZG-mdr"/>
-                            <constraint firstAttribute="trailing" secondItem="Lcc-ue-wTe" secondAttribute="trailing" constant="10" id="utu-DJ-oHl"/>
+                            <constraint firstAttribute="height" constant="20" id="duy-Qg-JI7"/>
                         </constraints>
-                    </view>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="January 01" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LAl-LU-7Rc">
-                        <rect key="frame" x="28" y="9" width="83" height="19"/>
+                        <rect key="frame" x="26" y="9" width="83" height="19"/>
                         <constraints>
-                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="74" id="CmL-h8-hjO"/>
                             <constraint firstAttribute="height" constant="19" id="Kv6-QH-FP5"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2kT-49-z6W">
+                        <rect key="frame" x="0.0" y="0.0" width="18" height="37"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="18" id="i6D-23-tqm"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="3Sl-2O-yPX" secondAttribute="trailing" id="2Oz-EO-6jZ"/>
+                    <constraint firstAttribute="bottom" secondItem="2kT-49-z6W" secondAttribute="bottom" id="4st-Fr-gSN"/>
                     <constraint firstItem="LAl-LU-7Rc" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="ARA-4E-4RQ"/>
-                    <constraint firstItem="3Sl-2O-yPX" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="RLq-oX-dbN"/>
-                    <constraint firstItem="3Sl-2O-yPX" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="VcM-im-Uo8"/>
-                    <constraint firstItem="LAl-LU-7Rc" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="28" id="iWH-bR-PTm"/>
-                    <constraint firstAttribute="bottom" secondItem="3Sl-2O-yPX" secondAttribute="bottom" id="yVI-Mj-gxA"/>
+                    <constraint firstItem="2kT-49-z6W" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="VoH-SE-6wB"/>
+                    <constraint firstItem="2kT-49-z6W" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="bEt-Ap-HSC"/>
+                    <constraint firstItem="Lcc-ue-wTe" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="gMv-TD-34N"/>
+                    <constraint firstItem="LAl-LU-7Rc" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="26" id="iWH-bR-PTm"/>
+                    <constraint firstAttribute="trailing" secondItem="Lcc-ue-wTe" secondAttribute="trailing" constant="8" id="tb3-Px-JTe"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
                 <outlet property="areaForShapes" destination="2kT-49-z6W" id="BTR-UA-3Gt"/>
-                <outlet property="backView" destination="3Sl-2O-yPX" id="iCq-Z3-Ssq"/>
                 <outlet property="dollarL" destination="Lcc-ue-wTe" id="B8d-Bw-eIN"/>
                 <outlet property="mounthL" destination="LAl-LU-7Rc" id="1uK-h9-Xfo"/>
             </connections>
             <point key="canvasLocation" x="168.11594202898553" y="182.47767857142856"/>
         </tableViewCell>
     </objects>
-    <resources>
-        <namedColor name="darkBlue">
-            <color red="0.11800000071525574" green="0.11800000071525574" blue="0.18400000035762787" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-    </resources>
 </document>

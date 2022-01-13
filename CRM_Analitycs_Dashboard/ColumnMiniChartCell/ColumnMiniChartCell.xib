@@ -10,54 +10,38 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="ColumnMiniChartCell" customModule="CRM_Analitycs_Dashboard" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="23" height="34"/>
+            <rect key="frame" x="0.0" y="0.0" width="23" height="36"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="23" height="34"/>
+                <rect key="frame" x="0.0" y="0.0" width="23" height="36"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OSt-0L-MDv">
-                        <rect key="frame" x="0.0" y="0.0" width="23" height="34"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JI9-O3-71o" customClass="KernLabel" customModule="CRM_Analitycs_Dashboard" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="25" width="23" height="10"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="23" id="gcJ-xe-Lqe"/>
-                                    <constraint firstAttribute="height" constant="10" id="sOt-j8-3HI"/>
-                                </constraints>
-                                <attributedString key="attributedText">
-                                    <fragment content="2000">
-                                        <attributes>
-                                            <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <font key="NSFont" size="10" name="Poppins-Medium"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="0.80000000000000004" tighteningFactorForTruncation="0.0"/>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <nil key="highlightedColor"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="characterSpacing">
-                                        <real key="value" value="0.29999999999999999"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </label>
-                        </subviews>
-                        <constraints>
-                            <constraint firstAttribute="bottom" secondItem="JI9-O3-71o" secondAttribute="bottom" constant="-1" id="2Vl-Ty-Jlj"/>
-                            <constraint firstItem="JI9-O3-71o" firstAttribute="centerX" secondItem="OSt-0L-MDv" secondAttribute="centerX" id="2mm-0Q-aW8"/>
-                        </constraints>
-                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JI9-O3-71o" customClass="KernLabel" customModule="CRM_Analitycs_Dashboard" customModuleProvider="target">
+                        <rect key="frame" x="-1" y="26.5" width="25" height="11.5"/>
+                        <attributedString key="attributedText">
+                            <fragment content="2000">
+                                <attributes>
+                                    <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <font key="NSFont" size="10" name="Poppins-Medium"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="0.80000000000000004" tighteningFactorForTruncation="0.0"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                        <nil key="highlightedColor"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="characterSpacing">
+                                <real key="value" value="0.29999999999999999"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </label>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="OSt-0L-MDv" secondAttribute="bottom" id="9wY-Ho-4AI"/>
-                <constraint firstItem="OSt-0L-MDv" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="TMa-gb-tVe"/>
-                <constraint firstAttribute="trailing" secondItem="OSt-0L-MDv" secondAttribute="trailing" id="Wze-Br-PpF"/>
-                <constraint firstItem="OSt-0L-MDv" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="jYy-Zc-pDK"/>
+                <constraint firstAttribute="bottom" secondItem="JI9-O3-71o" secondAttribute="bottom" constant="-2" id="6kx-oo-mGV"/>
+                <constraint firstItem="JI9-O3-71o" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="vwS-ee-lSE"/>
             </constraints>
             <connections>
-                <outlet property="backView" destination="OSt-0L-MDv" id="On1-T1-Svb"/>
                 <outlet property="yearLabel" destination="JI9-O3-71o" id="ReU-rG-0TQ"/>
             </connections>
             <point key="canvasLocation" x="138.40579710144928" y="153.34821428571428"/>
