@@ -10,8 +10,8 @@ import UIKit
 class TableViewCell: UITableViewCell {
     
     @IBOutlet weak var areaForShapes: UIView!
-    @IBOutlet weak var mounthL: KernLabel!
-    @IBOutlet weak var dollarL: KernLabel!
+    @IBOutlet weak var dateLabel: KernLabel!
+    @IBOutlet weak var moneyLabel: KernLabel!
     
     let buildShape = BuildingShape()
     let circleShape = CAShapeLayer()
@@ -20,7 +20,7 @@ class TableViewCell: UITableViewCell {
     let startAngle: CGFloat = ( -.pi / 2 )
     let endAngle: CGFloat = ( 3 * .pi / 2 )
     var indexPath: IndexPath!
-    var contentCellAray: [DataStructure]!
+    var selectedMonthlyMoneyArray = [Int]()
     
     func drawLinesAtPrepareForReuse() {
         
@@ -47,7 +47,7 @@ class TableViewCell: UITableViewCell {
         switch indexPath.row {
         case 0:
             lineUpShape.removeFromSuperlayer()
-        case contentCellAray.count - 1 :
+        case selectedMonthlyMoneyArray.count - 1 :
             lineDownShape.removeFromSuperlayer()
         default:
             break

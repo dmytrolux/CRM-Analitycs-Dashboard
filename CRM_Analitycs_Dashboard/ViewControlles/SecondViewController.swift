@@ -13,9 +13,10 @@ class SecondViewController: UIViewController {
     @IBOutlet weak var headingNavigationBarLabel: KernLabel!
     @IBOutlet weak var usersStatisticCollectionView: UICollectionView!
     @IBOutlet weak var columnMiniChartCollectionView: UICollectionView!
+    @IBOutlet weak var selectorMonthPickerView: UIPickerView!
     @IBOutlet weak var dailySalesLabel: KernLabel!
-    @IBOutlet weak var rangeDateButton: KernButton!
-    @IBOutlet weak var sumPerMonth: KernLabel!
+    @IBOutlet weak var selectorMonthButton: KernButton!
+    @IBOutlet weak var sumMoneyPerMonth: KernLabel!
     @IBOutlet weak var monthlyStatementTableView: UITableView!
     
     //MARK: - Colects Set
@@ -26,14 +27,14 @@ class SecondViewController: UIViewController {
     var yearlyStatisticsArray = YearlyStatistics.getDemoArrayYearlyStatistics()
     
     //MARK: - Table set
+    var selectedMonthlyMoneyArray = [Int]()
+    var selectedMonthName = "0"
     private let tabCellId = "TableViewCell"
-    var contentCellAray = [DataStructure]()
+    var monthlyStatiticsArray = MonthlyStatistic.getDemoArrayMonthlyStatistics()
     
     //MARK: - ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
         
         // Register cell of first collection
         self.usersStatisticCollectionView.register(UINib(nibName: UsersStatisticsId, bundle: nil), forCellWithReuseIdentifier: UsersStatisticsId)
@@ -45,7 +46,6 @@ class SecondViewController: UIViewController {
         self.columnMiniChartCollectionView.dataSource = self
         self.columnMiniChartCollectionView.delegate = self
         
-        
         // Register cell of table
         monthlyStatementTableView.register(UINib.init(nibName: tabCellId, bundle: nil), forCellReuseIdentifier: tabCellId)
         //tableView.rowHeight = UITableViewAutomaticDimension
@@ -53,36 +53,19 @@ class SecondViewController: UIViewController {
         self.monthlyStatementTableView.dataSource = self
         self.monthlyStatementTableView.delegate = self
         
-        
-        
-        
-        // Init data
-        for item in 1...31 {
-            let data = DataStructure()
-            
-            //format mounth
-            let formNumWithZero = String(format: "%02d", item)
-            
-            data?.month =  formNumWithZero
-            data?.dollars = Int.random(in: 0..<5111)
-            contentCellAray.append(data!)
-            
-        }
         monthlyStatementTableView.reloadData()
-        
-        
-        //SummDollars
-        let dollarString = contentCellAray.map({$0.dollars})
-        let dollarStringOpt = (dollarString.compactMap({$0}))
-        let summDoll = dollarStringOpt.reduce(0, +)
-        let numberForDollar = summDoll
-        let numbForm = NumberFormatter()
-        numbForm.numberStyle = .decimal
-        let formNumWithCommas = numbForm.string(from: NSNumber(value: numberForDollar))
-        sumPerMonth.text = "$\(formNumWithCommas!)"
-        
     }
     
+    @IBAction func selectMonthAction() {
+        
+        selectorMonthPickerView.isHidden.toggle()
+        selectorMonthPickerView.delegate = self
+        selectorMonthPickerView.dataSource = self
+        monthlyStatementTableView.reloadData()
+        
+        //add design PickerView
+        //add display table before selection
+    }
 }
 
 //MARK: - Extensions for Collections
@@ -120,8 +103,28 @@ extension SecondViewController: UICollectionViewDataSource, UICollectionViewDele
         vc.modalPresentationStyle = .fullScreen
         vc.data = statisticArray[indexPath.item]
         self.present(vc, animated: true) {}
-        //Delegate
+    }
+}
+
+//MARK: - Extension for PickerView
+extension SecondViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        monthlyStatiticsArray.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        selectedMonthName = monthlyStatiticsArray.map({$0.monthName})[row]
         
+        return "\(selectedMonthName)"
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        print("row: \(row)")
+        selectedMonthlyMoneyArray = monthlyStatiticsArray.map({$0.monthlyMoneyArray})[row]
     }
 }
 
@@ -133,33 +136,45 @@ extension SecondViewController : UITableViewDataSource, UITableViewDelegate{
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return contentCellAray.count
+        return selectedMonthlyMoneyArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: tabCellId, for: indexPath) as! TableViewCell
-       
         
-        
-        
-        let numberForDollar = contentCellAray[indexPath.row].dollars!
+        //Formatting value money: comma separation and mark dollar
+        let numberForDollar = selectedMonthlyMoneyArray[indexPath.row]
         let numbForm = NumberFormatter()
         numbForm.numberStyle = .decimal
         let formNumWithCommas = numbForm.string(from: NSNumber(value: numberForDollar))
+        let formattedMoney = "$\(formNumWithCommas!)"
         
-        cell.dollarL.text = "$\(formNumWithCommas!)"
-        cell.mounthL.text = "January \(contentCellAray[indexPath.row].month!)"
-       
+        //Formatting value date: two-digit day, capitalized name month, concatenation
+        let day = String(format: "%02d", indexPath.row + 1)
+        print(selectedMonthName)
+        let monthName = selectedMonthName.capitalized
+        let formattedDate = "\(monthName) \(day)"
         
-        //Work with Reusable cell
+        //Values substitution
+        cell.moneyLabel.text = formattedMoney
+        cell.dateLabel.text = formattedDate
+        
+        //Summ Money Label
+        let sumMoney = selectedMonthlyMoneyArray.reduce(0, +)
+        let sumMoneyFormatter = NumberFormatter()
+        sumMoneyFormatter.numberStyle = .decimal
+        let sumMoneyComma = sumMoneyFormatter.string(from: NSNumber(value: sumMoney))
+        let formattedSumMoney = "$\(sumMoneyComma!)"
+        sumMoneyPerMonth.text = formattedSumMoney
+        
+        //Reusable cell
         cell.indexPath = indexPath
-        cell.contentCellAray = contentCellAray
+        cell.selectedMonthlyMoneyArray = selectedMonthlyMoneyArray
         cell.drawLinesAtPrepareForReuse()
+        //add reusable for text
         
         return cell
     }
-    
-    
 }
 
 

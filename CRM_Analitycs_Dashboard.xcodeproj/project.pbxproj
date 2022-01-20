@@ -19,7 +19,6 @@
 		B4005B832784C9EE00EDDD97 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B4005B802784C9EE00EDDD97 /* Poppins-Regular.ttf */; };
 		B4005B852784CF7A00EDDD97 /* CustomTF.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4005B842784CF7A00EDDD97 /* CustomTF.swift */; };
 		B4005B882785C3F800EDDD97 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4005B872785C3F800EDDD97 /* SecondViewController.swift */; };
-		B4005B8E2786071100EDDD97 /* CollectionView1.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4005B8D2786071100EDDD97 /* CollectionView1.swift */; };
 		B4005B9B2786393800EDDD97 /* UsersStatisticCollecttionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4005B992786393800EDDD97 /* UsersStatisticCollecttionCell.swift */; };
 		B4005B9C2786393800EDDD97 /* UsersStatisticCollecttionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4005B9A2786393800EDDD97 /* UsersStatisticCollecttionCell.xib */; };
 		B4005B9E27863D6200EDDD97 /* Poppins-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B4005B9D27863D6200EDDD97 /* Poppins-Light.ttf */; };
@@ -28,6 +27,7 @@
 		B40FD01727878E6D00DFA27B /* ColumnMiniChartCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B40FD01527878E6D00DFA27B /* ColumnMiniChartCell.xib */; };
 		B40FD01927878E9600DFA27B /* YearlyStatistics.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40FD01827878E9600DFA27B /* YearlyStatistics.swift */; };
 		B45A7ED1279094540038460E /* MyColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45A7ED0279094540038460E /* MyColor.swift */; };
+		B45A7ED32791FDE20038460E /* CircleShapeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45A7ED22791FDE20038460E /* CircleShapeView.swift */; };
 		B4A140AC27898F6B009A4523 /* TableModelCopy.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A140AB27898F6A009A4523 /* TableModelCopy.swift */; };
 		B4A140AE278999CD009A4523 /* TableModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A140AD278999CD009A4523 /* TableModel.swift */; };
 		B4A140B52789B523009A4523 /* KernTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A140B12789B522009A4523 /* KernTextView.swift */; };
@@ -59,7 +59,6 @@
 		B4005B802784C9EE00EDDD97 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
 		B4005B842784CF7A00EDDD97 /* CustomTF.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTF.swift; sourceTree = "<group>"; };
 		B4005B872785C3F800EDDD97 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
-		B4005B8D2786071100EDDD97 /* CollectionView1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionView1.swift; sourceTree = "<group>"; };
 		B4005B992786393800EDDD97 /* UsersStatisticCollecttionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersStatisticCollecttionCell.swift; sourceTree = "<group>"; };
 		B4005B9A2786393800EDDD97 /* UsersStatisticCollecttionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UsersStatisticCollecttionCell.xib; sourceTree = "<group>"; };
 		B4005B9D27863D6200EDDD97 /* Poppins-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Light.ttf"; sourceTree = "<group>"; };
@@ -68,6 +67,8 @@
 		B40FD01527878E6D00DFA27B /* ColumnMiniChartCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColumnMiniChartCell.xib; sourceTree = "<group>"; };
 		B40FD01827878E9600DFA27B /* YearlyStatistics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearlyStatistics.swift; sourceTree = "<group>"; };
 		B45A7ED0279094540038460E /* MyColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyColor.swift; sourceTree = "<group>"; };
+		B45A7ED22791FDE20038460E /* CircleShapeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleShapeView.swift; sourceTree = "<group>"; };
+		B45A7ED427931D4B0038460E /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		B4A140AB27898F6A009A4523 /* TableModelCopy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableModelCopy.swift; sourceTree = "<group>"; };
 		B4A140AD278999CD009A4523 /* TableModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableModel.swift; sourceTree = "<group>"; };
 		B4A140B12789B522009A4523 /* KernTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KernTextView.swift; sourceTree = "<group>"; };
@@ -98,8 +99,6 @@
 		B4005B2C2784532100EDDD97 = {
 			isa = PBXGroup;
 			children = (
-				B4005B8D2786071100EDDD97 /* CollectionView1.swift */,
-				B4005B4C278455D600EDDD97 /* .gitignore */,
 				B4005B372784532100EDDD97 /* CRM_Analitycs_Dashboard */,
 				B4005B362784532100EDDD97 /* Products */,
 			);
@@ -128,8 +127,10 @@
 				B4A140B92789B579009A4523 /* Source */,
 				B4005B3A2784532100EDDD97 /* SceneDelegate.swift */,
 				B4005B382784532100EDDD97 /* AppDelegate.swift */,
+				B4005B4C278455D600EDDD97 /* .gitignore */,
 				B4005B462784532200EDDD97 /* Info.plist */,
 				B4005B432784532200EDDD97 /* LaunchScreen.storyboard */,
+				B45A7ED427931D4B0038460E /* MyPlayground.playground */,
 			);
 			path = CRM_Analitycs_Dashboard;
 			sourceTree = "<group>";
@@ -167,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				B4005B992786393800EDDD97 /* UsersStatisticCollecttionCell.swift */,
+				B45A7ED22791FDE20038460E /* CircleShapeView.swift */,
 				B4005B9A2786393800EDDD97 /* UsersStatisticCollecttionCell.xib */,
 			);
 			path = UsersStatisticCollecttionCell;
@@ -345,13 +347,13 @@
 				B4A140B72789B523009A4523 /* KernButton.swift in Sources */,
 				B4C3ECA1278B3B1700AD50AC /* StatisticDetailView.swift in Sources */,
 				B4A140BB2789BEFE009A4523 /* ThirdViewController.swift in Sources */,
-				B4005B8E2786071100EDDD97 /* CollectionView1.swift in Sources */,
 				B4A140B62789B523009A4523 /* KernTextField.swift in Sources */,
 				B4005BA027864E6600EDDD97 /* UserStatistic.swift in Sources */,
 				B4005B392784532100EDDD97 /* AppDelegate.swift in Sources */,
 				B4A140AE278999CD009A4523 /* TableModel.swift in Sources */,
 				B4005B852784CF7A00EDDD97 /* CustomTF.swift in Sources */,
 				B4C688BE278874D40097ADD2 /* TableViewCell.swift in Sources */,
+				B45A7ED32791FDE20038460E /* CircleShapeView.swift in Sources */,
 				B4C3ECA4278B45E300AD50AC /* CustomViewProtocol.swift in Sources */,
 				B40FD01627878E6D00DFA27B /* ColumnMiniChartCell.swift in Sources */,
 				B4A140B82789B523009A4523 /* KernLabel.swift in Sources */,

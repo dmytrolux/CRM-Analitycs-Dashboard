@@ -20,17 +20,25 @@ class ThirdViewController: UIViewController {
             deteilTotalUserV.clipsToBounds = true
         }
     }
+    @IBOutlet weak var chartUserLabel: KernLabel!
+    @IBOutlet weak var rangeYearForCollection: KernButton!
+    
     @IBOutlet weak var collDetailV: UICollectionView!
     
     //MARK: - Colects Set
     let CollDetailID = "CollDetailTVC"
     var data: UsersStatistic?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         guard let data = data else { return }
         deteilTotalUserV.setupView(data: data)
     }
-
+    
+    @IBAction func pressedBack(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+   
 }
 
 /*
