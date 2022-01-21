@@ -14,15 +14,10 @@ class ThirdViewController: UIViewController {
         }
     }
     //add outlet view with xib
-    @IBOutlet weak var deteilTotalUserV: StatisticDetailView!{
-        didSet{
-            deteilTotalUserV.layer.cornerRadius = 12
-            deteilTotalUserV.clipsToBounds = true
-        }
-    }
+    @IBOutlet weak var deteilTotalUserV: StatisticDetailView!
     @IBOutlet weak var chartUserLabel: KernLabel!
     @IBOutlet weak var rangeYearForCollection: KernButton!
-    
+    @IBOutlet weak var typeChartButton: KernButton!
     @IBOutlet weak var collDetailV: UICollectionView!
     
     //MARK: - Colects Set
@@ -38,6 +33,9 @@ class ThirdViewController: UIViewController {
     @IBAction func pressedBack(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
+    @IBAction func pressedTypeChart(_ sender: UIButton) {
+    }
+    
    
 }
 

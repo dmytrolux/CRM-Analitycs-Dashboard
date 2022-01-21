@@ -277,7 +277,7 @@
                                 <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kgA-Hy-YI8" customClass="KernButton" customModule="CRM_Analitycs_Dashboard" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kgA-Hy-YI8" customClass="KernButton" customModule="CRM_Analitycs_Dashboard" customModuleProvider="target">
                                 <rect key="frame" x="45" y="428" width="77" height="15"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="15" id="ReA-uw-ziY"/>
@@ -299,7 +299,6 @@
                         <constraints>
                             <constraint firstItem="Y0z-0Y-BBP" firstAttribute="top" secondItem="lEp-T5-Tlj" secondAttribute="bottom" constant="31" id="1nT-dI-2yP"/>
                             <constraint firstAttribute="trailingMargin" relation="lessThanOrEqual" secondItem="5Ft-6n-c8p" secondAttribute="trailing" constant="154" id="40d-hf-NxP"/>
-                            <constraint firstAttribute="trailingMargin" relation="lessThanOrEqual" secondItem="kgA-Hy-YI8" secondAttribute="trailing" constant="216" id="5Dp-XM-oWl"/>
                             <constraint firstItem="lEp-T5-Tlj" firstAttribute="top" secondItem="K1g-WG-xXc" secondAttribute="bottom" constant="41" id="A8e-t8-qK6"/>
                             <constraint firstItem="NpN-JR-Oln" firstAttribute="leading" secondItem="Iwg-UQ-Y4v" secondAttribute="leading" id="Epo-ah-b0u"/>
                             <constraint firstItem="ydn-BU-idH" firstAttribute="trailing" secondItem="lEp-T5-Tlj" secondAttribute="trailing" id="F5D-F5-iVy"/>
@@ -314,6 +313,7 @@
                             <constraint firstItem="ydn-BU-idH" firstAttribute="top" secondItem="5Ft-6n-c8p" secondAttribute="top" id="dAR-g8-74f"/>
                             <constraint firstItem="Y0z-0Y-BBP" firstAttribute="leading" secondItem="m9a-oT-ia4" secondAttribute="leadingMargin" id="dCf-7b-oHR"/>
                             <constraint firstItem="Iwg-UQ-Y4v" firstAttribute="trailing" secondItem="ydn-BU-idH" secondAttribute="trailingMargin" constant="8" id="dFP-u6-1aY"/>
+                            <constraint firstAttribute="trailingMargin" relation="lessThanOrEqual" secondItem="kgA-Hy-YI8" secondAttribute="trailing" constant="216" id="mmj-U7-0GS"/>
                             <constraint firstItem="kgA-Hy-YI8" firstAttribute="top" secondItem="5Ft-6n-c8p" secondAttribute="bottom" id="nbf-n0-aNb"/>
                             <constraint firstAttribute="trailingMargin" secondItem="lEp-T5-Tlj" secondAttribute="trailing" id="oJR-cP-02L"/>
                             <constraint firstItem="ydn-BU-idH" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="5Ft-6n-c8p" secondAttribute="trailing" constant="1" id="rEh-0q-msA"/>
@@ -367,7 +367,7 @@
                         <rightBarButtonItems>
                             <barButtonItem style="done" id="RPM-JW-Y5r">
                                 <button key="customView" opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jpl-M9-uXh">
-                                    <rect key="frame" x="308" y="5" width="30" height="34.333333333333336"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="30" height="34.333333333333336"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="17" id="klY-jF-IGK"/>
                                         <constraint firstAttribute="height" constant="17" id="ueL-6W-VEq"/>
@@ -399,9 +399,9 @@
                         <outlet property="columnMiniChartCollectionView" destination="Y0z-0Y-BBP" id="x5G-SS-SsE"/>
                         <outlet property="dailySalesLabel" destination="5Ft-6n-c8p" id="rOm-ss-71d"/>
                         <outlet property="headingNavigationBarLabel" destination="fma-tG-IyD" id="blN-Nz-Ccv"/>
+                        <outlet property="monthPickerView" destination="NpN-JR-Oln" id="5D8-pa-Voh"/>
+                        <outlet property="monthlyRangeButton" destination="kgA-Hy-YI8" id="X87-kk-J3c"/>
                         <outlet property="monthlyStatementTableView" destination="Iwg-UQ-Y4v" id="F8G-yc-eTT"/>
-                        <outlet property="selectorMonthButton" destination="kgA-Hy-YI8" id="X87-kk-J3c"/>
-                        <outlet property="selectorMonthPickerView" destination="NpN-JR-Oln" id="5D8-pa-Voh"/>
                         <outlet property="sumMoneyPerMonth" destination="ydn-BU-idH" id="F3h-rH-a6L"/>
                         <outlet property="usersStatisticCollectionView" destination="lEp-T5-Tlj" id="l5l-ES-2si"/>
                     </connections>
@@ -513,15 +513,20 @@
                                     <action selector="pressedBack:" destination="o5f-md-l2V" eventType="touchUpInside" id="MZa-aZ-KWN"/>
                                 </connections>
                             </button>
-                            <view contentMode="center" semanticContentAttribute="playback" translatesAutoresizingMaskIntoConstraints="NO" id="Z5W-OF-8zG" customClass="StatisticDetailView" customModule="CRM_Analitycs_Dashboard" customModuleProvider="target">
+                            <view clipsSubviews="YES" contentMode="center" semanticContentAttribute="playback" translatesAutoresizingMaskIntoConstraints="NO" id="Z5W-OF-8zG" customClass="StatisticDetailView" customModule="CRM_Analitycs_Dashboard" customModuleProvider="target">
                                 <rect key="frame" x="45" y="112.99999999999999" width="285" height="234.66666666666663"/>
                                 <color key="backgroundColor" name="gray"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Z5W-OF-8zG" secondAttribute="height" multiplier="317:261" id="t0S-U7-jjw"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chart Users" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nu1-qB-EnC" customClass="KernLabel" customModule="CRM_Analitycs_Dashboard" customModuleProvider="target">
-                                <rect key="frame" x="45" y="393.66666666666669" width="83" height="21"/>
+                                <rect key="frame" x="44.999999999999993" y="393.66666666666669" width="82.333333333333314" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="i8H-7j-sNr"/>
                                 </constraints>
@@ -559,29 +564,67 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7f5-BI-fnb" customClass="KernButton" customModule="CRM_Analitycs_Dashboard" customModuleProvider="target">
-                                <rect key="frame" x="245" y="398.66666666666669" width="80" height="20"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gKS-pY-bwe">
+                                <rect key="frame" x="250" y="387" width="80" height="20"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uK0-jl-rdS" customClass="KernButton" customModule="CRM_Analitycs_Dashboard" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="cjN-eN-Ozs"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="Type Chart">
+                                                    <attributes>
+                                                        <font key="NSFont" size="7" name="Poppins-Medium"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="right" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="characterSpacing">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="pressedTypeChart:" destination="o5f-md-l2V" eventType="touchUpInside" id="eWi-a6-AEt"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7f5-BI-fnb" customClass="KernButton" customModule="CRM_Analitycs_Dashboard" customModuleProvider="target">
+                                        <rect key="frame" x="50" y="0.0" width="30" height="20"/>
+                                        <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="10"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal">
+                                            <string key="title">Type Chart
+</string>
+                                            <imageReference key="image" image="arrowtriangle.down.fill" catalog="system" symbolScale="small"/>
+                                            <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="small" weight="thin"/>
+                                        </state>
+                                        <buttonConfiguration key="configuration" style="plain" title="" imagePadding="0.0">
+                                            <imageReference key="image" image="arrowtriangle.down.fill" catalog="system" symbolScale="medium" renderingMode="hierarchical-single"/>
+                                            <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" configurationType="pointSize" pointSize="7" scale="default"/>
+                                            <attributedString key="attributedSubtitle"/>
+                                            <directionalEdgeInsets key="contentInsets" top="0.0" leading="0.0" bottom="0.0" trailing="0.0"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="pressedTypeChart:" destination="o5f-md-l2V" eventType="touchUpInside" id="Pdi-Js-yHk"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" name="gray"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="80" id="O5k-OZ-4PC"/>
-                                    <constraint firstAttribute="height" constant="20" id="VRB-PY-xJb"/>
+                                    <constraint firstAttribute="width" constant="80" id="1YV-1v-Art"/>
+                                    <constraint firstAttribute="height" constant="20" id="wvB-4m-IzK"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="10"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal">
-                                    <string key="title">Type Chart
-</string>
-                                    <imageReference key="image" image="arrowtriangle.down.fill" catalog="system" symbolScale="small"/>
-                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="small" weight="thin"/>
-                                </state>
-                                <buttonConfiguration key="configuration" style="plain" imagePlacement="trailing" title="Type Chart   " titleAlignment="trailing">
-                                    <imageReference key="image" image="arrowtriangle.down.fill" catalog="system" symbolScale="small" renderingMode="template"/>
-                                    <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" scale="small" weight="thin"/>
-                                    <fontDescription key="titleFontDescription" name="Poppins-Medium" family="Poppins" pointSize="7"/>
-                                    <attributedString key="attributedSubtitle"/>
-                                </buttonConfiguration>
-                            </button>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" name="darkBlue"/>
                         <constraints>
@@ -597,8 +640,7 @@
                             <constraint firstItem="wMD-sS-6KL" firstAttribute="firstBaseline" secondItem="Nu1-qB-EnC" secondAttribute="baseline" constant="16" symbolType="layoutAnchor" id="DqW-LM-5B7"/>
                             <constraint firstItem="wMD-sS-6KL" firstAttribute="leading" secondItem="Nu1-qB-EnC" secondAttribute="leading" id="EXU-j9-JpD"/>
                             <constraint firstItem="Atk-eD-zgE" firstAttribute="leading" secondItem="h8t-fa-FFv" secondAttribute="trailing" constant="9" id="GSn-se-DeZ"/>
-                            <constraint firstItem="7f5-BI-fnb" firstAttribute="trailing" secondItem="Z5W-OF-8zG" secondAttribute="trailing" constant="-5" id="IvA-Co-Qgn"/>
-                            <constraint firstItem="7f5-BI-fnb" firstAttribute="top" secondItem="Z5W-OF-8zG" secondAttribute="bottom" constant="51" id="OWG-qr-ena"/>
+                            <constraint firstItem="gKS-pY-bwe" firstAttribute="trailing" secondItem="Z5W-OF-8zG" secondAttribute="trailing" id="MMB-zp-LJy"/>
                             <constraint firstItem="3LV-bB-xTG" firstAttribute="top" secondItem="8BT-Dn-E1U" secondAttribute="top" constant="43" id="RVL-gf-qSF"/>
                             <constraint firstItem="6AU-EO-upf" firstAttribute="centerY" secondItem="OMx-5b-a7G" secondAttribute="centerY" id="RZY-K0-MaV"/>
                             <constraint firstItem="ABV-gN-eEm" firstAttribute="top" secondItem="Atk-eD-zgE" secondAttribute="top" id="SSb-I9-7vO"/>
@@ -610,6 +652,7 @@
                             <constraint firstItem="6AU-EO-upf" firstAttribute="leading" secondItem="OMx-5b-a7G" secondAttribute="trailing" constant="21" id="pfD-pr-hlt"/>
                             <constraint firstItem="h8t-fa-FFv" firstAttribute="centerY" secondItem="3LV-bB-xTG" secondAttribute="centerY" id="pnH-Hi-pB2"/>
                             <constraint firstAttribute="trailing" secondItem="6AU-EO-upf" secondAttribute="trailing" constant="29" id="qzy-k2-nfR"/>
+                            <constraint firstItem="gKS-pY-bwe" firstAttribute="top" secondItem="Z5W-OF-8zG" secondAttribute="bottom" constant="39.333333333333371" id="xH2-f6-GiS"/>
                             <constraint firstItem="cKE-st-65B" firstAttribute="centerX" secondItem="8BT-Dn-E1U" secondAttribute="centerX" id="y9u-uH-OYu"/>
                         </constraints>
                         <variation key="default">
@@ -628,11 +671,12 @@
                         <outlet property="chartUserLabel" destination="Nu1-qB-EnC" id="Vw7-f7-EfH"/>
                         <outlet property="deteilTotalUserV" destination="Z5W-OF-8zG" id="Q8Q-NF-rbH"/>
                         <outlet property="rangeYearForCollection" destination="wMD-sS-6KL" id="Wvv-Qg-DWT"/>
+                        <outlet property="typeChartButton" destination="uK0-jl-rdS" id="de7-O9-e4A"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kyb-nf-KCG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1378" y="188"/>
+            <point key="canvasLocation" x="1376.8" y="187.3152709359606"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="aKM-SK-BWV">

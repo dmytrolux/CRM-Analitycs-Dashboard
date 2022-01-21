@@ -19,8 +19,30 @@ class TableViewCell: UITableViewCell {
     let lineDownShape = CAShapeLayer()
     let startAngle: CGFloat = ( -.pi / 2 )
     let endAngle: CGFloat = ( 3 * .pi / 2 )
+    
     var indexPath: IndexPath!
     var selectedMonthlyMoneyArray = [Int]()
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        buildShape.makeCircle(shape: circleShape,
+                              superLayer: areaForShapes,
+                              center: areaForShapes.center,
+                              radius: 3,
+                              startAngle: startAngle,
+                              endAngle: endAngle ,
+                              clockwise: true,
+                              fillColor: MyColor.blue,
+                              strokeColor: MyColor.clear,
+                              width: 0)
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        drawLinesAtPrepareForReuse()
+    }
     
     func drawLinesAtPrepareForReuse() {
         
@@ -52,26 +74,5 @@ class TableViewCell: UITableViewCell {
         default:
             break
         }
-    }
-    
-    override func prepareForReuse() {
-        super.prepareForReuse()
-        
-        drawLinesAtPrepareForReuse()
-    }
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        
-        buildShape.makeCircle(shape: circleShape,
-                              superLayer: areaForShapes,
-                              center: areaForShapes.center,
-                              radius: 3,
-                              startAngle: startAngle,
-                              endAngle: endAngle ,
-                              clockwise: true,
-                              fillColor: MyColor.blue,
-                              strokeColor: MyColor.clear,
-                              width: 0)
     }
 }

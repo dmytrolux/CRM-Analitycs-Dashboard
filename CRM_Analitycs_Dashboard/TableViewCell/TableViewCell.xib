@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -16,7 +17,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lcc-ue-wTe" customClass="KernLabel" customModule="CRM_Analitycs_Dashboard" customModuleProvider="target">
-                        <rect key="frame" x="268" y="8.5" width="40" height="20"/>
+                        <rect key="frame" x="265.5" y="8.5" width="42.5" height="20"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="20" id="duy-Qg-JI7"/>
                         </constraints>
@@ -37,7 +38,7 @@
                         </userDefinedRuntimeAttributes>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LAl-LU-7Rc" customClass="KernLabel" customModule="CRM_Analitycs_Dashboard" customModuleProvider="target">
-                        <rect key="frame" x="26" y="9" width="69" height="19"/>
+                        <rect key="frame" x="26" y="9" width="74.5" height="19"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="19" id="Kv6-QH-FP5"/>
                         </constraints>

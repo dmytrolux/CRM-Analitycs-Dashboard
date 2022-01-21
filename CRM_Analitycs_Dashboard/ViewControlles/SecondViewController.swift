@@ -13,9 +13,9 @@ class SecondViewController: UIViewController {
     @IBOutlet weak var headingNavigationBarLabel: KernLabel!
     @IBOutlet weak var usersStatisticCollectionView: UICollectionView!
     @IBOutlet weak var columnMiniChartCollectionView: UICollectionView!
-    @IBOutlet weak var selectorMonthPickerView: UIPickerView!
+    @IBOutlet weak var monthPickerView: UIPickerView!
     @IBOutlet weak var dailySalesLabel: KernLabel!
-    @IBOutlet weak var selectorMonthButton: KernButton!
+    @IBOutlet weak var monthlyRangeButton: KernButton!
     @IBOutlet weak var sumMoneyPerMonth: KernLabel!
     @IBOutlet weak var monthlyStatementTableView: UITableView!
     
@@ -31,10 +31,15 @@ class SecondViewController: UIViewController {
     var selectedMonthName = "0"
     private let tabCellId = "TableViewCell"
     var monthlyStatiticsArray = MonthlyStatistic.getDemoArrayMonthlyStatistics()
+    var selectedRowPicker = 0
+    
+    
     
     //MARK: - ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         
         // Register cell of first collection
         self.usersStatisticCollectionView.register(UINib(nibName: UsersStatisticsId, bundle: nil), forCellWithReuseIdentifier: UsersStatisticsId)
@@ -54,18 +59,28 @@ class SecondViewController: UIViewController {
         self.monthlyStatementTableView.delegate = self
         
         monthlyStatementTableView.reloadData()
+        
+        //PickerView
+        monthPickerView.backgroundColor = MyColor.background
+        monthPickerView.delegate = self
+        monthPickerView.dataSource = self
+        monthPickerView.selectRow(0, inComponent: 0, animated: false)
+        
+        //createToolBarPickerView()
+    }
+    
+    func setPickerView(){
+        monthPickerView.backgroundColor = MyColor.background
+        monthPickerView.delegate = self
+        monthPickerView.dataSource = self
     }
     
     @IBAction func selectMonthAction() {
-        
-        selectorMonthPickerView.isHidden.toggle()
-        selectorMonthPickerView.delegate = self
-        selectorMonthPickerView.dataSource = self
+        monthPickerView.isHidden.toggle()
         monthlyStatementTableView.reloadData()
         
-        //add design PickerView
-        //add display table before selection
     }
+   
 }
 
 //MARK: - Extensions for Collections
@@ -115,17 +130,51 @@ extension SecondViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         monthlyStatiticsArray.count
     }
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        selectedMonthName = monthlyStatiticsArray.map({$0.monthName})[row]
-        
-        return "\(selectedMonthName)"
-    }
-    
+ 
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        print("row: \(row)")
         selectedMonthlyMoneyArray = monthlyStatiticsArray.map({$0.monthlyMoneyArray})[row]
     }
+    
+    func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
+        return 35
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+        selectedMonthName = monthlyStatiticsArray.map({$0.monthName})[row]
+        print("\(row) \(selectedMonthName)")
+        var pickerViewLabel = UILabel()
+        if let currentLabel = view as? UILabel {
+            pickerViewLabel = currentLabel
+        } else {
+            pickerViewLabel = UILabel()
+        }
+        pickerViewLabel.textColor = UIColor.white
+        pickerViewLabel.textAlignment = .center
+        let sizeFont = 25
+        pickerViewLabel.font = UIFont(name: "Poppins-Regular", size: CGFloat(sizeFont))
+        pickerViewLabel.text = selectedMonthName
+        return pickerViewLabel
+    }
+   /*
+    func createToolBarPickerView(){
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        let doneButton = UIBarButtonItem(title: "Done",
+                                         style: .plain,
+                                         target: self,
+                                         action: #selector(dismissKeyboard) )
+        toolbar.setItems([doneButton], animated: true)
+        toolbar.isUserInteractionEnabled = true
+        toolbar.tintColor = .white
+        toolbar.barTintColor = MyColor.backView
+        //monthPickerView.inputAccessoryView = toolbar
+        }
+   
+    @objc func dismissKeyboard(){
+        monthlyStatementTableView.reloadData()
+        view.endEditing(true)
+    }
+    */
 }
 
 //MARK: - Extensions for Tables
@@ -166,6 +215,13 @@ extension SecondViewController : UITableViewDataSource, UITableViewDelegate{
         let sumMoneyComma = sumMoneyFormatter.string(from: NSNumber(value: sumMoney))
         let formattedSumMoney = "$\(sumMoneyComma!)"
         sumMoneyPerMonth.text = formattedSumMoney
+        
+        //Title Button: set selected range
+        let firstRangeDay = "01"
+        let lastRangeDay = String(format: "%02d", selectedMonthlyMoneyArray.count)
+        let titleSelectorButton = "\(monthName) \(firstRangeDay) - \(lastRangeDay)"
+        monthlyRangeButton.setTitle(titleSelectorButton, for: .normal)
+        
         
         //Reusable cell
         cell.indexPath = indexPath
