@@ -13,7 +13,7 @@ class SecondViewController: UIViewController {
     @IBOutlet weak var headingNavigationBarLabel: KernLabel!
     @IBOutlet weak var usersStatisticCollectionView: UICollectionView!
     @IBOutlet weak var columnMiniChartCollectionView: UICollectionView!
-    @IBOutlet weak var monthPickerView: UIPickerView!
+    @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var dailySalesLabel: KernLabel!
     @IBOutlet weak var monthlyRangeButton: KernButton!
     @IBOutlet weak var sumMoneyPerMonth: KernLabel!
@@ -31,15 +31,14 @@ class SecondViewController: UIViewController {
     var selectedMonthName = "0"
     private let tabCellId = "TableViewCell"
     var monthlyStatiticsArray = MonthlyStatistic.getDemoArrayMonthlyStatistics()
-    var selectedRowPicker = 0
-    
+    let screenWidth = UIScreen.main.bounds.width - 10
+    //let screenHeight = UIScreen.main.bounds.height / 3
+    var selectedRow = 0
     
     
     //MARK: - ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
         
         // Register cell of first collection
         self.usersStatisticCollectionView.register(UINib(nibName: UsersStatisticsId, bundle: nil), forCellWithReuseIdentifier: UsersStatisticsId)
@@ -60,25 +59,34 @@ class SecondViewController: UIViewController {
         
         monthlyStatementTableView.reloadData()
         
-        //PickerView
-        monthPickerView.backgroundColor = MyColor.background
-        monthPickerView.delegate = self
-        monthPickerView.dataSource = self
-        monthPickerView.selectRow(0, inComponent: 0, animated: false)
         
-        //createToolBarPickerView()
-    }
-    
-    func setPickerView(){
-        monthPickerView.backgroundColor = MyColor.background
-        monthPickerView.delegate = self
-        monthPickerView.dataSource = self
     }
     
     @IBAction func selectMonthAction() {
-        monthPickerView.isHidden.toggle()
-        monthlyStatementTableView.reloadData()
+        //pickerView.isHidden.toggle()
         
+        let vc = UIViewController()
+        let heightTV = monthlyStatementTableView.frame.height
+        vc.preferredContentSize = CGSize(width: screenWidth, height: heightTV * 0.2)
+        let pickerView = UIPickerView(frame: CGRect(x: 0, y: 0, width: screenWidth, height: heightTV * 0.7))
+        pickerView.dataSource = self
+        pickerView.delegate = self
+        pickerView.selectRow(selectedRow, inComponent: 0, animated: false)
+        vc.view.addSubview(pickerView)
+        pickerView.centerXAnchor.constraint(equalTo: vc.view.centerXAnchor).isActive = true
+        pickerView.centerYAnchor.constraint(equalTo: vc.view.centerYAnchor).isActive = true
+        
+        let alert = UIAlertController(title: "Select month", message: "", preferredStyle: .actionSheet)
+        alert.setValue(vc, forKey: "contentViewController")
+        alert.addAction(UIAlertAction(title: "Select", style: .default, handler: { (UIAlertAction) in
+            self.selectedRow = pickerView.selectedRow(inComponent: 0)
+            self.selectedMonthName = self.monthlyStatiticsArray.map({$0.monthName})[self.selectedRow]
+            self.selectedMonthlyMoneyArray = self.monthlyStatiticsArray.map({$0.monthlyMoneyArray})[self.selectedRow]
+            self.monthlyStatementTableView.reloadData()
+        }))
+        self.present(alert, animated: true, completion: nil)
+        
+        //monthlyStatementTableView.reloadData()
     }
    
 }
@@ -148,11 +156,12 @@ extension SecondViewController: UIPickerViewDelegate, UIPickerViewDataSource {
         } else {
             pickerViewLabel = UILabel()
         }
-        pickerViewLabel.textColor = UIColor.white
+        pickerViewLabel.textColor = MyColor.backLine
         pickerViewLabel.textAlignment = .center
         let sizeFont = 25
         pickerViewLabel.font = UIFont(name: "Poppins-Regular", size: CGFloat(sizeFont))
         pickerViewLabel.text = selectedMonthName
+        monthlyStatementTableView.reloadData()
         return pickerViewLabel
     }
    /*
@@ -175,6 +184,9 @@ extension SecondViewController: UIPickerViewDelegate, UIPickerViewDataSource {
         view.endEditing(true)
     }
     */
+    
+    
+    
 }
 
 //MARK: - Extensions for Tables

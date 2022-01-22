@@ -8,12 +8,7 @@
 import UIKit
 
 class ThirdViewController: UIViewController {
-    @IBOutlet weak var backTotalUserL: UILabel!{
-        didSet{
-            backTotalUserL.attributedText =  NSMutableAttributedString(string: "Total User", attributes: [NSAttributedString.Key.kern: 2])
-        }
-    }
-    //add outlet view with xib
+    @IBOutlet weak var backTotalUserL: KernLabel!
     @IBOutlet weak var deteilTotalUserV: StatisticDetailView!
     @IBOutlet weak var chartUserLabel: KernLabel!
     @IBOutlet weak var rangeYearForCollection: KernButton!
@@ -39,25 +34,8 @@ class ThirdViewController: UIViewController {
    
 }
 
-/*
+
 //MARK: - Extensions for Collections
- //Вертикальна колекція
-extension ThirdViewController: UICollectionViewDataSource, UICollectionViewDelegate{
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
-            return collectTUser.totalUserArray.count
-        }
-    
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-            let cell = totalUserCV.dequeueReusableCell(withReuseIdentifier: totUsSecContID, for: indexPath) as! UserTotalSVCCVCell
-            let userData = collectTUser.totalUserArray[indexPath.item]
-            cell.setupCell(totalUser: userData)
-            return cell
-    }
-}
-*/
+
 
         

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="EbP-fV-e6f">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="o5f-md-l2V">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
@@ -367,7 +367,7 @@
                         <rightBarButtonItems>
                             <barButtonItem style="done" id="RPM-JW-Y5r">
                                 <button key="customView" opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jpl-M9-uXh">
-                                    <rect key="frame" x="0.0" y="0.0" width="30" height="34.333333333333336"/>
+                                    <rect key="frame" x="308" y="5" width="30" height="34.333333333333336"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="17" id="klY-jF-IGK"/>
                                         <constraint firstAttribute="height" constant="17" id="ueL-6W-VEq"/>
@@ -399,9 +399,9 @@
                         <outlet property="columnMiniChartCollectionView" destination="Y0z-0Y-BBP" id="x5G-SS-SsE"/>
                         <outlet property="dailySalesLabel" destination="5Ft-6n-c8p" id="rOm-ss-71d"/>
                         <outlet property="headingNavigationBarLabel" destination="fma-tG-IyD" id="blN-Nz-Ccv"/>
-                        <outlet property="monthPickerView" destination="NpN-JR-Oln" id="5D8-pa-Voh"/>
                         <outlet property="monthlyRangeButton" destination="kgA-Hy-YI8" id="X87-kk-J3c"/>
                         <outlet property="monthlyStatementTableView" destination="Iwg-UQ-Y4v" id="F8G-yc-eTT"/>
+                        <outlet property="pickerView" destination="NpN-JR-Oln" id="5D8-pa-Voh"/>
                         <outlet property="sumMoneyPerMonth" destination="ydn-BU-idH" id="F3h-rH-a6L"/>
                         <outlet property="usersStatisticCollectionView" destination="lEp-T5-Tlj" id="l5l-ES-2si"/>
                     </connections>
@@ -429,7 +429,7 @@
                                     <constraint firstAttribute="width" constant="23" id="dd4-4D-vSS"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Atk-eD-zgE">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Atk-eD-zgE" customClass="KernLabel" customModule="CRM_Analitycs_Dashboard" customModuleProvider="target">
                                 <rect key="frame" x="61.999999999999993" y="46" width="95.333333333333314" height="23"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="23" id="yxW-ce-ch3"/>
@@ -443,6 +443,11 @@
                                     </fragment>
                                 </attributedString>
                                 <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="characterSpacing">
+                                        <integer key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3LV-bB-xTG" customClass="KernButton" customModule="CRM_Analitycs_Dashboard" customModuleProvider="target">
                                 <rect key="frame" x="30" y="43" width="24" height="29"/>
@@ -535,7 +540,7 @@
                                 <nil key="highlightedColor"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="characterSpacing">
-                                        <real key="value" value="0.46000000000000002"/>
+                                        <real key="value" value="0.56000000000000005"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </label>
@@ -625,6 +630,31 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </stackView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="X7k-I4-NJq">
+                                <rect key="frame" x="59" y="457" width="258" height="188"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="188" id="QeX-an-zvb"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Ht0-kS-gmX">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Ggq-q0-trl">
+                                        <rect key="frame" x="0.0" y="0.0" width="26" height="182"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="26" height="182"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <size key="customSize" width="26" height="182"/>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" name="darkBlue"/>
                         <constraints>
@@ -641,11 +671,14 @@
                             <constraint firstItem="wMD-sS-6KL" firstAttribute="leading" secondItem="Nu1-qB-EnC" secondAttribute="leading" id="EXU-j9-JpD"/>
                             <constraint firstItem="Atk-eD-zgE" firstAttribute="leading" secondItem="h8t-fa-FFv" secondAttribute="trailing" constant="9" id="GSn-se-DeZ"/>
                             <constraint firstItem="gKS-pY-bwe" firstAttribute="trailing" secondItem="Z5W-OF-8zG" secondAttribute="trailing" id="MMB-zp-LJy"/>
+                            <constraint firstItem="X7k-I4-NJq" firstAttribute="top" secondItem="wMD-sS-6KL" secondAttribute="bottom" constant="27" id="RNc-0U-CMv"/>
                             <constraint firstItem="3LV-bB-xTG" firstAttribute="top" secondItem="8BT-Dn-E1U" secondAttribute="top" constant="43" id="RVL-gf-qSF"/>
                             <constraint firstItem="6AU-EO-upf" firstAttribute="centerY" secondItem="OMx-5b-a7G" secondAttribute="centerY" id="RZY-K0-MaV"/>
                             <constraint firstItem="ABV-gN-eEm" firstAttribute="top" secondItem="Atk-eD-zgE" secondAttribute="top" id="SSb-I9-7vO"/>
                             <constraint firstItem="3LV-bB-xTG" firstAttribute="leading" secondItem="8BT-Dn-E1U" secondAttribute="leading" constant="30" id="Uye-Jw-NOj"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Z5W-OF-8zG" secondAttribute="trailing" constant="29" id="YVi-yd-gY1"/>
+                            <constraint firstItem="X7k-I4-NJq" firstAttribute="leading" secondItem="8BT-Dn-E1U" secondAttribute="leadingMargin" constant="43" id="aMC-Bw-U4H"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="X7k-I4-NJq" secondAttribute="trailing" constant="42" id="bUd-DB-T48"/>
                             <constraint firstItem="Z5W-OF-8zG" firstAttribute="leading" secondItem="8BT-Dn-E1U" secondAttribute="leadingMargin" constant="29" id="cxT-Ue-zBQ"/>
                             <constraint firstItem="Atk-eD-zgE" firstAttribute="centerY" secondItem="3LV-bB-xTG" secondAttribute="centerY" id="d9r-8A-GTC"/>
                             <constraint firstItem="Nu1-qB-EnC" firstAttribute="top" secondItem="Z5W-OF-8zG" secondAttribute="bottom" constant="46" id="oqL-Jm-zKz"/>
@@ -667,7 +700,7 @@
                     <extendedEdge key="edgesForExtendedLayout"/>
                     <size key="freeformSize" width="375" height="719"/>
                     <connections>
-                        <outlet property="backTotalUserL" destination="Atk-eD-zgE" id="Ahf-Bb-9un"/>
+                        <outlet property="backTotalUserL" destination="Atk-eD-zgE" id="dW7-XX-vVo"/>
                         <outlet property="chartUserLabel" destination="Nu1-qB-EnC" id="Vw7-f7-EfH"/>
                         <outlet property="deteilTotalUserV" destination="Z5W-OF-8zG" id="Q8Q-NF-rbH"/>
                         <outlet property="rangeYearForCollection" destination="wMD-sS-6KL" id="Wvv-Qg-DWT"/>
