@@ -31,8 +31,9 @@ class SecondViewController: UIViewController {
     var selectedMonthName = "0"
     private let tabCellId = "TableViewCell"
     var monthlyStatiticsArray = MonthlyStatistic.getDemoArrayMonthlyStatistics()
+    
     let screenWidth = UIScreen.main.bounds.width - 10
-    //let screenHeight = UIScreen.main.bounds.height / 3
+    let screenHeight = UIScreen.main.bounds.height
     var selectedRow = 0
     
     
@@ -66,9 +67,7 @@ class SecondViewController: UIViewController {
         //pickerView.isHidden.toggle()
         
         let vc = UIViewController()
-        let heightTV = monthlyStatementTableView.frame.height
-        vc.preferredContentSize = CGSize(width: screenWidth, height: heightTV * 0.2)
-        let pickerView = UIPickerView(frame: CGRect(x: 0, y: 0, width: screenWidth, height: heightTV * 0.7))
+        let pickerView = UIPickerView(frame: CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight * 0.3))
         pickerView.dataSource = self
         pickerView.delegate = self
         pickerView.selectRow(selectedRow, inComponent: 0, animated: false)
@@ -105,27 +104,29 @@ extension SecondViewController: UICollectionViewDataSource, UICollectionViewDele
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if collectionView == usersStatisticCollectionView{
-            let cell = usersStatisticCollectionView.dequeueReusableCell(withReuseIdentifier: UsersStatisticsId, for: indexPath) as! UsersStatisticCollecttionCell
+            let item = usersStatisticCollectionView.dequeueReusableCell(withReuseIdentifier: UsersStatisticsId, for: indexPath) as! UsersStatisticCollecttionCell
             let userData = statisticArray[indexPath.item]
-            cell.setupCell(totalUser: userData)
+            item.setupItem(totalUser: userData)
             
-            return cell
+            return item
         }
         else {
-            let cell = columnMiniChartCollectionView.dequeueReusableCell(withReuseIdentifier: columnMiniChartId, for: indexPath) as! ColumnMiniChartCell
+            let item = columnMiniChartCollectionView.dequeueReusableCell(withReuseIdentifier: columnMiniChartId, for: indexPath) as! ColumnMiniChartCell
             let userData = yearlyStatisticsArray[indexPath.item]
-            cell.setupCell(data: userData)
-            return cell
+            item.setupItem(data: userData)
+            return item
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        if collectionView == usersStatisticCollectionView{
+            
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "ThirdVC") as! ThirdViewController
         vc.modalPresentationStyle = .fullScreen
         vc.data = statisticArray[indexPath.item]
         self.present(vc, animated: true) {}
+        }
     }
 }
 
@@ -163,30 +164,7 @@ extension SecondViewController: UIPickerViewDelegate, UIPickerViewDataSource {
         pickerViewLabel.text = selectedMonthName
         monthlyStatementTableView.reloadData()
         return pickerViewLabel
-    }
-   /*
-    func createToolBarPickerView(){
-        let toolbar = UIToolbar()
-        toolbar.sizeToFit()
-        let doneButton = UIBarButtonItem(title: "Done",
-                                         style: .plain,
-                                         target: self,
-                                         action: #selector(dismissKeyboard) )
-        toolbar.setItems([doneButton], animated: true)
-        toolbar.isUserInteractionEnabled = true
-        toolbar.tintColor = .white
-        toolbar.barTintColor = MyColor.backView
-        //monthPickerView.inputAccessoryView = toolbar
-        }
-   
-    @objc func dismissKeyboard(){
-        monthlyStatementTableView.reloadData()
-        view.endEditing(true)
-    }
-    */
-    
-    
-    
+    } 
 }
 
 //MARK: - Extensions for Tables

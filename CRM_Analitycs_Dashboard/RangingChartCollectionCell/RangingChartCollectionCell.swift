@@ -1,23 +1,23 @@
 //
-//  VertDiagrameCell.swift
+//  RangingChartCollectionCell.swift
 //  CRM_Analitycs_Dashboard
 //
-//  Created by Пришляк Дмитро on 06.01.2022.
+//  Created by Пришляк Дмитро on 22.01.2022.
 //
 
 import UIKit
 
-class ColumnMiniChartCell: UICollectionViewCell {
-    
+class RangingChartCollectionCell: UICollectionViewCell {
     @IBOutlet weak var yearLabel: KernLabel!
     
     let buildShape = BuildingShape()
     let backLineShape = CAShapeLayer()
     let animationLineShape = CAShapeLayer()
-    let startX: CGFloat = 11
-    let startY: CGFloat = 20
-    let endX: CGFloat = 11
-    let endY: CGFloat = 2
+    let startX: CGFloat = 13
+    let startY: CGFloat = 156.5
+    let endX: CGFloat = 13
+    let endY: CGFloat = 4.5
+    let width: CGFloat = 9
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -30,7 +30,7 @@ class ColumnMiniChartCell: UICollectionViewCell {
                             endY: endY,
                             fillColor: MyColor.clear,
                             strokeColor: MyColor.backLine,
-                            width: 3)
+                            width: width)
     }
     
     func setupItem (data: YearlyStatistics) {
@@ -47,8 +47,8 @@ class ColumnMiniChartCell: UICollectionViewCell {
                                      endY: endY,
                                      fillColor: MyColor.clear,
                                      strokeColor: MyColor.blue,
-                                     width: 3,
-                                     fullCycleInSec: 2)
+                                     width: width,
+                                     fullCycleInSec: 3)
     }
     
 }

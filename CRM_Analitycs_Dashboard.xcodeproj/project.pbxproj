@@ -26,6 +26,8 @@
 		B40FD01627878E6D00DFA27B /* ColumnMiniChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40FD01427878E6D00DFA27B /* ColumnMiniChartCell.swift */; };
 		B40FD01727878E6D00DFA27B /* ColumnMiniChartCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B40FD01527878E6D00DFA27B /* ColumnMiniChartCell.xib */; };
 		B40FD01927878E9600DFA27B /* YearlyStatistics.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40FD01827878E9600DFA27B /* YearlyStatistics.swift */; };
+		B440CD7A279C1F6800ACC205 /* RangingChartCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B440CD78279C1F6800ACC205 /* RangingChartCollectionCell.swift */; };
+		B440CD7B279C1F6800ACC205 /* RangingChartCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B440CD79279C1F6800ACC205 /* RangingChartCollectionCell.xib */; };
 		B45A7ED1279094540038460E /* MyColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45A7ED0279094540038460E /* MyColor.swift */; };
 		B4A140AC27898F6B009A4523 /* TableModelCopy.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A140AB27898F6A009A4523 /* TableModelCopy.swift */; };
 		B4A140B52789B523009A4523 /* KernTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A140B12789B522009A4523 /* KernTextView.swift */; };
@@ -64,6 +66,8 @@
 		B40FD01427878E6D00DFA27B /* ColumnMiniChartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColumnMiniChartCell.swift; sourceTree = "<group>"; };
 		B40FD01527878E6D00DFA27B /* ColumnMiniChartCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColumnMiniChartCell.xib; sourceTree = "<group>"; };
 		B40FD01827878E9600DFA27B /* YearlyStatistics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YearlyStatistics.swift; sourceTree = "<group>"; };
+		B440CD78279C1F6800ACC205 /* RangingChartCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RangingChartCollectionCell.swift; sourceTree = "<group>"; };
+		B440CD79279C1F6800ACC205 /* RangingChartCollectionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RangingChartCollectionCell.xib; sourceTree = "<group>"; };
 		B45A7ED0279094540038460E /* MyColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyColor.swift; sourceTree = "<group>"; };
 		B45A7ED427931D4B0038460E /* MyPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = MyPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		B4A140AB27898F6A009A4523 /* TableModelCopy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableModelCopy.swift; sourceTree = "<group>"; };
@@ -119,6 +123,7 @@
 				B40FD01327878DEA00DFA27B /* ColumnMiniChartCell */,
 				B4C688BB2788735D0097ADD2 /* TableViewCell */,
 				B4A140BC2789C152009A4523 /* StatisticDetailView */,
+				B440CD77279C1E8000ACC205 /* RangingChartCollectionCell */,
 				B4005B9827862AEE00EDDD97 /* OtherCustomClasses */,
 				B4A140B92789B579009A4523 /* Source */,
 				B4005B3A2784532100EDDD97 /* SceneDelegate.swift */,
@@ -185,6 +190,15 @@
 				B40FD01527878E6D00DFA27B /* ColumnMiniChartCell.xib */,
 			);
 			path = ColumnMiniChartCell;
+			sourceTree = "<group>";
+		};
+		B440CD77279C1E8000ACC205 /* RangingChartCollectionCell */ = {
+			isa = PBXGroup;
+			children = (
+				B440CD78279C1F6800ACC205 /* RangingChartCollectionCell.swift */,
+				B440CD79279C1F6800ACC205 /* RangingChartCollectionCell.xib */,
+			);
+			path = RangingChartCollectionCell;
 			sourceTree = "<group>";
 		};
 		B4A140B92789B579009A4523 /* Source */ = {
@@ -320,6 +334,7 @@
 				B4005B832784C9EE00EDDD97 /* Poppins-Regular.ttf in Resources */,
 				B4005B812784C9EE00EDDD97 /* poppins-bold.ttf in Resources */,
 				B4005B822784C9EE00EDDD97 /* Poppins-Medium.ttf in Resources */,
+				B440CD7B279C1F6800ACC205 /* RangingChartCollectionCell.xib in Resources */,
 				B4005B9C2786393800EDDD97 /* UsersStatisticCollecttionCell.xib in Resources */,
 				B4005B422784532200EDDD97 /* Assets.xcassets in Resources */,
 				B40FD01727878E6D00DFA27B /* ColumnMiniChartCell.xib in Resources */,
@@ -355,6 +370,7 @@
 				B4A140B52789B523009A4523 /* KernTextView.swift in Sources */,
 				B4005B3B2784532100EDDD97 /* SceneDelegate.swift in Sources */,
 				B4A140AC27898F6B009A4523 /* TableModelCopy.swift in Sources */,
+				B440CD7A279C1F6800ACC205 /* RangingChartCollectionCell.swift in Sources */,
 				B4C6C684278CBDBB005396D5 /* BuildShape.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

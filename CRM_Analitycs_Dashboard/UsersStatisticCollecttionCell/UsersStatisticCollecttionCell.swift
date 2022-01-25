@@ -38,7 +38,7 @@ class UsersStatisticCollecttionCell: UICollectionViewCell {
                               width: 10)
     }
     
-    func setupCell(totalUser: UsersStatistic){
+    func setupItem(totalUser: UsersStatistic){
         
         let countLess = totalUser.lessUsersCount
         let countTarget = totalUser.targetUsersCount
