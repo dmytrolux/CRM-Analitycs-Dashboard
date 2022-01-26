@@ -115,8 +115,8 @@
 		B4005B372784532100EDDD97 /* CRM_Analitycs_Dashboard */ = {
 			isa = PBXGroup;
 			children = (
-				B4D1D558278DE4DC001A72C0 /* ModelData */,
 				B4005B952786253B00EDDD97 /* Storyboard */,
+				B4D1D558278DE4DC001A72C0 /* ModelData */,
 				B4005B962786257300EDDD97 /* ViewControlles */,
 				B4005B9727862ABB00EDDD97 /* UsersStatisticCollecttionCell */,
 				B40FD01327878DEA00DFA27B /* ColumnMiniChartCell */,
