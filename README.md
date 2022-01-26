@@ -3,7 +3,7 @@
 ## Project tasks
 Implement the prototype interactions and animation from a design in [Figma](https://www.figma.com/file/GSuWs8R4I8zBxOaLAE0LdOWn/Dashboard1-Design-Concept?node-id=0%3A1) using Xcode.
 
-![prot](https://raw.githubusercontent.com/salokpi/CRM_Analitycs_Dashboard/7e917f67df3a34f7cf0eaf5bd982651ef9e10ca5/Screenshots/Screenshot%202022-01-26%20at%2015.16.11.png?token=AL55Z74XQFRWKJC4DOD4K5TB6FVH2)
+![prot](https://github.com/salokpi/CRM_Analitycs_Dashboard/blob/master/Screenshots/Screenshot%202022-01-26%20at%2015.16.11.png?raw=true)
 
 ## My target from this project
 In this project I have to consolidate in practice the acquired knowledge on working with:
