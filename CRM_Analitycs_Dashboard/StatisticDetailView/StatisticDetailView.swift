@@ -17,7 +17,7 @@ class StatisticDetailView: UIView, CustomViewProtocol {
     @IBOutlet weak var decriptionLabel: KernLabel!
     
     let nameThisClass = String(describing: StatisticDetailView.self)
-    let buildShape = BuildingShape()
+    let buildShape = PatternShapes()
     let backCirclShape = CAShapeLayer()
     let pointUpShape = CAShapeLayer()
     let pointDownShape = CAShapeLayer()
@@ -64,7 +64,6 @@ class StatisticDetailView: UIView, CustomViewProtocol {
                               strokeColor: MyColor.clear,
                               width: 0)
         
-        
     }
     
     func setupView (data: UsersStatistic) {
@@ -88,7 +87,6 @@ class StatisticDetailView: UIView, CustomViewProtocol {
                                                  strokeColor: MyColor.blue,
                                                  width: 15,
                                                  fullCycleInSec: 2)
-        
     }
     
     override init(frame: CGRect) {
@@ -99,6 +97,5 @@ class StatisticDetailView: UIView, CustomViewProtocol {
         super.init(coder: aDecoder)
         commonInit(for: nameThisClass)
     }
-    
 }
 

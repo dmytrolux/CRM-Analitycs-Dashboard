@@ -18,6 +18,12 @@ class SecondViewController: UIViewController {
     @IBOutlet weak var monthlyRangeButton: KernButton!
     @IBOutlet weak var sumMoneyPerMonth: KernLabel!
     @IBOutlet weak var monthlyStatementTableView: UITableView!
+    @IBOutlet weak var viewInform: InformingView!
+    
+    let screenWidth = UIScreen.main.bounds.width - 10
+    let screenHeight = UIScreen.main.bounds.height * 0.2
+    
+    var numberInforming = 0
     
     //MARK: - Colects Set
     private let UsersStatisticsId = String(describing: UsersStatisticCollecttionCell.self)
@@ -27,19 +33,17 @@ class SecondViewController: UIViewController {
     var yearlyStatisticsArray = YearlyStatistics.getDemoArrayYearlyStatistics()
     
     //MARK: - Table set
-    var selectedMonthlyMoneyArray = [Int]()
-    var selectedMonthName = "0"
     private let tabCellId = "TableViewCell"
-    var monthlyStatiticsArray = MonthlyStatistic.getDemoArrayMonthlyStatistics()
-    
-    let screenWidth = UIScreen.main.bounds.width - 10
-    let screenHeight = UIScreen.main.bounds.height
-    var selectedRow = 0
-    
+    var selectedNameMonth = "january"
+    var selectedRowMonth = 0
+    var monthlyArrays = MonthlyStatistic.getDemoArrayMonthlyStatistics()
+    var selectedMonthlyMoneyArray: [Int] { monthlyArrays.map({$0.monthlyMoneyArray})[selectedRowMonth] }
     
     //MARK: - ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
+        increaseNumberInforming()
+        viewInform.setupNumberInforming(numberInforming)
         
         // Register cell of first collection
         self.usersStatisticCollectionView.register(UINib(nibName: UsersStatisticsId, bundle: nil), forCellWithReuseIdentifier: UsersStatisticsId)
@@ -53,41 +57,54 @@ class SecondViewController: UIViewController {
         
         // Register cell of table
         monthlyStatementTableView.register(UINib.init(nibName: tabCellId, bundle: nil), forCellReuseIdentifier: tabCellId)
-        //tableView.rowHeight = UITableViewAutomaticDimension
         monthlyStatementTableView.separatorColor = UIColor.clear
         self.monthlyStatementTableView.dataSource = self
         self.monthlyStatementTableView.delegate = self
-        
-        monthlyStatementTableView.reloadData()
-        
-        
+    }
+    
+    @IBAction func pressedInforming() {
+        if numberInforming > 0 {
+            numberInforming -= 1
+            viewInform.setupNumberInforming(numberInforming)
+        }
+    }
+    
+    @IBAction func pressedPerson() {
+        if numberInforming < 9 {
+            numberInforming += 1
+            viewInform.setupNumberInforming(numberInforming)
+        }
     }
     
     @IBAction func selectMonthAction() {
-        //pickerView.isHidden.toggle()
-        
         let vc = UIViewController()
-        let pickerView = UIPickerView(frame: CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight * 0.3))
+        let pickerView = UIPickerView(frame: CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight))
         pickerView.dataSource = self
         pickerView.delegate = self
-        pickerView.selectRow(selectedRow, inComponent: 0, animated: false)
+        pickerView.selectRow(selectedRowMonth, inComponent: 0, animated: false)
         vc.view.addSubview(pickerView)
         pickerView.centerXAnchor.constraint(equalTo: vc.view.centerXAnchor).isActive = true
         pickerView.centerYAnchor.constraint(equalTo: vc.view.centerYAnchor).isActive = true
         
         let alert = UIAlertController(title: "Select month", message: "", preferredStyle: .actionSheet)
         alert.setValue(vc, forKey: "contentViewController")
-        alert.addAction(UIAlertAction(title: "Select", style: .default, handler: { (UIAlertAction) in
-            self.selectedRow = pickerView.selectedRow(inComponent: 0)
-            self.selectedMonthName = self.monthlyStatiticsArray.map({$0.monthName})[self.selectedRow]
-            self.selectedMonthlyMoneyArray = self.monthlyStatiticsArray.map({$0.monthlyMoneyArray})[self.selectedRow]
-            self.monthlyStatementTableView.reloadData()
-        }))
+        alert.addAction(UIAlertAction(title: "Select", style: .cancel, handler: { (UIAlertAction) in }))
         self.present(alert, animated: true, completion: nil)
-        
-        //monthlyStatementTableView.reloadData()
     }
-   
+    
+    func increaseNumberInforming(){
+        if numberInforming < 9 {
+            let delay = Double.random(in: 5...30)
+            DispatchQueue.main.asyncAfter(deadline: .now() + delay ) {
+                if self.numberInforming < 9 {
+                    self.numberInforming += 1
+                    self.viewInform.setupNumberInforming(self.numberInforming)
+                    self.increaseNumberInforming()
+                }
+            }
+        }
+    }
+    
 }
 
 //MARK: - Extensions for Collections
@@ -121,50 +138,50 @@ extension SecondViewController: UICollectionViewDataSource, UICollectionViewDele
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == usersStatisticCollectionView{
             
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "ThirdVC") as! ThirdViewController
-        vc.modalPresentationStyle = .fullScreen
-        vc.data = statisticArray[indexPath.item]
-        self.present(vc, animated: true) {}
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "ThirdVC") as! ThirdViewController
+            vc.modalPresentationStyle = .fullScreen
+            vc.data = statisticArray[indexPath.item]
+            vc.numberInforming = numberInforming
+            self.present(vc, animated: true) {}
         }
     }
 }
 
 //MARK: - Extension for PickerView
 extension SecondViewController: UIPickerViewDelegate, UIPickerViewDataSource {
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        1
-    }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int { 1 }
+    
+    func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat { 35 }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        monthlyStatiticsArray.count
-    }
- 
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        selectedMonthlyMoneyArray = monthlyStatiticsArray.map({$0.monthlyMoneyArray})[row]
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
-        return 35
+        monthlyArrays.count
     }
     
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
-        selectedMonthName = monthlyStatiticsArray.map({$0.monthName})[row]
-        print("\(row) \(selectedMonthName)")
-        var pickerViewLabel = UILabel()
-        if let currentLabel = view as? UILabel {
-            pickerViewLabel = currentLabel
-        } else {
-            pickerViewLabel = UILabel()
-        }
+        
+        selectedNameMonth = monthlyArrays.map({$0.monthName})[row]
+        
+        let pickerViewLabel = UILabel()
         pickerViewLabel.textColor = MyColor.backLine
+        pickerViewLabel.backgroundColor = UIColor.white
+        pickerViewLabel.layer.frame = CGRect(x: 0, y: 0, width: 200, height: 30)
+        pickerViewLabel.layer.cornerRadius = 15
+        pickerViewLabel.clipsToBounds = true
         pickerViewLabel.textAlignment = .center
-        let sizeFont = 25
-        pickerViewLabel.font = UIFont(name: "Poppins-Regular", size: CGFloat(sizeFont))
-        pickerViewLabel.text = selectedMonthName
+        pickerViewLabel.textColor = MyColor.blue
+        pickerViewLabel.font = UIFont(name: "Poppins-Regular", size: 25)
+        pickerViewLabel.text = selectedNameMonth
+        
         monthlyStatementTableView.reloadData()
         return pickerViewLabel
-    } 
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        selectedRowMonth = row
+        monthlyStatementTableView.reloadData()
+    }
 }
 
 //MARK: - Extensions for Tables
@@ -190,8 +207,7 @@ extension SecondViewController : UITableViewDataSource, UITableViewDelegate{
         
         //Formatting value date: two-digit day, capitalized name month, concatenation
         let day = String(format: "%02d", indexPath.row + 1)
-        print(selectedMonthName)
-        let monthName = selectedMonthName.capitalized
+        let monthName = selectedNameMonth.capitalized
         let formattedDate = "\(monthName) \(day)"
         
         //Values substitution
@@ -212,12 +228,10 @@ extension SecondViewController : UITableViewDataSource, UITableViewDelegate{
         let titleSelectorButton = "\(monthName) \(firstRangeDay) - \(lastRangeDay)"
         monthlyRangeButton.setTitle(titleSelectorButton, for: .normal)
         
-        
         //Reusable cell
         cell.indexPath = indexPath
         cell.selectedMonthlyMoneyArray = selectedMonthlyMoneyArray
         cell.drawLinesAtPrepareForReuse()
-        //add reusable for text
         
         return cell
     }

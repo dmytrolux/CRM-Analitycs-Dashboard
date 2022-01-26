@@ -13,7 +13,7 @@ class TableViewCell: UITableViewCell {
     @IBOutlet weak var dateLabel: KernLabel!
     @IBOutlet weak var moneyLabel: KernLabel!
     
-    let buildShape = BuildingShape()
+    let buildShape = PatternShapes()
     let circleShape = CAShapeLayer()
     let lineUpShape = CAShapeLayer()
     let lineDownShape = CAShapeLayer()

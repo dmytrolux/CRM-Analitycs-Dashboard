@@ -11,30 +11,38 @@ class ThirdViewController: UIViewController {
     @IBOutlet weak var backTotalUserLabel: KernLabel!
     @IBOutlet weak var deteilTotalUserView: StatisticDetailView!
     @IBOutlet weak var chartUserLabel: KernLabel!
-    @IBOutlet weak var rangeYearForCollection: KernButton!
+    @IBOutlet weak var rangeButton: KernButton!
     @IBOutlet weak var typeChartButton: KernButton!
     @IBOutlet weak var rangingChartCollectionView: UICollectionView!
     @IBOutlet weak var pickerView: UIPickerView!
+    @IBOutlet weak var informing: InformingView!
+    
+    let screenWidth = UIScreen.main.bounds.width - 10
+    let screenHeight = UIScreen.main.bounds.height * 0.25
+    var numberInforming: Int?
     
     //MARK: - Data for deteilTotalUserView
     var data: UsersStatistic?
-    
     //MARK: - Data for rangingChartCollectionView
     private let columnMiniChartId = String(describing: RangingChartCollectionCell.self)
-    var yearlyObjectsArray = YearlyStatistics.getDemoArrayYearlyStatistics()
+    var yearlyArrays = YearlyStatistics.getDemoArrayYearlyStatistics()
     
     //MARK: - Data for PickerView
-    var yearsIntArray: [Int] { yearlyObjectsArray.map({$0.year}) }
-    var allYearsArray: [String] { yearsIntArray.compactMap({String($0)}) }
-    //["2003", "2004", "2005", "2006", "2007"...]
-    var selectedPickerRow1 = 0
-    var selectedPickerRow2 = 18
-    var differenceIndex = 0
-    var leftPickerArray: [String] { Array(allYearsArray[...(selectedPickerRow2)]) }
-    var rightPickerArray: [String] { Array(allYearsArray[(selectedPickerRow1)...]) }
+    var yearsIntArray: [Int] { yearlyArrays.map({$0.year}) }
+    var yearsAllArray: [String] { yearsIntArray.compactMap({String($0)}) }
+    var selectedRow0 = 0
+    var selectedRow1 = 18
+    var differenceCountIndex = 0
+    var labelsComponent0: [String] { Array(yearsAllArray[...selectedRow1]) }
+    var labelsComponent1: [String] { Array(yearsAllArray[selectedRow0...]) }
+    var rangeYearlyArrays: [YearlyStatistics] { Array(yearlyArrays[selectedRow0...selectedRow1]) }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let numberInforming = numberInforming{
+            informing.setupNumberInforming(numberInforming)
+        }
         
         //MARK: - Data for deteilTotalUserView
         guard let data = data else { return }
@@ -44,21 +52,33 @@ class ThirdViewController: UIViewController {
         self.rangingChartCollectionView.register(UINib(nibName: columnMiniChartId, bundle: nil), forCellWithReuseIdentifier: columnMiniChartId)
         self.rangingChartCollectionView.dataSource = self
         self.rangingChartCollectionView.delegate = self
-        
-        //MARK: - Data for PickerView
-        pickerView.dataSource = self
-        pickerView.delegate = self
     }
-   
+    
+    
     @IBAction func pressedBack(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
     @IBAction func pressedTypeChart(_ sender: UIButton) {
         print("You pressed to Type Chart")
+        rangingChartCollectionView.reloadData()
     }
     
     @IBAction func selectMonthAction() {
-        pickerView.isHidden.toggle()
+        let vc = UIViewController()
+        let pickerView = UIPickerView(frame: CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight))
+        pickerView.dataSource = self
+        pickerView.delegate = self
+        pickerView.selectRow(selectedRow0, inComponent: 0, animated: false)
+        pickerView.selectRow(selectedRow1, inComponent: 1, animated: false)
+        vc.view.addSubview(pickerView)
+        pickerView.centerXAnchor.constraint(equalTo: vc.view.centerXAnchor).isActive = true
+        pickerView.centerYAnchor.constraint(equalTo: vc.view.centerYAnchor).isActive = true
+        
+        let alert = UIAlertController(title: "Select range years", message: "", preferredStyle: .actionSheet)
+        alert.setValue(vc, forKey: "contentViewController")
+        alert.addAction(UIAlertAction(title: "Select", style: .cancel, handler: { (UIAlertAction) in
+        }))
+        self.present(alert, animated: true, completion: nil)
     }
 }
 
@@ -66,13 +86,13 @@ class ThirdViewController: UIViewController {
 extension ThirdViewController: UICollectionViewDelegate, UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        yearlyObjectsArray.count
+        rangeYearlyArrays.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let item = rangingChartCollectionView.dequeueReusableCell(withReuseIdentifier: columnMiniChartId, for: indexPath) as! RangingChartCollectionCell
-        let userData = yearlyObjectsArray[indexPath.item]
+        let userData = rangeYearlyArrays[indexPath.item]
         item.setupItem(data: userData)
         return item
     }
@@ -88,26 +108,23 @@ extension ThirdViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         
         if component == 0 {
-            return leftPickerArray.count
+            return labelsComponent0.count
         } else {
-            return rightPickerArray.count
+            return labelsComponent1.count
         }
     }
     
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
         
-        pickerView.backgroundColor = MyColor.background
-        pickerView.layer.opacity = 0.9
-        pickerView.alpha = 0.9
-        pickerView.layer.shadowColor = UIColor.white.cgColor
+        pickerView.backgroundColor = UIColor.clear
+        pickerView.layer.shadowColor = MyColor.background?.cgColor
         pickerView.layer.shadowOffset = CGSize(width: 3, height: 10)
-        pickerView.layer.shadowOpacity = 0.5
+        pickerView.layer.shadowOpacity = 0.75
         pickerView.layer.shadowRadius = 9
         
         let pickerViewLabel = UILabel()
-        pickerViewLabel.layer.borderWidth = 1
         pickerViewLabel.layer.opacity = 1
-        pickerViewLabel.layer.backgroundColor = MyColor.backView?.cgColor
+        pickerViewLabel.layer.backgroundColor = MyColor.blue?.cgColor
         pickerViewLabel.layer.cornerRadius = 8
         pickerViewLabel.layer.frame = CGRect(x: 0, y: 0, width: 175, height: 30)
         pickerViewLabel.textColor = UIColor.white
@@ -115,10 +132,10 @@ extension ThirdViewController: UIPickerViewDelegate, UIPickerViewDataSource {
         pickerViewLabel.font = UIFont(name: "Poppins-Regular", size: CGFloat(20))
         
         if component == 0 {
-            pickerViewLabel.text = "\(leftPickerArray[row])"
+            pickerViewLabel.text = "\(labelsComponent0[row])"
             return pickerViewLabel
         } else  {
-            pickerViewLabel.text = "\(rightPickerArray[row])"
+            pickerViewLabel.text = "\(labelsComponent1[row])"
             return pickerViewLabel
         }
     }
@@ -127,14 +144,18 @@ extension ThirdViewController: UIPickerViewDelegate, UIPickerViewDataSource {
         
         switch component {
         case 0:
-            selectedPickerRow1 = row
-            differenceIndex = row
+            selectedRow0 = row
+            differenceCountIndex = row
             pickerView.reloadComponent(1)
         case 1:
-            selectedPickerRow2 = row + differenceIndex
+            selectedRow1 = row + differenceCountIndex
             pickerView.reloadComponent(0)
         default: break
         }
+        
+        let titleForRange = "In \(yearsAllArray[selectedRow0]) - \(yearsAllArray[selectedRow1])"
+        rangeButton.setTitle(titleForRange, for: .normal)
+        rangingChartCollectionView.reloadData()
     }
 }
 

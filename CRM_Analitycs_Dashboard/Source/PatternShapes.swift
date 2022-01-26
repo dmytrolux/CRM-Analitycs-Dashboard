@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BuildingShape {
+class PatternShapes {
     
     func makeCircle(shape: CAShapeLayer, superLayer: UIView, center: CGPoint, radius: CGFloat, startAngle: CGFloat, endAngle: CGFloat, clockwise: Bool, fillColor: UIColor!, strokeColor: UIColor!, width: CGFloat) {
         let path = UIBezierPath(arcCenter: center,
@@ -24,7 +24,6 @@ class BuildingShape {
         shape.strokeEnd = 1
         superLayer.layer.addSublayer(shape)
     }
-    
     
     func makeAnimationCircleAndPercent (shape: CAShapeLayer, superLayer: UIView, percent: Int, labelForPercent: UILabel, center: CGPoint, radius: CGFloat, startAngle: CGFloat, endAngle: CGFloat, clockwise: Bool, fillColor: UIColor!, strokeColor: UIColor!, width: CGFloat, fullCycleInSec: Double) {
         
@@ -113,7 +112,4 @@ class BuildingShape {
     }
     
 }
-
-
-
 

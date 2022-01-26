@@ -10,7 +10,7 @@ import UIKit
 class RangingChartCollectionCell: UICollectionViewCell {
     @IBOutlet weak var yearLabel: KernLabel!
     
-    let buildShape = BuildingShape()
+    let buildShape = PatternShapes()
     let backLineShape = CAShapeLayer()
     let animationLineShape = CAShapeLayer()
     let startX: CGFloat = 13

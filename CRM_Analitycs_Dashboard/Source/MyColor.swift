@@ -14,4 +14,5 @@ struct MyColor {
     static let backLine = UIColor(named: "backLine")
     static let background = UIColor(named: "darkBlue")
     static let backView = UIColor(named: "gray")
+    static let notification = UIColor(named: "notification")
 }

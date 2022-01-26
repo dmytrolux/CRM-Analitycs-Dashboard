@@ -17,7 +17,7 @@ class UsersStatisticCollecttionCell: UICollectionViewCell {
     @IBOutlet weak var countLessUsersLabel: KernLabel!
     @IBOutlet weak var percentLabel: KernLabel!
     
-    let buildShape = BuildingShape()
+    let buildShape = PatternShapes()
     let backCircleShape = CAShapeLayer()
     let animationCircleShape = CAShapeLayer()
     let startAngle: CGFloat = ( -.pi / 2 )
